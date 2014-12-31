@@ -1,4 +1,4 @@
-package com.onlinebazzar.onlinebazzar;
+package com.onlinebazzar.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
