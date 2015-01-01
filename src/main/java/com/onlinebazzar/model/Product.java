@@ -21,6 +21,7 @@ public class Product {
 	private double price;
 	private String descritpion;
 	private String url;
+	private double bazzarBenefit;
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "vendor") 
 	private Vendor vendor;
@@ -76,6 +77,13 @@ public class Product {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
+	public double getBazzarBenefit() {
+		return bazzarBenefit;
+	}
+	public void setBazzarBenefit(double bazzarBenefit) {
+		this.bazzarBenefit = bazzarBenefit;
+	}
+	
 	
 	
 }
