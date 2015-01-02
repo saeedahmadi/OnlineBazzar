@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-  http://www.springframework.org/schema/beans/spring-beans.xsd
-  http://www.springframework.org/schema/context 
-  http://www.springframework.org/schema/context/spring-context.xsd
-  http://www.springframework.org/schema/tx 
-  http://www.springframework.org/schema/tx/spring-tx.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	
-	<context:component-scan base-package="com.onlinebazzar.onlinebazzar" />
+	<context:annotation-config/>
+	<context:component-scan base-package="com.onlinebazzar" />
 	
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -32,9 +33,20 @@
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 
-		<property name="packagesToScan">
+		<property name="annotatedClasses">
 			<list>
-				<value>com.onlinebazzar.model</value>
+				<value>com.onlinebazzar.model.WebUser</value>
+				<value>com.onlinebazzar.model.Address</value>
+				<value>com.onlinebazzar.model.BankAccount</value>
+				<value>com.onlinebazzar.model.Category</value>
+				<value>com.onlinebazzar.model.Customer</value>
+				<value>com.onlinebazzar.model.LineItem</value>
+				<value>com.onlinebazzar.model.Order</value>
+				<value>com.onlinebazzar.model.PaymentDetails</value>
+				<value>com.onlinebazzar.model.Person</value>
+				<value>com.onlinebazzar.model.Product</value>
+				<value>com.onlinebazzar.model.ShoppingCart</value>
+				<value>com.onlinebazzar.model.Vendor</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -52,8 +64,48 @@
 	</bean>
 
 	<tx:annotation-driven transaction-manager="transactionManager"  />
+	
+	<security:http auto-config="true"
+		authentication-manager-ref="authenticationManagerForRest">
+
+		<!-- Customer -->
+		<security:intercept-url pattern="/customer/**"
+			access="ROLE_CUSTOMER" />
+
+		<!-- ADMIN -->
+		<security:intercept-url pattern="/admin/**"
+			access="ROLE_ADMIN" />
+		<!-- VADMIN -->
+		<security:intercept-url pattern="/vadmin/**"
+			access="ROLE_VADMIN" />
+			
+		<!-- VMANAGER -->
+		<security:intercept-url pattern="/vmanager/**"
+			access="ROLE_VMANAGER" />
+			
+		<!-- VOperator -->
+		<security:intercept-url pattern="/voperator/**"
+			access="ROLE_VOPERATOR" />
+			
+		<!--Manager  -->
+		<security:intercept-url pattern="/manager/**"
+			access="ROLE_MANAGER" />
+		
+
+		<security:form-login login-page="/login"
+			default-target-url="/" 
+			authentication-failure-url="/loginfailed" />
+		<security:logout logout-success-url="/logout" />
+	</security:http>
+
+
+	<!-- Authentication manager -->
+	<security:authentication-manager alias="authenticationManagerForRest">
+		<security:authentication-provider
+			user-service-ref="customUserDetailsService" />
+	</security:authentication-manager>
 		
 </beans>
-	
-		
+
+
 
