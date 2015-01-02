@@ -22,6 +22,7 @@ public abstract class GenericServiceImpl<T> implements GenericService<T> {
 
 	@Transactional
 	public T save(T entity) {
+		System.out.println("hello");
 		return (T) getDAO().save(entity);
 	}
 

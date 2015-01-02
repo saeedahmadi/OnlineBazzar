@@ -1,6 +1,7 @@
 package com.onlinebazzar.daoimpl;
 
 import java.lang.reflect.ParameterizedType;
+
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -11,7 +12,6 @@ import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.onlinebazzar.dao.GenericDAO;
-
 public class GenericDAOImpl<T> implements GenericDAO<T> {
 
 	private Class<T> clazz;
@@ -39,8 +39,8 @@ public class GenericDAOImpl<T> implements GenericDAO<T> {
 				.list();
 	}
 
-	@Transactional
 	public T save(T entity) {
+		System.out.println("Hello 2");
 		getCurrentSession().persist(entity);
 		this.entity = entity;
 		return entity;
