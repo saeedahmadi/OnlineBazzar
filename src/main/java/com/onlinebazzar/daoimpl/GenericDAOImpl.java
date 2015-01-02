@@ -40,15 +40,18 @@ public class GenericDAOImpl<T> implements GenericDAO<T> {
 	}
 
 	public T save(T entity) {
-		System.out.println("Hello 2");
 		getCurrentSession().persist(entity);
+		getCurrentSession().flush();
 		this.entity = entity;
 		return entity;
 	}
 
 	@Transactional
 	public T update(T entity) {
-		return (T) getCurrentSession().merge(entity);
+		getCurrentSession().merge(entity);
+		getCurrentSession().flush();
+		this.entity=entity;
+		return entity;
 	}
 
 	public void delete(T entity) {
