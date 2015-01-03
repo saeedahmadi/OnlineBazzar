@@ -19,6 +19,9 @@ public class WebUser {
 	private String password;
 	@Transient
 	private boolean status;
+	
+	private boolean enabled;
+	
 	private Role role;
 	
 	
@@ -51,6 +54,12 @@ public class WebUser {
 	}
 	public void setRole(Role role) {
 		this.role = role;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 	
