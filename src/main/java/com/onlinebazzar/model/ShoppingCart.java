@@ -1,5 +1,6 @@
 package com.onlinebazzar.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +13,7 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-public class ShoppingCart {
+public class ShoppingCart implements Serializable{
 
 	@Id
 	@GeneratedValue

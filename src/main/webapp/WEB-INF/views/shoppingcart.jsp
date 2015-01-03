@@ -10,12 +10,11 @@
 <title>Shopping Cart</title>
 </head>
 <body>
-	
-
 	<c:forEach var="lineitem" items="${shoppingCart.items}">
 		${lineitem.product.name}
-		</c:forEach>
-		
-
+	</c:forEach>
+	
+	<a href="/onlinebazzar/customer/checkout">Check out</a>
+	
 </body>
 </html>

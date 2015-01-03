@@ -66,4 +66,9 @@ public class CustomerController {
 		customerService.update(customer);
 		return "redirect:/";
 	}
+	
+	@RequestMapping(value = "/customer/checkout", method = RequestMethod.GET)
+	public String checkOut(){
+		return"confirmPayment";
+	}
 }
