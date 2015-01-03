@@ -29,7 +29,7 @@ public class Person {
 	
 	@NotNull
 	private String firstName, lastName;
-	@Pattern(regexp = "^[0-9]{3}-[0-9]{3}-[0-9]{4}$", message = "Phone should be in 111-111-1111 format")
+//	@Pattern(regexp = "^[0-9]{3}-[0-9]{3}-[0-9]{4}$", message = "Phone should be in 111-111-1111 format")
 	private String phoneNumber;
 
 	@Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\."
