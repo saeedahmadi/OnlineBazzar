@@ -40,6 +40,17 @@ public class Person {
 	private Date dob;
 	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private WebUser webuser;
+
+	public WebUser getWebuser() {
+		return webuser;
+	}
+
+	public void setWebuser(WebUser webuser) {
+		this.webuser = webuser;
+	}
 
 	public Long getId() {
 		return id;

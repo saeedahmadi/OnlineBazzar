@@ -20,10 +20,7 @@ public class WebUser {
 	@Transient
 	private boolean status;
 	private Role role;
-	@OneToOne
-	private Customer customer;
-	@OneToOne
-	private Vendor vendor;
+	
 	
 	public Long getId() {
 		return id;
@@ -55,18 +52,7 @@ public class WebUser {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	public Customer getCustomer() {
-		return customer;
-	}
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-	public Vendor getVendor() {
-		return vendor;
-	}
-	public void setVendor(Vendor vendor) {
-		this.vendor = vendor;
-	}
+	
 	
 	
 	

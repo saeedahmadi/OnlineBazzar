@@ -2,6 +2,7 @@ package com.onlinebazzar.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,17 +17,54 @@ public class Vendor {
 	private Long id;
 	
 	private String name;
+	
+	private String phoneNumber;
+	private String email;
+	
 	@OneToMany
 	@JoinColumn(name="vendor_id")
 	private List<Category> categories;
 	@OneToOne
 	private BankAccount bankAccount;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private WebUser webuser;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	private Address address;
+	
+	public WebUser getWebUser() {
+		return webuser;
+	}
+
+	public void setWebUser(WebUser webuser) {
+		this.webuser = webuser;
+	}
+	
+	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public WebUser getWebuser() {
+		return webuser;
+	}
+
+	public void setWebuser(WebUser webuser) {
+		this.webuser = webuser;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -44,6 +82,22 @@ public class Vendor {
 	}
 	public void setBankAccount(BankAccount bankAccount) {
 		this.bankAccount = bankAccount;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	
 	
