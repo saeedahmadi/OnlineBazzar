@@ -56,6 +56,7 @@ public class GenericDAOImpl<T> implements GenericDAO<T> {
 
 	public void delete(T entity) {
 		getCurrentSession().delete(entity);
+		getCurrentSession().flush();
 	}
 
 	public void deleteById(final long id) {

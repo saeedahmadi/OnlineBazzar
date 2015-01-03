@@ -85,5 +85,14 @@ public class AdminController {
 	        model.addAttribute("categories", this.categoryService.findAll());
 	        return "admin/index";
 	    }
+	    
+	    @RequestMapping("/remove/{id}")
+	    public String deleteCategory(@PathVariable("id") Long id, Model model){
+	        //model.addAttribute("category", this.categoryService.findOne(id));
+	    	categoryService.deleteById(id);
+	        model.addAttribute("category", new Category());
+	        model.addAttribute("categories", this.categoryService.findAll());
+	        return "admin/index";
+	    }
 	
 }
