@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.onlinebazzar.dao.WebUserDAO;
 import com.onlinebazzar.model.WebUser;
-@Repository
+@Repository("webuserDAO")
 public class WebUserDAOImpl extends GenericDAOImpl<WebUser> implements WebUserDAO{
 
 	@Override
