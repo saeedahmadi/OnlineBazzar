@@ -1,5 +1,6 @@
 package com.onlinebazzar.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +23,11 @@ public class ShoppingCart {
 	private List<LineItem> items;
 	private Date creationDate;
 	private double price;
+	
+	public ShoppingCart() {
+		// TODO Auto-generated constructor stub
+		this.items= new ArrayList<LineItem>();
+	}
 	public Long getId() {
 		return id;
 	}

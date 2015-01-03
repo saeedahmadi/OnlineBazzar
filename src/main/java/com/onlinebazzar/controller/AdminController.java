@@ -17,8 +17,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.onlinebazzar.model.Address;
 import com.onlinebazzar.model.Category;
+import com.onlinebazzar.model.Vendor;
+import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.AddressService;
 import com.onlinebazzar.services.CategoryService;
+import com.onlinebazzar.services.VendorService;
+import com.onlinebazzar.services.WebUserService;
 
 /**
  * Handles requests for the application home page.
@@ -30,6 +34,11 @@ public class AdminController {
 	AddressService addressService;
 	@Autowired
 	CategoryService categoryService;
+	@Autowired
+	VendorService vendorService;
+	@Autowired
+	WebUserService webuserService;
+	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
 	/**
@@ -62,16 +71,13 @@ public class AdminController {
 	        return "admin/index";
 	    }
 	     
-	    //For add and update category both
 	    @RequestMapping(value= "/category/add", method = RequestMethod.POST)
 	    public String addCategory(@ModelAttribute("category") Category c){
 	        System.out.println(c);
 	        if(c.getId() == null){
 	        	
-	            //new person, add it
 	            categoryService.save(c);
 	        }else{
-	            //existing person, call update
 	            categoryService.update(c);
 	        }
 	         
@@ -88,11 +94,85 @@ public class AdminController {
 	    
 	    @RequestMapping("/remove/{id}")
 	    public String deleteCategory(@PathVariable("id") Long id, Model model){
-	        //model.addAttribute("category", this.categoryService.findOne(id));
 	    	categoryService.deleteById(id);
 	        model.addAttribute("category", new Category());
 	        model.addAttribute("categories", this.categoryService.findAll());
 	        return "admin/index";
 	    }
+	    
+	    
+	    @RequestMapping(value = "/vendors", method = RequestMethod.GET)
+	    public String listVendors(Model model) {
+	        model.addAttribute("vendor", new Vendor());
+	        model.addAttribute("vendors", vendorService.findAll());
+	        return "admin/vendors";
+	    }
+	    
+	    @RequestMapping(value= "/vendors/add", method = RequestMethod.POST)
+	    public String addVendor(@ModelAttribute("vendor") Vendor v){
+	        System.out.println(v);
+	        if(v.getId() == null){
+	        	
+	            vendorService.save(v);
+	        }else{
+	            vendorService.update(v);
+	        }
+	         
+	        return "redirect:/vendors";
+	         
+	    }
+	    
+	    
+	    @RequestMapping("/vendors/edit/{id}")
+	    public String editVendor(@PathVariable("id") Long id, Model model){
+	        model.addAttribute("vendor", this.vendorService.findOne(id));
+	        model.addAttribute("vendors", this.vendorService.findAll());
+	        return "admin/vendors";
+	    }
+	    
+	    @RequestMapping("/vendors/remove/{id}")
+	    public String deleteVendor(@PathVariable("id") Long id, Model model){
+	    	vendorService.deleteById(id);
+	        model.addAttribute("vendor", new Vendor());
+	        model.addAttribute("vendors", this.vendorService.findAll());
+	        return "admin/vendors";
+	    }
 	
+	    
+	    @RequestMapping(value = "/webusers", method = RequestMethod.GET)
+	    public String listWebusers(Model model) {
+	        model.addAttribute("webuser", new WebUser());
+	        model.addAttribute("webusers", webuserService.findAll());
+	        return "admin/webusers";
+	    }
+	    
+	    @RequestMapping(value= "/webusers/add", method = RequestMethod.POST)
+	    public String addWebuser(@ModelAttribute("webuser") WebUser v){
+	        System.out.println(v);
+	        if(v.getId() == null){
+	        	
+	        	webuserService.save(v);
+	        }else{
+	        	webuserService.update(v);
+	        }
+	         
+	        return "redirect:/webusers";
+	         
+	    }
+	    
+	    
+	    @RequestMapping("/webusers/edit/{id}")
+	    public String editWebUser(@PathVariable("id") Long id, Model model){
+	        model.addAttribute("webuser", this.webuserService.findOne(id));
+	        model.addAttribute("webuser", this.webuserService.findAll());
+	        return "admin/webusers";
+	    }
+	    
+	    @RequestMapping("/webusers/remove/{id}")
+	    public String deleteWebuser(@PathVariable("id") Long id, Model model){
+	    	webuserService.deleteById(id);
+	        model.addAttribute("webuser", new WebUser());
+	        model.addAttribute("webuser", this.webuserService.findAll());
+	        return "admin/webusers";
+	    }
 }
