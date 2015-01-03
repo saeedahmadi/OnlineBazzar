@@ -1,6 +1,5 @@
 
 
-<!-- header_top -->
 <div class="top_bg">
 <div class="container">
 <div class="header_top">

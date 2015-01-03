@@ -40,6 +40,15 @@
 					<form:errors path="*" cssClass="alert alert-danger" element="div" />
 					<div class="form-group">
 
+						<div class="col-lg-3">
+							<form:input type="hidden" class="form-control" path="id" />
+							<form:errors path="id" />
+							<br>
+						</div>
+					</div>
+					
+					<div class="form-group">
+
 						<label for="firstName" class="control-label col-lg-2 col-lg-2">firstName:
 						</label>
 						<div class="col-lg-3">
