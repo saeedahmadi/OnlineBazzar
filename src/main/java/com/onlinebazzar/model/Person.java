@@ -9,6 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Email;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.sun.istack.internal.NotNull;
 
 
 
@@ -20,10 +26,15 @@ public class Person {
 	@Column(name = "person_id")
 	@GeneratedValue
 	private Long id;
-	
+	@NotNull
 	private String firstName,lastName;
+	@Pattern(regexp = "^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message = "give correct phone Numenbr")
 	private String phoneNumber;
+	@NotNull
+	@Email
 	private String email;
+	@NotNull
+	@DateTimeFormat(pattern = "dd/mm/yyyy")
 	private Date dob;
 	@OneToOne
 	private Address address;
