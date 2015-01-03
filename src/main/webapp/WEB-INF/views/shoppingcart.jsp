@@ -7,19 +7,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Shopping Cart</title>
 </head>
 <body>
-	<form action="productSearch" method="post">
-		<input type="text" name="name"> <input type="submit"
-			text="Search">
-	</form>
+	
 
-
-	<c:forEach var="product" items="${productList}">
-		${product.name}
-		<a href="<c:url value='/product/addtocart/${product.id}' />" >Add TO Cart</a>
-				</c:forEach>
+	<c:forEach var="lineitem" items="${shoppingCart.items}">
+		${lineitem.product.name}
+		</c:forEach>
 		
 
 </body>
