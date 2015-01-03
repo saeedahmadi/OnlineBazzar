@@ -6,8 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
 <title>Login</title>
 </head>
 <body>
@@ -48,7 +47,7 @@
 										name='j_password' type="password" value="">
 								</div>
 								<input class="btn btn-lg btn-success btn-block" type="submit"
-									value="sublit">
+									value="login">
 								<br /> <a href="<c:url value="/"/>">Back to Home</a> <input
 									type="hidden" name="${_csrf.parameterName}"
 									value="${_csrf.token}" />
