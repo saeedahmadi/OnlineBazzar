@@ -3,6 +3,7 @@ package com.onlinebazzar.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Address {
@@ -13,6 +14,7 @@ public class Address {
 	private String street;
 	private String city;
 	private String state;
+	@Size(min = 5, max = 5)
 	private String zip;
 	private String country;
 	

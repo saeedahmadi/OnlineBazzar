@@ -2,6 +2,7 @@ package com.onlinebazzar.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,30 +14,31 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import com.sun.istack.internal.NotNull;
 
-
-
 @Entity
-@Inheritance(strategy=InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Person {
-	
+
 	@Id
 	@Column(name = "person_id")
 	@GeneratedValue
 	private Long id;
+	
 	@NotNull
-	private String firstName,lastName;
-	@Pattern(regexp = "^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message = "give correct phone Numenbr")
+	private String firstName, lastName;
+	@Pattern(regexp = "^[0-9]{3}-[0-9]{3}-[0-9]{4}$", message = "Phone should be in 111-111-1111 format")
 	private String phoneNumber;
-	@NotNull
-	@Email
+
+	@Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\."
+			+ "[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@"
+			+ "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message = "Email should be in mmm@mmm.mmm format")
 	private String email;
-	@NotNull
-	@DateTimeFormat(pattern = "dd/mm/yyyy")
+	@DateTimeFormat(iso = ISO.DATE)
 	private Date dob;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
 
 	public Long getId() {
@@ -94,7 +96,5 @@ public class Person {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	
-	
 
 }
