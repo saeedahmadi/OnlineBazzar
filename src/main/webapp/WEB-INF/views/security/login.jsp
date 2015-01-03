@@ -30,12 +30,14 @@
 					<div class="panel-body">
 						<c:if test="${not empty error}">
 							<div class="alert alert-danger">
+							Wrong Credentials
 								<br />
 							</div>
 						</c:if>
 						<form action="<c:url value="/j_spring_security_check"></c:url>"
 							method="post">
-							<fieldset>
+							<fieldset >
+							 <legend>Authentication</legend>
 								<div class="form-group">
 									<input class="form-control"
 										placeholder="username"
