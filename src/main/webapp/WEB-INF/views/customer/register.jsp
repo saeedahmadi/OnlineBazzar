@@ -28,12 +28,15 @@
 	<div class="content-section">
 		<div class="container">
 		              
-			<h2 class="panel-heading"><strong>Customer Registration</strong></h2>
-				
+			
 			
 <!-- 	<div class="form-group">Customer Registration</div> -->
 	<form:form role="form" method="post" action="users"
 		modelAttribute="customer" class="form-horizontal">
+		
+		<div class="panel panel-default">
+					<div class="panel-heading">Customer Registration</div>
+					<div class="panel-body">
 		<fieldset>
 			<form:errors path="*" cssClass="alert alert-danger" element="div" />
 			<div class="form-group">
@@ -166,13 +169,18 @@
 						<div class="col-lg-offset-2 col-lg-10">
 							<input type="submit" id="btnSumbit" class="btn btn-primary" value="SigunUP"/>
 						</div>
-						Already Registered ?  <a href="#" >Login here</a>
+						<div> 
+						<label class="control-label col-lg-2 col-lg-2">Already Registered ?<a href="#">Login here</a> </label> 
+						</div>
+						
 					</div>
 			
 			
 			
 			
 		</fieldset>
+		</div>
+		</div>
 	</form:form>
 	</div>
 	</div>
