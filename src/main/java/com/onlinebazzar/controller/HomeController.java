@@ -19,7 +19,6 @@ import com.onlinebazzar.model.Customer;
 import com.onlinebazzar.model.ShoppingCart;
 import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.WebUserService;
-import com.sun.org.apache.xml.internal.resolver.Catalog;
 
 /**
  * Handles requests for the application home page.
@@ -80,7 +79,7 @@ public class HomeController {
 
 			if (user.getRole().equals(Role.CUSTOMER)) {
 				Customer customer=(Customer) user.getPerson();
-				request.getSession().setAttribute("user", user);
+				request.getSession().setAttribute("user", customer);
 				return "/HomePage";
 			}
 		}

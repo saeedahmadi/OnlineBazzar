@@ -3,6 +3,7 @@ package com.onlinebazzar.controller;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.onlinebazzar.model.Customer;
-import com.onlinebazzar.model.ShoppingCart;
 import com.onlinebazzar.services.CustomerService;
 
 @Controller
-@SessionAttributes({"shoppingCart","currentCustomer"})
+@Scope("session")
+@SessionAttributes("user")
 public class CustomerController {
 
 	/**
@@ -52,8 +53,9 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customer/edit", method = RequestMethod.GET)
-	public String editCustomerProfile(Model model){
-		model.addAttribute("currentCustomer", (Customer)customerService.findOne(1L));
+	public String editCustomerProfile(HttpSession session,Model model){
+		Customer customer =(Customer)session.getAttribute("user");
+		model.addAttribute("currentCustomer",customer );
 		return "customer/customerEditProfile";
 	}
 	
@@ -69,9 +71,7 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customer/checkout", method = RequestMethod.GET)
-	public String checkOut(@ModelAttribute ShoppingCart shoppingCart, @ModelAttribute Customer currentCustomer){
-		
-		
+	public String checkOut(){
 		return"confirmPayment";
 	}
 }
