@@ -29,7 +29,7 @@
       <ul class="dropdown-menu">
         <li><a href="<c:url value='/vendor/vusers' />" >Manage Users</a></li>
         <li><a href="<c:url value='/vendor/product/add' />" >Manage Products</a></li>
-        <li><a href="#">Submenu 1-3</a></li>      
+        <li><a href="<c:url value='/vendor/user/add' />" >Add Vendor Users</a></li>      
                        
       </ul>
     </li>

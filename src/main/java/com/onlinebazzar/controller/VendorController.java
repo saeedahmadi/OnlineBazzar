@@ -1,5 +1,6 @@
 package com.onlinebazzar.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -66,6 +67,36 @@ public String getVendorUsers(Model model){
 	List<Person> vusers = personService.findAllVendorPersons();
 	model.addAttribute("vuser", new Person());
 	model.addAttribute("vusers", vusers);
+	return "vendor/vadmin";
+	}
+
+@RequestMapping(value="/vendor/user/add", method=RequestMethod.GET)
+public String showVendorUser(Model model){
+	
+	List<String> enumValues = new ArrayList<String>();
+	enumValues.add("VMANAGER");
+	enumValues.add("VOPERATOR");
+	model.addAttribute("enumValues", enumValues);	
+	model.addAttribute("vuser", new Person());
+	return "vendor/vuserregistration";
+	}
+
+@RequestMapping(value="/vendor/user/add", method=RequestMethod.POST)
+public String addVendorUser(@ModelAttribute("vendor") @Valid Person p, BindingResult result){
+	
+		
+	if (result.hasErrors()) {
+		return "redirect:vendor/vendorRegister";
+	}
+	
+    if(p.getId() == null){
+    	
+        
+        personService.save(p);
+        
+    }else{
+        personService.update(p);
+    }
 	return "vendor/vadmin";
 	}
 
