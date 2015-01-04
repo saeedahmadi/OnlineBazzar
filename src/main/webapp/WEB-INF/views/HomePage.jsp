@@ -65,13 +65,13 @@
 	<div class="container">
 		<div class="header">
 			<div class="logo">
-				<a href="index.html"><img src="resources/images/logo.png" alt="" />
+				<a href="HomePage.jsp"><img src="resources/images/logo.png" alt="" />
 				</a>
 			</div>
 			<!-- start header_right -->
 			<div class="header_right">
 				<div class="create_btn">
-					<a class="arrow" href="registration.html">create account <img
+					<a class="arrow" href="http://localhost:8080/onlinebazzar/userRegister">create account <img
 						src="resources/images/right_arrow.png" alt="" />
 					</a>
 				</div>
