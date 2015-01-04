@@ -52,6 +52,7 @@ public class CustomerController {
 	
 	@RequestMapping(value = "/customer/edit", method = RequestMethod.GET)
 	public String editCustomerProfile(Model model){
+		
 		model.addAttribute("currentCustomer", (Customer)customerService.findOne(1L));
 		return "customer/customerEditProfile";
 	}

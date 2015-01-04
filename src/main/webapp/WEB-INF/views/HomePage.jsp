@@ -1,4 +1,5 @@
-
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="top_bg">
 <div class="container">
@@ -6,9 +7,20 @@
 	<div class="top_left">
 		<h2><a href="#">50%off</a> use coupon code "big61" and get extra 33% off on orders above rs 2,229 </h2>
 	</div>
+	
+	
 	<div class="top_right">
 		<ul>
-			<li><a href="#">Recently viewed</a></li>|
+		
+		
+		<sec:authorize access="hasRole('ROLE_CUSTOMER')">
+			<li><a href="<c:url value="/customer/edit"/>">Manage Profile</a></li>|
+			<li><a href="<c:url value="/addToCart"/>">Add to cart</a></li>|
+			<li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
+		</sec:authorize>
+		
+	<sec:authorize access="isAnonymous()">
+	<li><a href="#">Recently viewed</a></li>|
 			<li><a href="contact.html">Contact</a></li>|
 			<li><a href="login">Signin</a></li>|
 			<li class="login" >
@@ -32,6 +44,8 @@
 				        </div>
 			      </div>
 			</li>
+	</sec:authorize>
+			
 		</ul>
 	</div>
 	<div class="clearfix"> </div>
