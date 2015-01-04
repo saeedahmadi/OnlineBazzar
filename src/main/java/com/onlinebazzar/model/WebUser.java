@@ -1,5 +1,7 @@
 package com.onlinebazzar.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,7 +11,7 @@ import javax.persistence.Transient;
 import com.onlinebazzar.commons.Role;
 
 @Entity
-public class WebUser {
+public class WebUser implements Serializable{
 
 	@Id
 	@GeneratedValue

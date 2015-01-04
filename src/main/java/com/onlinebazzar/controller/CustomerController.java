@@ -20,6 +20,7 @@ import com.onlinebazzar.model.ShoppingCart;
 import com.onlinebazzar.services.CustomerService;
 
 @Controller
+@SessionAttributes({"shoppingCart","currentCustomer"})
 public class CustomerController {
 
 	/**
@@ -51,8 +52,8 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customer/edit", method = RequestMethod.GET)
-	public String editCustomerProfile(HttpServletRequest request,Model model){
-		model.addAttribute("currentCustomer", (Customer)request.getSession().getAttribute("user"));
+	public String editCustomerProfile(Model model){
+		model.addAttribute("currentCustomer", (Customer)customerService.findOne(1L));
 		return "customer/customerEditProfile";
 	}
 	
@@ -68,7 +69,9 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/customer/checkout", method = RequestMethod.GET)
-	public String checkOut(){
+	public String checkOut(@ModelAttribute ShoppingCart shoppingCart, @ModelAttribute Customer currentCustomer){
+		
+		
 		return"confirmPayment";
 	}
 }
