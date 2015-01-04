@@ -1,5 +1,6 @@
 package com.onlinebazzar.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,7 +12,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 @PrimaryKeyJoinColumn(name="person_id")
-public class Customer extends Person{
+public class Customer extends Person implements Serializable{
 	
 	@OneToOne
 	private ShoppingCart shoppingCart;

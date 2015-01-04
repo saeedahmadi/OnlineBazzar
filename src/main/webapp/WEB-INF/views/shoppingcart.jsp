@@ -14,7 +14,7 @@
 		${lineitem.product.name}
 	</c:forEach>
 	
-	<a href="/onlinebazzar/customer/checkout">Check out</a>
+	<a href="/onlinebazzar/paymentInput">Check out</a>
 	
 </body>
 </html>
