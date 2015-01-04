@@ -38,23 +38,16 @@ public class VendorController {
 	
 	@Autowired
 	WebUserService webuserService;
-	/**@RequestMapping(value = "/vendorRegister", method = RequestMethod.GET)
-	public String createVendorForm(Model model) {
-		model.addAttribute("vendor", new Vendor());
-		return "vendor/vendorRegistration";
-	}**/
 
+	@RequestMapping(value = "/vendorPanel", method = RequestMethod.GET)
+    public String showAdminPanel(Model model) {
+        
+        return "vendor/vendorpanel";
+    }
 	
-	/*public String register(Model model) {
-		model.addAttribute("customer", new Customer());
-		customerService.save(entity);
-		return "register";
-	}*/
-	
-
-
-@RequestMapping(value="/vendor", method=RequestMethod.POST)
-public String saveVendor(@ModelAttribute("vendor") @Valid Vendor vendor, BindingResult result, HttpServletRequest request, Locale locale){
+@RequestMapping(value="/vendor/", method=RequestMethod.POST)
+public String saveVendor(@ModelAttribute("vendor") @Valid Vendor vendor, 
+		BindingResult result, HttpServletRequest request, Locale locale){
 	
 	
 		if (result.hasErrors()) {

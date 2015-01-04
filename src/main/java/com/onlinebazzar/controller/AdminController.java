@@ -80,7 +80,7 @@ public class AdminController {
 	        
 	        return "admin/adminpanel";
 	    }
-	  @RequestMapping(value = "/categories", method = RequestMethod.GET)
+	  @RequestMapping(value = "/admin/categories", method = RequestMethod.GET)
 	    public String listCategories(Model model) {
 	        model.addAttribute("category", new Category());
 	        model.addAttribute("categories", categoryService.findAll());
@@ -117,7 +117,7 @@ public class AdminController {
 	    }
 	    
 	    
-	    @RequestMapping(value = "/vendors", method = RequestMethod.GET)
+	    @RequestMapping(value = "/admin/vendors", method = RequestMethod.GET)
 	    public String listVendors(Model model) {
 	        model.addAttribute("vendor", new Vendor());
 	        model.addAttribute("vendors", vendorService.findAll());
@@ -138,7 +138,7 @@ public class AdminController {
 	    	return "home";
 	    	}**/
 	    
-	    @RequestMapping(value = "/vendorRegister", method = RequestMethod.GET)
+	    @RequestMapping(value = "/admin/vendorRegister", method = RequestMethod.GET)
 		public String createVendorForm(Model model) {
 	    	List<String> enumValues = new ArrayList<String>();
 	    	enumValues.add("CHECKING");
@@ -204,7 +204,7 @@ public class AdminController {
 	    }
 	
 	    
-	    @RequestMapping(value = "/webusers", method = RequestMethod.GET)
+	    @RequestMapping(value = "/admin/webusers", method = RequestMethod.GET)
 	    public String listWebusers(Model model) {
 	        model.addAttribute("webuser", new WebUser());
 	        model.addAttribute("webusers", webuserService.findAll());

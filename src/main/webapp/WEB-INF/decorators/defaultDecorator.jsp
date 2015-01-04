@@ -26,7 +26,9 @@
 <link href="<c:url value="/resources/css/megamenu.css"/>" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="<c:url value="/resources/js/megamenu.js"/>"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<!-- start slider -->
+<!-- start  slider -->
+
+
 <link rel="stylesheet" href="<c:url value="/resources/css/fwslider.css"/>" media="all">
 <script src="<c:url value="/resources/js/jquery-ui.min.js"/>"></script>
 <script src="<c:url value="/resources/js/fwslider.js"/>"></script>
@@ -34,11 +36,10 @@
   </head>
 
   <body >
-    <div>
-    <jsp:include page="common.jsp"></jsp:include>
-    </div>
-  
-    
+      <div>
+      <!--jsp:include page="common.jsp" -->
+  	  </div>
+ 
      <div>
       		<sitemesh:write property='body' />           
     </div>

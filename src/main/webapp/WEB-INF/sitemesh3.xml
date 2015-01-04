@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemesh>
+	<mapping path="/admin*" decorator="/WEB-INF/decorators/admin.jsp" />
+	<mapping path="/vendor*" decorator="/WEB-INF/decorators/vadmin.jsp" />
 	<mapping path="/*" decorator="/WEB-INF/decorators/defaultDecorator.jsp" />
 	<mapping path="/resources/*" exclue="true"/>
 </sitemesh>

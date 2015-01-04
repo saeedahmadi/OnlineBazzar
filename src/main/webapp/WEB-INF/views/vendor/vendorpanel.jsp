@@ -11,15 +11,7 @@
 </head>
 <body>
 
-<a href="<c:url value='/admin/categories' />" >Add Category</a>
-<br>
 
-<a href="<c:url value='/admin/vendorRegister' />" >Register Vendor</a>
-<br>
-
-
-<a href="<c:url value='/admin/webusers' />" >Manage Customers</a>
-<br>
 
 
 </body>
