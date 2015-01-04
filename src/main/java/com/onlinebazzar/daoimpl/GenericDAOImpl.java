@@ -48,9 +48,9 @@ public class GenericDAOImpl<T> implements GenericDAO<T> {
 
 	@Transactional
 	public T update(T entity) {
-		getCurrentSession().merge(entity);
+		entity = (T) getCurrentSession().merge(entity);
 		getCurrentSession().flush();
-		this.entity=entity;
+		
 		return entity;
 	}
 

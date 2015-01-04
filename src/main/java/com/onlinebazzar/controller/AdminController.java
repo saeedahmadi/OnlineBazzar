@@ -1,26 +1,35 @@
 package com.onlinebazzar.controller;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.onlinebazzar.commons.AccountType;
+import com.onlinebazzar.commons.Role;
 import com.onlinebazzar.model.Address;
 import com.onlinebazzar.model.Category;
+import com.onlinebazzar.model.Person;
 import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.AddressService;
 import com.onlinebazzar.services.CategoryService;
+import com.onlinebazzar.services.PersonService;
 import com.onlinebazzar.services.VendorService;
 import com.onlinebazzar.services.WebUserService;
 
@@ -38,6 +47,9 @@ public class AdminController {
 	VendorService vendorService;
 	@Autowired
 	WebUserService webuserService;
+	@Autowired
+	PersonService personService;
+	
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
@@ -63,7 +75,11 @@ public class AdminController {
 		return "admin/index";
 	}
 	
-
+	  @RequestMapping(value = "/adminPanel", method = RequestMethod.GET)
+	    public String showAdminPanel(Model model) {
+	        
+	        return "admin/adminpanel";
+	    }
 	  @RequestMapping(value = "/categories", method = RequestMethod.GET)
 	    public String listCategories(Model model) {
 	        model.addAttribute("category", new Category());
@@ -108,18 +124,67 @@ public class AdminController {
 	        return "admin/vendors";
 	    }
 	    
+	    
+	  /**  @RequestMapping(value="/vendor", method=RequestMethod.POST)
+	    public String saveVendor(@ModelAttribute("vendor") @Valid Vendor vendor, BindingResult result, HttpServletRequest request, Locale locale){
+	    	
+	    	
+	    		if (result.hasErrors()) {
+	    			return "vendorRegistration";
+	    		}
+	    		
+	    	vendorService.save(vendor);
+	    		//after the custmer service implimentation created
+	    	return "home";
+	    	}**/
+	    
+	    @RequestMapping(value = "/vendorRegister", method = RequestMethod.GET)
+		public String createVendorForm(Model model) {
+	    	List<String> enumValues = new ArrayList<String>();
+	    	enumValues.add("CHECKING");
+	    	enumValues.add("Saving");
+	    	model.addAttribute("enumValues", enumValues);
+			model.addAttribute("vendor", new Vendor());
+			return "admin/vendorRegistration";
+		}
+	    
 	    @RequestMapping(value= "/vendors/add", method = RequestMethod.POST)
-	    public String addVendor(@ModelAttribute("vendor") Vendor v){
+	    public String addVendor(@ModelAttribute("vendor") @Valid Vendor v, BindingResult result){
+	    	
+	    	if (result.hasErrors()) {
+    			return "redirect:/vendorRegister";
+    		}
+    		
 	        System.out.println(v);
 	        if(v.getId() == null){
-	        	
-	            vendorService.save(v);
+	        	v = vendorService.update(v);
+	            Person p = createVendorAdmin(v);
+	            personService.save(p);
+	            
 	        }else{
 	            vendorService.update(v);
 	        }
 	         
 	        return "redirect:/vendors";
 	         
+	    }
+	    
+	    private Person createVendorAdmin(Vendor v){
+	    	Person p = new Person();
+	    	p.setFirstName(v.getName());
+	    	p.setLastName(v.getName());
+	    	p.setEmail(v.getEmail());
+	    	p.setPhoneNumber(v.getPhoneNumber());
+	    	p.setAddress(v.getAddress());
+	    	
+	    	WebUser user = new WebUser();
+	    	user.setRole(Role.VADMIN);
+	    	user.setUsername(v.getName());
+	    	user.setPassword(v.getName()+"123");
+	    	p.setWebuser(user);
+	    	p.setVendor(v);
+			return p;
+	    	
 	    }
 	    
 	    

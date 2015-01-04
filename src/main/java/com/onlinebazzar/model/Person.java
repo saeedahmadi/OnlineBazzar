@@ -43,6 +43,10 @@ public class Person {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private WebUser webuser;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Vendor vendor;
+
 
 	public WebUser getWebuser() {
 		return webuser;
@@ -107,5 +111,14 @@ public class Person {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	public Vendor getVendor() {
+		return vendor;
+	}
+
+	public void setVendor(Vendor vendor) {
+		this.vendor = vendor;
+	}
+	
 
 }

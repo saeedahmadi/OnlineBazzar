@@ -24,22 +24,13 @@ public class Vendor {
 	@OneToMany
 	@JoinColumn(name="vendor_id")
 	private List<Category> categories;
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private BankAccount bankAccount;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private WebUser webuser;
-
-	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
 	
-	public WebUser getWebUser() {
-		return webuser;
-	}
 
-	public void setWebUser(WebUser webuser) {
-		this.webuser = webuser;
-	}
 	
 	
 	public Long getId() {
@@ -57,13 +48,7 @@ public class Vendor {
 		this.email = email;
 	}
 
-	public WebUser getWebuser() {
-		return webuser;
-	}
 
-	public void setWebuser(WebUser webuser) {
-		this.webuser = webuser;
-	}
 
 	public String getName() {
 		return name;

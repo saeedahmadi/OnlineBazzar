@@ -5,4 +5,6 @@ import com.onlinebazzar.model.WebUser;
 
 public interface WebUserService extends GenericService<WebUser>{
 
+	void enable(Long id);
+
 }

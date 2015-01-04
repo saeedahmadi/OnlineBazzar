@@ -34,7 +34,9 @@
   </head>
 
   <body >
-    
+    <div>
+    <jsp:include page="common.jsp"></jsp:include>
+    </div>
   
     
      <div>

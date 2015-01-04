@@ -27,5 +27,12 @@ public class WebuserServiceImpl extends GenericServiceImpl<WebUser> implements W
 			return webUserDAO;
 		}
 
+		@Override
+		public void enable(Long id) {
+			// TODO Auto-generated method stub
+			webUserDAO.enable(id);
+			
+		}
+
 	}
 
