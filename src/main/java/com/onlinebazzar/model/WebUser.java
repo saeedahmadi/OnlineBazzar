@@ -24,6 +24,9 @@ public class WebUser {
 	
 	private Role role;
 	
+	@OneToOne(mappedBy="webuser")
+	private Person person;
+	
 	
 	public Long getId() {
 		return id;
@@ -61,8 +64,10 @@ public class WebUser {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	
-	
-	
-	
+	public Person getPerson() {
+		return person;
+	}
+	public void setPerson(Person person) {
+		this.person = person;
+	}
 }

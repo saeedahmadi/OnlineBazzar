@@ -31,7 +31,7 @@ import com.sun.org.apache.xml.internal.resolver.Catalog;
  * Handles requests for the application home page.
  */
 @Controller
-@SessionAttributes("shoppingCart")
+@SessionAttributes("user")
 public class HomeController {
 
 	private static final Logger logger = LoggerFactory
@@ -68,7 +68,7 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String clientHome(Model model) {
+	public String clientHome(HttpServletRequest request,Model model) {
 
 		Object principal = SecurityContextHolder.getContext()
 				.getAuthentication().getPrincipal();
@@ -76,14 +76,16 @@ public class HomeController {
 		if (principal instanceof UserDetails) {
 			String username = ((UserDetails) principal).getUsername();
 			WebUser user = webUserService.getUserByUserName(username);
-
+			
 			if (user.getRole().equals(Role.ADMIN)) {
 				model.addAttribute("category", new Category());
+				request.getSession().setAttribute("user", user);
 				return "/admin/index";
 			}
 
 			if (user.getRole().equals(Role.CUSTOMER)) {
-//				model.addAttribute("currentCustomer", new Customer());
+				Customer customer=(Customer) user.getPerson();
+				request.getSession().setAttribute("user", user);
 				return "/HomePage";
 			}
 		}
