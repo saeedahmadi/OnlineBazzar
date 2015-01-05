@@ -1,6 +1,5 @@
 package com.onlinebazzar.controller;
 
-import java.util.Date;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,14 +15,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.onlinebazzar.commons.CardType;
+import com.onlinebazzar.model.Customer;
 import com.onlinebazzar.model.Order;
 import com.onlinebazzar.model.PaymentDetails;
 import com.onlinebazzar.model.ShoppingCart;
+import com.onlinebazzar.services.CustomerService;
 import com.onlinebazzar.services.OrderService;
 import com.onlinebazzar.services.PaymentDetailsService;
 
 @Controller
-@SessionAttributes("shoppingCart")
+@SessionAttributes({"shoppingCart", "user"})
 public class PaymentGatewayController {
 
 	@Autowired
@@ -31,9 +32,34 @@ public class PaymentGatewayController {
 
 	@Autowired
 	public OrderService orderService;
-
+	
+	@Autowired
+	public CustomerService customerService;
+	
 	@RequestMapping("/paymentInput")
 	public String paymentDetails(Model model) {
+		if(!model.containsAttribute("user")){
+			
+			model.addAttribute("customer", new Customer());
+			return "customer/getGuestInformation";
+		}
+		
+		model.addAttribute("paymentDetails", new PaymentDetails());
+		model.addAttribute("card", CardType.values());
+		return "paymentDetails";
+	}
+	
+	@RequestMapping(value = "/registerGuest", method = RequestMethod.POST)
+	public String saveCustomer(
+			@ModelAttribute("customer") @Valid Customer customer,
+			BindingResult result, HttpServletRequest request, Locale locale,Model model) {
+
+		if (result.hasErrors()) {
+			return "customer/getGuestInformation";
+		}
+		
+		model.addAttribute("user", customer);
+				
 		model.addAttribute("paymentDetails", new PaymentDetails());
 		model.addAttribute("card", CardType.values());
 		return "paymentDetails";
@@ -44,22 +70,30 @@ public class PaymentGatewayController {
 			@ModelAttribute("paymentDetails") @Valid PaymentDetails paymentDetails,
 			BindingResult result, HttpServletRequest request, Locale locale,
 			Model model,
-			@ModelAttribute("shoppingCart") ShoppingCart shoppingCart) {
+			@ModelAttribute("shoppingCart") ShoppingCart shoppingCart,@ModelAttribute("user") Customer currentUser) {
 
-		System.out.println(shoppingCart.getPrice());
+		//web service goes here and if condition is true continue else don't continue
 		
 		// check condition here
+		
+		currentUser.getPaymentDetails().add(paymentDetails);
+				
 		Order order = new Order();
-
-		order.setCreationDate(new Date());
 		order.setPrice(shoppingCart.getPrice());
-
-		// orderService.save(order);
+		order.setItems(shoppingCart.getItems());
+		order.setCustomer(currentUser);
+		orderService.save(order);
 
 		if (result.hasErrors()) {
 			return "/paymentDetails";
 		}
-		// paymentDetailService.save(paymentDetails);
 		return "confirmPayment";
+	}
+	
+	@RequestMapping(value = "/confirmPayment")
+	public String confirmPayment(Model model){
+		
+		model.addAttribute("shoppingCart", new ShoppingCart());
+		return "redirect:/HomePage";
 	}
 }

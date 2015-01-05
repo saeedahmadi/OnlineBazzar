@@ -19,9 +19,9 @@ public class LineItem  implements Serializable{
 	private double price;
 	
 	public LineItem() {
-		this.quantity = 1;
+		// TODO Auto-generated constructor stub
+		this.quantity=1;
 	}
-	
 	public Long getId() {
 		return id;
 	}
@@ -33,27 +33,19 @@ public class LineItem  implements Serializable{
 	}
 	public void setProduct(Product product) {
 		this.product = product;
-		updateTotalPrice();
+		this.price=product.getPrice()*this.quantity;
 	}
 	public int getQuantity() {
 		return quantity;
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
-		updateTotalPrice();
 	}
 	public double getPrice() {
 		return price;
 	}
 	public void setPrice(double price) {
 		this.price = price;
-	}
-	
-	
-	public void updateTotalPrice() {
-		double totalPrice = 0D;
-		totalPrice        = this.product.getPrice() * this.quantity;
-		this.price        = totalPrice;
 	}
 
 }

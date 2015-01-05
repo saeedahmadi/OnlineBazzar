@@ -1,5 +1,6 @@
 package com.onlinebazzar.model;
 
+
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -8,15 +9,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.web.multipart.MultipartFile;
 
 
 @Entity
-public class Product {
+public class Product  {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
-	
 	private String name;
 	private double price;
 	private String descritpion;
@@ -25,10 +30,19 @@ public class Product {
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "vendor") 
 	private Vendor vendor;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "category") 
 	private Category category;
+	@DateTimeFormat(iso = ISO.DATE)
 	private Date creationDate;
+	@Transient
+	private MultipartFile  productImage;
+	public MultipartFile getProductImage() {
+		return productImage;
+	}
+	public void setProductImage(MultipartFile productImage) {
+		this.productImage = productImage;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -83,6 +97,11 @@ public class Product {
 	public void setBazzarBenefit(double bazzarBenefit) {
 		this.bazzarBenefit = bazzarBenefit;
 	}
+	@Override
+	public String toString() {
+		return "Product [category=" + category + "]";
+	}
+	
 	
 	
 	

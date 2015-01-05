@@ -19,16 +19,20 @@ public class Order {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="order_id")
-	//@OneToOne(cascade = CascadeType.ALL)
 	private List<LineItem> items;
 	private double price;
 	private Date creationDate;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn
 	private Customer customer;
 	private OrderStatus status;
+	
+	public Order() {
+		this.creationDate = new Date();
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -58,6 +62,7 @@ public class Order {
 	}
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+		//customer.getOrders().add(this);
 	}
 	public OrderStatus getStatus() {
 		return status;

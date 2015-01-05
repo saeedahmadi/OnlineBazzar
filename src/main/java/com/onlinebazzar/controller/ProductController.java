@@ -51,6 +51,6 @@ public class ProductController {
 		shoppingCart.addCartItem(item);
 		model.addAttribute("shoppingCart",shoppingCart);
 		System.out.println(shoppingCart.getPrice());
- 		return "searchresult";
+ 		return "redirect:/HomePage";
 	}
 }

@@ -8,4 +8,7 @@ import com.onlinebazzar.model.Order;
 @Repository("orderDAO")
 public class OrderDAOImpl extends GenericDAOImpl<Order> implements OrderDAO{
 
+	public OrderDAOImpl() {
+		 setClazz(Order.class );
+	}
 }

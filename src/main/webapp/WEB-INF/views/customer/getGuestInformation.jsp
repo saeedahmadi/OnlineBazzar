@@ -34,8 +34,8 @@
 
 
 			<!-- 	<div class="form-group">Customer Registration</div> -->
-			<form:form role="form" method="post" action="editProfile"
-				modelAttribute="currentCustomer" class="form-horizontal">
+			<form:form role="form" method="post" action="registerGuest"
+				modelAttribute="customer" class="form-horizontal">
 				<fieldset>
 					<form:errors path="*" cssClass="alert alert-danger" element="div" />
 					<div class="form-group">
@@ -49,7 +49,7 @@
 					
 					<div class="form-group">
 
-						<label for="firstName" class="control-label col-lg-2 col-lg-2">First Name
+						<label for="firstName" class="control-label col-lg-2 col-lg-2">First Name:
 						</label>
 						<div class="col-lg-3">
 							<form:input type="text" class="form-control" path="firstName" />
@@ -72,7 +72,7 @@
 
 					<div class="form-group">
 
-						<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">Phone Number
+						<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">Phone Number:
 						</label>
 						<div class="col-lg-3">
 							<form:input type="number" class="form-control" path="phoneNumber" />

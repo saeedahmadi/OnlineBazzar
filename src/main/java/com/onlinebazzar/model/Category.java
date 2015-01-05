@@ -1,5 +1,6 @@
 package com.onlinebazzar.model;
 
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Category {
+public class Category  {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -26,6 +27,7 @@ public class Category {
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
 	private List<Product> products;
 	
+
 	public Long getId() {
 		return id;
 	}
