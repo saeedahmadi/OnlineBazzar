@@ -33,13 +33,13 @@
 		<div class="container">
 
 			<h2 class="panel-heading">
-				<strong>Admin Profile</strong>
+				<strong>Vendor Profile</strong>
 			</h2>
 
 
-			<!-- 	<div class="form-group">Customer Registration</div> -->
+			
 			<form:form role="form" method="post" action="editProfile"
-				modelAttribute="currentAdmin" class="form-horizontal">
+				modelAttribute="currentVendor" class="form-horizontal">
 				<fieldset>
 					<form:errors path="*" cssClass="alert alert-danger" element="div" />
 					<div class="form-group">
