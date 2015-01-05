@@ -90,7 +90,7 @@ public class PaymentGatewayController {
 		return "confirmPayment";
 	}
 	
-	@RequestMapping(value = "/confirm")
+	@RequestMapping(value = "/confirmPayment")
 	public String confirmPayment(Model model){
 		
 		model.addAttribute("shoppingCart", new ShoppingCart());
