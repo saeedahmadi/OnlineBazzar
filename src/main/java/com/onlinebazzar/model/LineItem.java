@@ -18,6 +18,10 @@ public class LineItem  implements Serializable{
 	private int quantity;
 	private double price;
 	
+	public LineItem() {
+		// TODO Auto-generated constructor stub
+		this.quantity=1;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -29,6 +33,7 @@ public class LineItem  implements Serializable{
 	}
 	public void setProduct(Product product) {
 		this.product = product;
+		this.price=product.getPrice()*this.quantity;
 	}
 	public int getQuantity() {
 		return quantity;

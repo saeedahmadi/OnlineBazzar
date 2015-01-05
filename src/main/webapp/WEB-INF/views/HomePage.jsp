@@ -28,7 +28,7 @@
 						<li><a href="#">Recently viewed</a></li>|
 						<li><a href="contact.html">Contact</a></li>|
 						<li><a href="login">Signin</a></li>|
-						<li><a href="login">${fn:length(shoppingCart.items)}</a></li>|
+						<li><a href="shoppingCart">${fn:length(shoppingCart.items)}</a></li>|
 						<li><a href="./userRegister">Register</a></li>|
 						<li class="login">
 						
