@@ -84,12 +84,12 @@
 							<div class="h_nav">
 								<h4>shop</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -97,12 +97,12 @@
 							<div class="h_nav">
 								<h4>help</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -110,12 +110,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>												
 						</div>
@@ -123,12 +123,12 @@
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="women.html">login</a></li>
-									<li><a href="women.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
+									<li><a href="searchresult.jsp">login</a></li>
+									<li><a href="searchresult.jsp">create an account</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
+									<li><a href="searchresult.jsp">my shopping bag</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
 								</ul>	
 							</div>						
 						</div>
@@ -136,12 +136,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -149,12 +149,12 @@
 							<div class="h_nav">
 								<h4>popular</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -175,12 +175,12 @@
 							<div class="h_nav">
 								<h4>shop</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -188,12 +188,12 @@
 							<div class="h_nav">
 								<h4>help</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -201,12 +201,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>												
 						</div>
@@ -214,12 +214,12 @@
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="women.html">login</a></li>
-									<li><a href="women.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
+									<li><a href="searchresult.jsp">login</a></li>
+									<li><a href="searchresult.jsp">create an account</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
+									<li><a href="searchresult.jsp">my shopping bag</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
 								</ul>	
 							</div>						
 						</div>
@@ -227,12 +227,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -240,12 +240,12 @@
 							<div class="h_nav">
 								<h4>popular</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -266,12 +266,12 @@
 							<div class="h_nav">
 								<h4>shop</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -279,12 +279,12 @@
 							<div class="h_nav">
 								<h4>help</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -292,12 +292,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>												
 						</div>
@@ -305,12 +305,12 @@
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="women.html">login</a></li>
-									<li><a href="women.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
+									<li><a href="searchresult.jsp">login</a></li>
+									<li><a href="searchresult.jsp">create an account</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
+									<li><a href="searchresult.jsp">my shopping bag</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
 								</ul>	
 							</div>						
 						</div>
@@ -318,12 +318,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -331,12 +331,12 @@
 							<div class="h_nav">
 								<h4>popular</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -357,12 +357,12 @@
 							<div class="h_nav">
 								<h4>shop</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -370,12 +370,12 @@
 							<div class="h_nav">
 								<h4>help</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -383,12 +383,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>												
 						</div>
@@ -396,12 +396,12 @@
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="women.html">login</a></li>
-									<li><a href="women.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
+									<li><a href="searchresult.jsp">login</a></li>
+									<li><a href="searchresult.jsp">create an account</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
+									<li><a href="searchresult.jsp">my shopping bag</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
 								</ul>	
 							</div>						
 						</div>
@@ -409,12 +409,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -422,12 +422,12 @@
 							<div class="h_nav">
 								<h4>popular</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -448,12 +448,12 @@
 							<div class="h_nav">
 								<h4>shop</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -461,12 +461,12 @@
 							<div class="h_nav">
 								<h4>help</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -474,12 +474,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>												
 						</div>
@@ -487,12 +487,12 @@
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="women.html">login</a></li>
-									<li><a href="women.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
+									<li><a href="searchresult.jsp">login</a></li>
+									<li><a href="searchresult.jsp">create an account</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
+									<li><a href="searchresult.jsp">my shopping bag</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
 								</ul>	
 							</div>						
 						</div>
@@ -500,12 +500,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -513,12 +513,12 @@
 							<div class="h_nav">
 								<h4>popular</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -539,12 +539,12 @@
 							<div class="h_nav">
 								<h4>shop</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -552,12 +552,12 @@
 							<div class="h_nav">
 								<h4>help</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -565,12 +565,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>												
 						</div>
@@ -578,12 +578,12 @@
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="women.html">login</a></li>
-									<li><a href="women.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
+									<li><a href="searchresult.jsp">login</a></li>
+									<li><a href="searchresult.jsp">create an account</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
+									<li><a href="searchresult.jsp">my shopping bag</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
 								</ul>	
 							</div>						
 						</div>
@@ -591,12 +591,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -604,12 +604,12 @@
 							<div class="h_nav">
 								<h4>popular</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -630,12 +630,12 @@
 							<div class="h_nav">
 								<h4>shop</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -643,12 +643,12 @@
 							<div class="h_nav">
 								<h4>help</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>							
 						</div>
@@ -656,12 +656,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>												
 						</div>
@@ -669,12 +669,12 @@
 							<div class="h_nav">
 								<h4>account</h4>
 								<ul>
-									<li><a href="women.html">login</a></li>
-									<li><a href="women.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
+									<li><a href="searchresult.jsp">login</a></li>
+									<li><a href="searchresult.jsp">create an account</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
+									<li><a href="searchresult.jsp">my shopping bag</a></li>
+									<li><a href="searchresult.jsp">brands</a></li>
+									<li><a href="searchresult.jsp">create wishlist</a></li>
 								</ul>	
 							</div>						
 						</div>
@@ -682,12 +682,12 @@
 							<div class="h_nav">
 								<h4>my company</h4>
 								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">trends</a></li>
+									<li><a href="searchresult.jsp">sale</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>
@@ -695,12 +695,12 @@
 							<div class="h_nav">
 								<h4>popular</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
+									<li><a href="searchresult.jsp">new arrivals</a></li>
+									<li><a href="searchresult.jsp">men</a></li>
+									<li><a href="searchresult.jsp">women</a></li>
+									<li><a href="searchresult.jsp">accessories</a></li>
+									<li><a href="searchresult.jsp">kids</a></li>
+									<li><a href="searchresult.jsp">style videos</a></li>
 								</ul>	
 							</div>
 						</div>

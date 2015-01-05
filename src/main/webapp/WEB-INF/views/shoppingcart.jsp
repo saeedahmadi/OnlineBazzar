@@ -12,6 +12,7 @@
 <body>
 	<c:forEach var="lineitem" items="${shoppingCart.items}">
 		${lineitem.product.name}
+		${lineitem.quantity}
 	</c:forEach>
 	
 	<a href="/onlinebazzar/paymentInput">Check out</a>

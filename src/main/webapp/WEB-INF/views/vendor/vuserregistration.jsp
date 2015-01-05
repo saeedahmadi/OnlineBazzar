@@ -68,7 +68,7 @@
 
 				<label for="webuser.password" class="control-label col-lg-2 col-lg-2">Role:
 				</label>
-				<form:select path="webuser.role">
+			<form:select path="webuser.role">
 	    		<form:option value="-" label="Role Type"/>
 	            <form:options items="${enumValues}" />
 			</form:select>
