@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 import com.onlinebazzar.dao.GenericDAO;
 import com.onlinebazzar.dao.TransactionDAO;
 import com.onlinebazzar.model.Transaction;
+import com.onlinebazzar.services.TransactionService;
 
 @Service("transactionService")
-public class TransactionServiceImpl extends GenericServiceImpl<Transaction>{
+public class TransactionServiceImpl extends GenericServiceImpl<Transaction> implements TransactionService{
 
 	@Autowired
 	@Qualifier("transactionDAO")

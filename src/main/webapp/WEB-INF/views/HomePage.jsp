@@ -112,7 +112,7 @@
 						</ul></li>
 				</ul>
 				<div class="search">
-					<form action="productSearch" method="post">
+					<form action="onlinebazzar/productSearch" method="post">
 						<input type="text" name="name" value="" placeholder="search...">
 						<input type="submit" value="">
 					</form>
