@@ -21,7 +21,6 @@ public class Order {
 	private Long id;
 	@OneToMany
 	@JoinColumn(name="order_id")
-	//@OneToOne(cascade = CascadeType.ALL)
 	private List<LineItem> items;
 	private double price;
 	private Date creationDate;
