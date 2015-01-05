@@ -40,7 +40,7 @@ public class ProductController {
 		System.out.println("name:: " + name);
 		List<Product> searchResult = productService.findByName(name);
 		model.addAttribute("productList",searchResult);
- 		return "Product";
+ 		return "searchresult";
 	}
 	
 	@RequestMapping("/product/addtocart/{id}")
@@ -48,8 +48,9 @@ public class ProductController {
 		Product product = productService.findOne(id);
 		LineItem item = new LineItem();
 		item.setProduct(product);
-		shoppingCart.getItems().add(item);
+		shoppingCart.addCartItem(item);
 		model.addAttribute("shoppingCart",shoppingCart);
- 		return "shoppingcart";
+		System.out.println(shoppingCart.getPrice());
+ 		return "searchresult";
 	}
 }

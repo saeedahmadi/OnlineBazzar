@@ -78,8 +78,5 @@ public class PaymentDetails implements Serializable{
 	public void setBillingAddress(Address billingAddress) {
 		this.billingAddress = billingAddress;
 	}
-	
-	
-	
 
 }
