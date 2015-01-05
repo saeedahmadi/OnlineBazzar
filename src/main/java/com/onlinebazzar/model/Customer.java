@@ -1,6 +1,7 @@
 package com.onlinebazzar.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -16,12 +17,16 @@ public class Customer extends Person implements Serializable{
 	
 	@OneToOne
 	private ShoppingCart shoppingCart;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="customer_id")
 	private List<PaymentDetails> paymentDetails;
 	@OneToMany
 	@JoinColumn(name="customer_id")
 	private List<Order> orders;
+	
+	public Customer() {
+		paymentDetails = new ArrayList<PaymentDetails>();
+	}
 	
 	public ShoppingCart getShoppingCart() {
 		return shoppingCart;

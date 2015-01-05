@@ -4,15 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<!-- <html lang="en">
-<head>
-  <title>Online Bazzar Admin</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-</head> -->
 
 <html>
 <head>
@@ -35,7 +26,7 @@
 	type='text/css' />
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript">
+<script type="application/x-javascript"> 
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
 </script>
 <!--webfont-->
@@ -129,8 +120,10 @@
 									<div class="h_nav">
 										<h4>shop</h4>
 										<ul>
-											<li><a href="<c:url value='/admin/categories' />" >Add Category</a></li>
-											<li><a href="<c:url value='/admin/webusers' />" >Manage Categories</a></li>											
+											<li><a href="<c:url value='/admin/categories' />">Add
+													Category</a></li>
+											<li><a href="<c:url value='/admin/webusers' />">Manage
+													Categories</a></li>
 										</ul>
 									</div>
 								</div>
@@ -143,12 +136,14 @@
 									<div class="h_nav">
 										<h4>shop</h4>
 										<ul>
-											<li><a href="<c:url value='/admin/vendorRegister' />" >Register Vendor</a></li>
-											<li><a href="<c:url value='/admin/vendors'/>" >Manage Vendors</a></li>										
+											<li><a href="<c:url value='/admin/vendorRegister' />">Register
+													Vendor</a></li>
+											<li><a href="<c:url value='/admin/vendors'/>">Manage
+													Vendors</a></li>
 										</ul>
 									</div>
 								</div>
-							</div>							
+							</div>
 						</div></li>
 					<li><a class="color5" href="#">Customer</a>
 						<div class="megapanel">
@@ -157,12 +152,13 @@
 									<div class="h_nav">
 										<h4>shop</h4>
 										<ul>
-											<li><a href="<c:url value='/admin/webusers' />" >Manage Customers</a></li>											
+											<li><a href="<c:url value='/admin/webusers' />">Manage
+													Customers</a></li>
 										</ul>
 									</div>
 								</div>
-							</div>							
-						</div></li>					
+							</div>
+						</div></li>
 				</ul>
 			</div>
 		</div>

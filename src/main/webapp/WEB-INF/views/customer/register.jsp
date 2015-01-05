@@ -41,7 +41,7 @@
 			<form:errors path="*" cssClass="alert alert-danger" element="div" />
 			<div class="form-group">
 
-				<label for="firstName" class="control-label col-lg-2 col-lg-2">FirstName:
+				<label for="firstName" class="control-label col-lg-2 col-lg-2">First Name 
 				</label>
 				<div class="col-lg-3">
 					<form:input type="text" class="form-control"
@@ -55,7 +55,7 @@
 			<div class="form-group" spellcheck="true">
 
 
-				<label for="lastName" class="control-label col-lg-2 col-lg-2">LastName:
+				<label for="lastName" class="control-label col-lg-2 col-lg-2">Last Name
 				</label>
 				<div class="col-lg-3">
 					<form:input type="text" class="form-control"
@@ -66,7 +66,7 @@
 		
 			<div class="form-group">
 
-				<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">PhoneNumber:
+				<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">Phone Number
 				</label>
 				<div class="col-lg-3">
 					<form:input type="number" class="form-control"
@@ -87,7 +87,7 @@
 			<div class="form-group">
 
 
-				<label for="email" class="control-label col-lg-2 col-lg-2">Email:
+				<label for="email" class="control-label col-lg-2 col-lg-2">Email
 				</label>
 				<div class="col-lg-3">
 					<form:input type="text" class="form-control" placeholder="Email "
@@ -97,7 +97,7 @@
 			</div>
 			<div class="form-group">
 
-				<label for="street" class="control-label col-lg-2 col-lg-2">Street:
+				<label for="street" class="control-label col-lg-2 col-lg-2">Street
 				</label>
 				<div class="col-lg-3">
 					<form:input type="text" class="form-control" placeholder="Street"
@@ -108,7 +108,7 @@
 
 			<div class="form-group">
 
-				<label for="city" class="control-label col-lg-2 col-lg-2">City:
+				<label for="city" class="control-label col-lg-2 col-lg-2">City
 				</label>
 				<div class="col-lg-3">
 					<form:input type="text" class="form-control" placeholder="City"
@@ -120,7 +120,7 @@
 			<div class="form-group">
 
 
-				<label for="state" class="control-label col-lg-2 col-lg-2">State:
+				<label for="state" class="control-label col-lg-2 col-lg-2">State
 				</label>
 				<div class="col-lg-3">
 					<form:input type="text" class="form-control" placeholder="State"
@@ -132,7 +132,7 @@
 			<div class="form-group">
 
 
-				<label for="country" class="control-label col-lg-2 col-lg-2">Country:
+				<label for="country" class="control-label col-lg-2 col-lg-2">Country
 				</label>
 				<div class="col-lg-3">
 					<form:input type="text" class="form-control" placeholder="Country"
@@ -145,7 +145,7 @@
 			<div class="form-group">
 
 
-				<label for="zip" class="control-label col-lg-2 col-lg-2">Zip:
+				<label for="zip" class="control-label col-lg-2 col-lg-2">Zip
 				</label>
 				<div class="col-lg-3">
 					<form:input type="text" class="form-control" placeholder="zip"
