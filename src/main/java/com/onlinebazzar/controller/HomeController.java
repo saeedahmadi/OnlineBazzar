@@ -74,8 +74,8 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String clientHome(HttpServletRequest request,Model model) {
-
-		model.addAttribute("shoppingCart", new ShoppingCart());
+		if(!model.containsAttribute("shoppingCart"))
+			model.addAttribute("shoppingCart", new ShoppingCart());
 		Object principal = SecurityContextHolder.getContext()
 				.getAuthentication().getPrincipal();
 

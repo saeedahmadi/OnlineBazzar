@@ -1,12 +1,14 @@
 package com.onlinebazzar.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class LineItem {
+public class LineItem  implements Serializable{
 	@Id
 	@GeneratedValue
 	private Long id;

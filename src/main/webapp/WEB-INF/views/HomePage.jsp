@@ -1,6 +1,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <div class="top_bg">
 	<div class="container">
@@ -27,6 +28,7 @@
 						<li><a href="#">Recently viewed</a></li>|
 						<li><a href="contact.html">Contact</a></li>|
 						<li><a href="login">Signin</a></li>|
+						<li><a href="login">${fn:length(shoppingCart.items)}</a></li>|
 						<li><a href="./userRegister">Register</a></li>|
 						<li class="login">
 						
@@ -98,8 +100,8 @@
 						</ul></li>
 				</ul>
 				<div class="search">
-					<form>
-						<input type="text" value="" placeholder="search..."> <input
+					<form action="productSearch" method="post">
+						<input type="text" name="name" value="" placeholder="search..."> <input
 							type="submit" value="">
 					</form>
 				</div>
