@@ -116,6 +116,14 @@ textarea {
   font: inherit;
   color: inherit;
 }
+.catTable
+{
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
 button {
   overflow: visible;
 }
