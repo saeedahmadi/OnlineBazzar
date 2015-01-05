@@ -34,7 +34,7 @@
 
 
 			<form:form role="form" method="post"
-				action="/onlinebazzar/vendors/add" modelAttribute="vendor"
+				action="/onlinebazzar/vendor" modelAttribute="vendor"
 				class="form-horizontal">
 				<fieldset>
 					<form:errors path="*" cssClass="alert alert-danger" element="div" />

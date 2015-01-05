@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-           <a href="/onlinebazzar">Confirm payment</a>
+           <a href="/onlinebazzar/confirmPayment">Confirm payment</a>
 </body>
 </html>

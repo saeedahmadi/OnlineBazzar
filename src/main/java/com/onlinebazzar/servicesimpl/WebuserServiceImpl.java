@@ -63,5 +63,11 @@ public class WebuserServiceImpl extends GenericServiceImpl<WebUser> implements W
 	public void updateUser(WebUser user) {
 		
 	}
+
+	@Override
+	public void updateUserByPasswordRecovery(String id) {
+		// TODO Auto-generated method stub
+		webUserDAO.updateUserByPasswordRecovery(id);
+	}
 	}
 

@@ -29,4 +29,15 @@ public class WebUserDAOImpl extends GenericDAOImpl<WebUser> implements WebUserDA
 		
 	}
 
+	@Override
+	public void updateUserByPasswordRecovery(String id) {
+		// TODO Auto-generated method stub
+		Query query = getCurrentSession().createQuery("Update WebUser u set u.enabled=true"
+				+ " where u.passwordRecovery=:id ");
+		
+		query.setParameter("id", id);
+		query.executeUpdate();
+		
+	}
+
 }

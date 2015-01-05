@@ -55,12 +55,7 @@ public class ShoppingCart implements Serializable {
 	}
 
 	public double getPrice() {
-		Iterator<LineItem> it = items.iterator();
-
-		while (it.hasNext()) {
-			LineItem item = it.next();
-			price = price + item.getPrice();
-		}
+		
 		return price;
 	}
 
@@ -70,6 +65,7 @@ public class ShoppingCart implements Serializable {
 
 	public void addCartItem(LineItem item) {
 		items.add(item);
+		updateGrandTotal();
 
 	}
 

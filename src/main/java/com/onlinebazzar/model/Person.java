@@ -28,7 +28,8 @@ public class Person {
 	private Long id;
 	
 	@NotNull
-	private String firstName, lastName;
+	private String firstName;
+	private String lastName;
 //	@Pattern(regexp = "^[0-9]{3}-[0-9]{3}-[0-9]{4}$", message = "Phone should be in 111-111-1111 format")
 	private String phoneNumber;
 

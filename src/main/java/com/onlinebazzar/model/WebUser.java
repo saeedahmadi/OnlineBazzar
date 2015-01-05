@@ -1,6 +1,7 @@
 package com.onlinebazzar.model;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,10 +25,19 @@ public class WebUser implements Serializable{
 	
 	private boolean enabled;
 	
+	private String passwordRecovery;
+	
 	private Role role;
+	
+	
 	
 	@OneToOne(mappedBy="webuser")
 	private Person person;
+	
+	public WebUser() {
+		// TODO Auto-generated constructor stub
+		passwordRecovery = UUID.randomUUID().toString();
+	}
 	
 	
 	public Long getId() {
@@ -72,4 +82,12 @@ public class WebUser implements Serializable{
 	public void setPerson(Person person) {
 		this.person = person;
 	}
+	public String getPasswordRecovery() {
+		return passwordRecovery;
+	}
+	public void setPasswordRecovery(String passwordRecovery) {
+		this.passwordRecovery = passwordRecovery;
+	}
+	
+	
 }
