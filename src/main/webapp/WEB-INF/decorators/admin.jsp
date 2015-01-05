@@ -82,7 +82,7 @@
 					<ul>
 
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
-							<li><a href="<c:url value="/customer/edit"/>">Manage
+							<li><a href="<c:url value="/admin/edit"/>">Manage
 									Profile</a></li>|						
 						<li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
 						</sec:authorize>
