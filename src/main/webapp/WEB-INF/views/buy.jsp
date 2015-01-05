@@ -784,12 +784,12 @@
 			<div class="shoping1_of_2">
 				<h4><a href="#">${lineitem.product.name }</a> </h4>
 				<span>size <b>xl</b>&nbsp;&nbsp; QTY<b>&nbsp;&nbsp; ${lineitem.quantity }</b> | code :1175</span>
-				<ul class="s_icons">
+				<!-- <ul class="s_icons">
 					<li><a href="#"><img src="images/s_icon1.png" alt=""></a></li>
 					<li><a href="#"><img src="images/s_icon2.png" alt=""></a></li>
 					<li><a href="#"><img src="images/s_icon3.png" alt=""></a></li>
 				</ul>
-			</div>
+ -->			</div>
 			<div class="clearfix"></div>
 		</div>
 		<div class="shoping_right">

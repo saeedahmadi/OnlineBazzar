@@ -46,11 +46,11 @@
 							<br>
 						</div>
 					</div>
-					
+
 					<div class="form-group">
 
-						<label for="firstName" class="control-label col-lg-2 col-lg-2">First Name:
-						</label>
+						<label for="firstName" class="control-label col-lg-2 col-lg-2">First
+							Name: </label>
 						<div class="col-lg-3">
 							<form:input type="text" class="form-control" path="firstName" />
 							<form:errors path="firstName" />
@@ -62,8 +62,8 @@
 					<div class="form-group" spellcheck="true">
 
 
-						<label for="lastName" class="control-label col-lg-2 col-lg-2">Last Name
-						</label>
+						<label for="lastName" class="control-label col-lg-2 col-lg-2">Last
+							Name </label>
 						<div class="col-lg-3">
 							<form:input type="text" class="form-control" path="lastName" />
 							<form:errors path="lastName" />
@@ -72,8 +72,8 @@
 
 					<div class="form-group">
 
-						<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">Phone Number:
-						</label>
+						<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">Phone
+							Number: </label>
 						<div class="col-lg-3">
 							<form:input type="number" class="form-control" path="phoneNumber" />
 							<form:errors path="phoneNumber" />
@@ -158,7 +158,8 @@
 					<div class="form-group">
 						<div class="col-lg-offset-2 col-lg-10">
 							<input type="submit" id="btnSumbit" class="btn btn-primary"
-								value="Save changes" />
+								value="Save changes" /> Already
+								Registered ?<a href="login">Login here
 						</div>
 					</div>
 				</fieldset>
