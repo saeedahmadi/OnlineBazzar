@@ -41,7 +41,7 @@
 							<form:errors path="*" cssClass="alert alert-danger" element="div" />
 							<div class="form-group">
 
-								<label for="name" class="control-label col-lg-2 col-lg-2">name:
+								<label for="name" class="control-label col-lg-2 col-lg-2">Name:
 								</label>
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control" placeholder="name"
@@ -51,7 +51,7 @@
 								</div>
 							</div>
 							<div class="form-group" spellcheck="true">
-								<label for="price" class="control-label col-lg-2 col-lg-2">price:
+								<label for="price" class="control-label col-lg-2 col-lg-2">Price:
 								</label>
 								<div class="col-lg-3">
 									<form:input type="number" class="form-control"
@@ -62,7 +62,7 @@
 
 							<div class="form-group">
 
-								<label for="descritpion" class="control-label col-lg-2 col-lg-2">descritpion:
+								<label for="descritpion" class="control-label col-lg-2 col-lg-2">Descritpion:
 								</label>
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control"
@@ -72,7 +72,7 @@
 							</div>
 							<div class="form-group">
 								<label for="bazzarBenefit"
-									class="control-label col-lg-2 col-lg-2">bazzarBenefit:
+									class="control-label col-lg-2 col-lg-2">BazzarBenefit:
 								</label>
 								<div class="col-lg-3">
 									<form:input type="number" class="form-control"
@@ -83,7 +83,7 @@
 							<div class="form-group">
 
 								<label for="creationDate"
-									class="control-label col-lg-2 col-lg-2">creationDate: </label>
+									class="control-label col-lg-2 col-lg-2">Creation Date: </label>
 								<div class="col-lg-3">
 									<form:input type="date" class="form-control"
 										placeholder="creationDate" path="creationDate" />
@@ -93,7 +93,7 @@
 
 							<div class="form-group">
 
-								<label for="url" class="control-label col-lg-2 col-lg-2">url:
+								<label for="url" class="control-label col-lg-2 col-lg-2">Url:
 								</label>
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control" placeholder="url"
@@ -103,7 +103,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="url" class="control-label col-lg-2 col-lg-2">category:
+								<label for="url" class="control-label col-lg-2 col-lg-2">Category:
 								</label>
 								<div class="col-lg-6">
 									<form:select path="category.id">
@@ -116,7 +116,7 @@
 
 							<div class="form-group">
 								<label class="control-label col-lg-2" for="productImage">
-									productImage: </label>
+									Product Image: </label>
 								<div class="col-lg-10">
 									<form:input id="productImage" path="productImage" type="file"
 										class="form:input-large" />

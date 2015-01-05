@@ -41,7 +41,7 @@
 			<form:errors path="*" cssClass="alert alert-danger" element="div" />
 			<div class="form-group">
 
-				<label for="firstName" class="control-label col-lg-2 col-lg-2">firstName:
+				<label for="firstName" class="control-label col-lg-2 col-lg-2">FirstName:
 				</label>
 				<div class="col-lg-3">
 					<form:input type="text" class="form-control"
@@ -55,7 +55,7 @@
 			<div class="form-group" spellcheck="true">
 
 
-				<label for="lastName" class="control-label col-lg-2 col-lg-2">lastName:
+				<label for="lastName" class="control-label col-lg-2 col-lg-2">LastName:
 				</label>
 				<div class="col-lg-3">
 					<form:input type="text" class="form-control"
@@ -66,7 +66,7 @@
 		
 			<div class="form-group">
 
-				<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">phoneNumber:
+				<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">PhoneNumber:
 				</label>
 				<div class="col-lg-3">
 					<form:input type="number" class="form-control"
