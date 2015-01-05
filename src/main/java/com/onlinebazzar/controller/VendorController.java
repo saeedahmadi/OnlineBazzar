@@ -62,7 +62,6 @@ public String saveVendor(@ModelAttribute("vendor") @Valid Vendor vendor,
 @RequestMapping(value="/vendor/vusers", method=RequestMethod.GET)
 public String getVendorUsers(Model model){
 	
-		
 	List<Person> vusers = personService.findAllVendorPersons();
 	model.addAttribute("vuser", new Person());
 	model.addAttribute("vusers", vusers);
