@@ -134,7 +134,7 @@
 							</div>
 							
 							<table class="table table-bordered">
- 					
+ 					 
  					    <thead>
     <tr>
         <th data-field="state" data-radio="true">Product ID</th>
