@@ -1,5 +1,6 @@
 package com.onlinebazzar.model;
 
+
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -16,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 @Entity
-public class Product {
+public class Product  {
 	
 	@Id
 	@GeneratedValue
@@ -29,7 +30,7 @@ public class Product {
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "vendor") 
 	private Vendor vendor;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "category") 
 	private Category category;
 	@DateTimeFormat(iso = ISO.DATE)
@@ -96,6 +97,11 @@ public class Product {
 	public void setBazzarBenefit(double bazzarBenefit) {
 		this.bazzarBenefit = bazzarBenefit;
 	}
+	@Override
+	public String toString() {
+		return "Product [category=" + category + "]";
+	}
+	
 	
 	
 	

@@ -47,14 +47,10 @@
 									<form:input type="text" class="form-control" placeholder="name"
 										path="name" />
 									<form:errors path="name" />
-									<br>
+									
 								</div>
 							</div>
-
-
 							<div class="form-group" spellcheck="true">
-
-
 								<label for="price" class="control-label col-lg-2 col-lg-2">price:
 								</label>
 								<div class="col-lg-3">
@@ -63,20 +59,6 @@
 									<form:errors path="price" />
 								</div>
 							</div>
-
-
-							<%-- 		
-							<div class="form-group" spellcheck="true">
-
-
-								<label for="category" class="control-label col-lg-2 col-lg-2">category:
-								</label>
-								<div class="col-lg-3">
-									<form:input type="text" class="form-control"
-										placeholder="category: " path="category" />
-									<form:errors path="category" />
-								</div>
-							</div> --%>
 
 							<div class="form-group">
 
@@ -88,10 +70,7 @@
 									<form:errors path="descritpion" />
 								</div>
 							</div>
-
 							<div class="form-group">
-
-
 								<label for="bazzarBenefit"
 									class="control-label col-lg-2 col-lg-2">bazzarBenefit:
 								</label>
@@ -114,7 +93,7 @@
 
 							<div class="form-group">
 
-								<label for="url" class="control-label col-lg-2 col-lg-2">url
+								<label for="url" class="control-label col-lg-2 col-lg-2">url:
 								</label>
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control" placeholder="url"
@@ -123,38 +102,21 @@
 								</div>
 							</div>
 
-
-
-							<%-- 		<div class="form-group">
-
-								<label for="vendor" class="control-label col-lg-2 col-lg-2">vendor
+							<div class="form-group">
+								<label for="url" class="control-label col-lg-2 col-lg-2">category:
 								</label>
-								<div class="col-lg-3">
-									<form:input type="text" class="form-control" placeholder="vendor"
-										path="vendor" />
-									<form:errors path="vendor" />
+								<div class="col-lg-6">
+									<form:select path="category.id">
+										<form:option value="-" label="--Please Select" />
+										<form:options items="${category}" itemValue="id"
+											itemLabel="name" />
+									</form:select>
 								</div>
-							</div> --%>
+							</div>
 
-							<%-- <div>
-
-								<label for="catagory" class="control-label col-lg-2 col-lg-2">catagory
-								</label>
-								<form:input type="text" class="form-control" placeholder="
-									catagory"
-										path="catagory" />
-								<ul class="droprightMenu">
-									<c:forEach items="${category }" var="cat">
-
-
-										<li><a href="#">${cat.getCategory}</a></li>
-									</c:forEach>
-								</ul>
-
-							</div> --%>
 							<div class="form-group">
 								<label class="control-label col-lg-2" for="productImage">
-									productImage </label>
+									productImage: </label>
 								<div class="col-lg-10">
 									<form:input id="productImage" path="productImage" type="file"
 										class="form:input-large" />
@@ -170,6 +132,19 @@
 								</div>
 
 							</div>
+							
+							<table class="table table-bordered">
+ 					
+ 					    <thead>
+    <tr>
+        <th data-field="state" data-radio="true">Product ID</th>
+        <th data-field="id" data-align="right">Product catagory</th>
+        <th data-field="name" data-align="center">Prodyct  Name</th>
+        <th data-field="price" data-align="left">Product Price</th>
+    </tr>
+    </thead>
+ 					
+</table>
 
 
 						</fieldset>
@@ -181,6 +156,7 @@
 
 		</div>
 	</div>
+
 
 </body>
 </html>
