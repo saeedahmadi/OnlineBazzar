@@ -30,8 +30,6 @@ public class Vendor {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
 	
-
-	
 	
 	public Long getId() {
 		return id;
@@ -47,9 +45,7 @@ public class Vendor {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
-
+	
 	public String getName() {
 		return name;
 	}
