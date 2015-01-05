@@ -108,6 +108,25 @@
 	<security:global-method-security secured-annotations="enabled"></security:global-method-security>
 	<bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
 		
+				<bean id="mailMail" class="com.onlinebazzar.commons.MailMail">		
+			<property name="mailSender" ref="mailSender" />
+		</bean>		
+		
+			<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+			<property name="host" value="smtp.gmail.com" />
+			<property name="port" value="587" />
+			<property name="username" value="testmeluck@gmail.com" />
+			<property name="password" value="spring.org" />		 
+			<property name="javaMailProperties">
+			   <props>
+		       	      <prop key="mail.smtp.auth">true</prop>
+		       	      <prop key="mail.smtp.starttls.enable">true</prop>
+		       	      
+		       	   </props>
+			</property>
+		</bean>
+		
+		
 </beans>
 
 

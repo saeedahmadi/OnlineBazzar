@@ -186,9 +186,9 @@ public class AdminController {
 		 
 		    	MailMail mm = (MailMail) context.getBean("mailMail");
 		    	
-		        mm.sendMail("mumyogastudio@gmail.com",
+		        mm.sendMail("testmeluck@gmail.com",
 		    		   email,
-		    		   "Yoga Account Activatioin", 
+		    		   "Welcome to onlinebazzar", 
 		    		   "<a href='http://localhost:8080/studio/validateRegister/id="+code);
 		 
 		}
