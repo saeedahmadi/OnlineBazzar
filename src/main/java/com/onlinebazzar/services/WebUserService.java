@@ -19,4 +19,6 @@ public interface WebUserService extends GenericService<WebUser>{
 	void enable(Long id);
 
 	public void updateUser(WebUser user);
+
+	public void updateUserByPasswordRecovery(String id);
 }
