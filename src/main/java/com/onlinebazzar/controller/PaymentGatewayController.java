@@ -50,7 +50,6 @@ public class PaymentGatewayController {
 		
 		// check condition here
 		Order order = new Order();
-
 		order.setCreationDate(new Date());
 		order.setPrice(shoppingCart.getPrice());
 
