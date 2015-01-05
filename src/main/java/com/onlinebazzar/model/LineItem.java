@@ -16,6 +16,10 @@ public class LineItem {
 	private int quantity;
 	private double price;
 	
+	public LineItem() {
+		this.quantity = 1;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -27,12 +31,14 @@ public class LineItem {
 	}
 	public void setProduct(Product product) {
 		this.product = product;
+		updateTotalPrice();
 	}
 	public int getQuantity() {
 		return quantity;
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+		updateTotalPrice();
 	}
 	public double getPrice() {
 		return price;
@@ -42,6 +48,10 @@ public class LineItem {
 	}
 	
 	
-	
+	public void updateTotalPrice() {
+		double totalPrice = 0D;
+		totalPrice        = this.product.getPrice() * this.quantity;
+		this.price        = totalPrice;
+	}
 
 }

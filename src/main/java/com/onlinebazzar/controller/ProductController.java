@@ -48,8 +48,9 @@ public class ProductController {
 		Product product = productService.findOne(id);
 		LineItem item = new LineItem();
 		item.setProduct(product);
-		shoppingCart.getItems().add(item);
+		shoppingCart.addCartItem(item);
 		model.addAttribute("shoppingCart",shoppingCart);
+		System.out.println(shoppingCart.getPrice());
  		return "shoppingcart";
 	}
 }
