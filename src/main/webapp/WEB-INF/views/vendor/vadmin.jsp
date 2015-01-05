@@ -11,10 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- Welcome Vendor Admin Page
- 
- 
-
+<div class="container">
 <br>
 <h3>Vendor User List</h3>
 <c:if test="${!empty vusers}">
@@ -33,5 +30,6 @@
     </c:forEach>
     </table>
 </c:if>
+</div>
 </body>
 </html>
