@@ -13,7 +13,7 @@
 				</h2>
 			</div>
 
-
+<a href="<c:url value="/vendor"/>">Vender Regestration</a>
 
 			<div class="top_right">
 				<ul>
