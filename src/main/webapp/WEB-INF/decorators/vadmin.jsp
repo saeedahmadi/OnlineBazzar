@@ -99,7 +99,7 @@
 				</div>
 				<!-- start header menu -->
 				<ul class="megamenu skyblue">
-					<li><a class="color1" href="index.html">Home</a></li>
+					<li><a class="color1" href="<c:url value='/vendorPanel'/>">Home</a></li>
 					<li class="grid"><a class="color2" href="#">Manage Staff</a>
 						<div class="megapanel">
 							<div class="row">
