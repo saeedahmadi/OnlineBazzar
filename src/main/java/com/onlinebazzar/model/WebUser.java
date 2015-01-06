@@ -31,7 +31,7 @@ public class WebUser implements Serializable{
 	
 	
 	
-	@OneToOne(mappedBy="webuser")
+	@OneToOne
 	private Person person;
 	
 	public WebUser() {

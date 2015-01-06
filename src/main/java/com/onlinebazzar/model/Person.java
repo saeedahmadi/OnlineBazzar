@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Pattern;
 
@@ -43,6 +44,7 @@ public class Person {
 	private Address address;
 	
 	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn
 	private WebUser webuser;
 	
 	@OneToOne(cascade = CascadeType.ALL)

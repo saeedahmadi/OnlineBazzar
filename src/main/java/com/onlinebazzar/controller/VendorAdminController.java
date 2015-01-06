@@ -24,6 +24,7 @@ import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.PersonService;
 import com.onlinebazzar.services.VendorService;
+import com.onlinebazzar.services.WebUserService;
 
 @Controller
 public class VendorAdminController {
@@ -38,6 +39,8 @@ public class VendorAdminController {
 	VendorService vendorService;
 	@Autowired
 	PersonService personService;
+	@Autowired
+	WebUserService webuserService;
 	@Autowired
 	MailMail mail;	
 	@RequestMapping(value = "/roleManagement", method = RequestMethod.GET)
@@ -72,7 +75,10 @@ BindingResult result, HttpServletRequest request, Locale locale){
 		}
 		vendor =vendorService.update(vendor);
 		 Person p = createVendorAdmin(vendor);
-         personService.save(p);
+         p=personService.save(p);
+     	 WebUser webUser = p.getWebuser();
+     	 webUser.setPerson(p);
+     	 webUser= webuserService.update(webUser);
          notifyVendorAdmin(p);
 	    		
 		//notifyAdminVendor(vendor.getEmail(),vendor.getName(),msg);
@@ -93,6 +99,7 @@ BindingResult result, HttpServletRequest request, Locale locale){
 	    	user.setUsername(v.getName());
 	    	user.setPassword(v.getName()+"123");
 	    	p.setWebuser(user);
+	    	//p.getWebuser().setPerson(p);
 	    	p.setVendor(v);
 	    	p.getWebuser().setEnabled(false);
 			return p;
