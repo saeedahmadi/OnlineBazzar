@@ -117,7 +117,8 @@ public class PaymentGatewayController {
 		return "redirect:/HomePage";
 	}
 
-	@RequestMapping(value = "/confirmPayment")
+		
+
 	public String confirmPayment(Model model,
 			@ModelAttribute("order") Order order,
 			@ModelAttribute("user") Customer customer) {
