@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.onlinebazzar.commons.CardType;
 import com.onlinebazzar.commons.EntryType;
+import com.onlinebazzar.financialsystem.restclient.FinancialSystemClient;
 import com.onlinebazzar.model.Customer;
 import com.onlinebazzar.model.LineItem;
 import com.onlinebazzar.model.Order;
@@ -96,7 +97,7 @@ public class PaymentGatewayController {
 			@ModelAttribute("user") Customer currentUser) {
 
 		if (result.hasErrors()) {
-			return "/paymentDetails";
+			return "paymentDetails";
 		}
 
 		// Web service for payment gateway to check the balance and card number
@@ -182,5 +183,7 @@ public class PaymentGatewayController {
 		bazzarTransaction.setPrice(bazzarBenefit);
 		transactionService.save(bazzarTransaction);
 		transactionList.add(bazzarTransaction);
+		System.out.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+		FinancialSystemClient.testPostTransaction(transactionList);
 	}
 }

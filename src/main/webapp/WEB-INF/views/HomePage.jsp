@@ -113,7 +113,7 @@
 								</p></li>
 						</ul></li>
 				</ul>
-				<div class="search" size= "50">
+				<div class="search">
 					<form action="productSearch" method="post">
 						<input type="text" name="name" value="" placeholder="search...">
 						<input type="submit" value="">
@@ -124,8 +124,8 @@
 			<!-- start header menu -->
 			<ul class="megamenu skyblue">
 				<li><a class="color1" href="<c:url value='/'/>">Home</a></li>
-				<li class="grid"><a class="color2" href="<c:url value='/newArrivals'/>">new arrivals</a>
-					</li>
+				<li class="grid"><a class="color2"
+					href="<c:url value='/newArrivals'/>">new arrivals</a></li>
 				<li class="active grid"><a class="color4" href="#">women</a>
 					<div class="megapanel">
 						<div class="row">
@@ -791,80 +791,77 @@
 
 			</div>
 			<!-- grids_of_3 -->
+
 			<div class="row grids">
-				<div class="col-md-3 grid1">
-					<a href="details.html"> <img src="resources/images/pic1.jpg"
-						class="img-responsive" alt="" />
+				<c:forEach var="product" items="${productList}">
+
+					<div class="col-md-3 grid1">
+						<div class="content_box">
+							<a href="<c:url value="/details/${product.id} "/>">
+								<div class="view view-fifth">
+									<img src="${product.url} " class="img-responsive" alt="" />
+									<div class="mask">
+										<div class="info">Quick View</div>
+									</div>
+								</div>
+							</a>
+						</div>
+
 						<div class="look">
-							<h4>get scraves</h4>
+							<h4>
+								<a href="<c:url value="/details/${product.id}"/>"> ${product.name} </a>
+							</h4>
 							<p>read more</p>
-						</div></a>
-				</div>
-				<div class="col-md-3 grid1">
-					<a href="details.html"> <img src="resources/images/pic2.jpg"
-						class="img-responsive" alt="" />
-						<div class="look">
-							<h4>Fashion Tips</h4>
-							<p>read more</p>
-						</div></a>
-				</div>
-				<div class="col-md-3 grid1">
-					<a href="details.html"> <img src="resources/images/pic3.jpg"
-						class="img-responsive" alt="" />
-						<div class="look">
-							<h4>Crop Levis</h4>
-							<p>read more</p>
-						</div></a>
-				</div>
-				<div class="col-md-3 grid1">
-					<a href="details.html"> <img src="resources/images/pic4.jpg"
-						class="img-responsive" alt="" />
-						<div class="look">
-							<h4>get scraves</h4>
-							<p>read more</p>
-						</div></a>
-				</div>
+						</div>
+						</a>
+					</div>
+				</c:forEach>
+
 			</div>
 			<!-- end grids_of_3 -->
 		</div>
+</div>
 		<!-- end content -->
 	</div>
-<!-- footer_top -->
-<div class="footer_top">
- <div class="container">
-	<div class="span_of_4">
-		<div class="clearfix"></div>
-		</div>
-		<!-- start span_of_2 -->
-		<div class="span_of_2">
-		<div class="span1_of_2">
-			<h5>need help? <a href="#">contact us <span> ></span> </a> </h5>
-			<p>(or) Call us: +91-70-45022088</p>
-		</div>
-		<div class="span1_of_2">
-			<h5>follow us </h5>
-			<div class="social-icons">
-				     <ul>
-				        <li><a href="#" target="_blank"></a></li>
-				        <li><a href="#" target="_blank"></a></li>
-				        <li><a href="#" target="_blank"></a></li>
-				        <li><a href="#" target="_blank"></a></li>
-				        <li><a href="#" target="_blank"></a></li>
-					</ul>
+	<!-- footer_top -->
+	<div class="footer_top">
+		<div class="container">
+			<div class="span_of_4">
+				<div class="clearfix"></div>
+			</div>
+			<!-- start span_of_2 -->
+			<div class="span_of_2">
+				<div class="span1_of_2">
+					<h5>
+						need help? <a href="#">contact us <span> ></span>
+						</a>
+					</h5>
+					<p>(or) Call us: +91-70-45022088</p>
+				</div>
+				<div class="span1_of_2">
+					<h5>follow us</h5>
+					<div class="social-icons">
+						<ul>
+							<li><a href="#" target="_blank"></a></li>
+							<li><a href="#" target="_blank"></a></li>
+							<li><a href="#" target="_blank"></a></li>
+							<li><a href="#" target="_blank"></a></li>
+							<li><a href="#" target="_blank"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
-		<div class="clearfix"></div>
-		</div>
-  </div>
-</div>
-<!-- footer -->
-<div class="footer">
-	<div class="container">
-		<div class="copy">
-			<p class="link">
-				&copy; All rights reserved | Design by&nbsp; <a
-					href="http://w3layouts.com/"> W3Layouts</a>
-			</p>
+	</div>
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="copy">
+				<p class="link">
+					&copy; All rights reserved | Design by&nbsp; <a
+						href="http://w3layouts.com/"> W3Layouts</a>
+				</p>
+			</div>
 		</div>
 	</div>
-</div>

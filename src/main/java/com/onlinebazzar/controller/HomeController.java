@@ -1,6 +1,9 @@
 package com.onlinebazzar.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,14 +15,19 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.onlinebazzar.commons.Role;
 import com.onlinebazzar.model.Category;
 import com.onlinebazzar.model.Customer;
+import com.onlinebazzar.model.Person;
+import com.onlinebazzar.model.Product;
 import com.onlinebazzar.model.ShoppingCart;
+import com.onlinebazzar.services.CategoryService;
 import com.onlinebazzar.services.ProductService;
 import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.WebUserService;
@@ -36,6 +44,8 @@ public class HomeController {
 
 	@Autowired
 	ProductService productService;
+	@Autowired
+	CategoryService categoryService;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -102,7 +112,14 @@ public class HomeController {
 			}
 			
 			
+			
 		}
+		
+		
+		List<Product> searchResult = productService.findAll();
+		model.addAttribute("productList",searchResult);
+	 		
+		
 
 		return "/HomePage";
 
@@ -116,6 +133,18 @@ public class HomeController {
 	@RequestMapping(value = "/HomePage", method = RequestMethod.GET)
 	public String index() {
 		return "/HomePage";
+	}
+	
+	@RequestMapping(value = "/details/{id}", method = RequestMethod.GET)
+	public String detailsSearchResult(Model model, @ModelAttribute("id")  Long id ){
+		
+		
+		Product product = productService.findOne(id);
+		model.addAttribute("product", product);
+		Category category = categoryService.findOne(product.getCategory().getId());
+		List<Product> searchResult = category.getProducts();
+		model.addAttribute("productList",searchResult);
+ 		return "details";
 	}
 
 }

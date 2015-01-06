@@ -4,6 +4,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+		prefix="sec"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
 <head>
@@ -61,10 +64,6 @@
   </div>
 
  --%>
-
-	<%@ taglib uri="http://www.springframework.org/security/tags"
-		prefix="sec"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 	<div class="top_bg">
 		<div class="container">
