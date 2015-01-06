@@ -2,6 +2,7 @@ package com.onlinebazzar.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.UUID;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,20 +19,22 @@ public class Transaction implements Serializable {
 	@GeneratedValue
 	private Long id;
 	private Date transactionDate;
-	
+
 	private Long orderId;
 	private String accountNumber;
 	private CardType type;
-	
+
 	private String accountCompany;
 	private EntryType entryType;
 	private double price;
-	
-	
+
+	private String transactionId;
+
 	public Transaction() {
 		this.transactionDate = new Date();
+		this.setTransactionId(UUID.randomUUID().toString());
 	}
-	
+
 	public Long getOrderId() {
 		return orderId;
 	}
@@ -83,6 +86,7 @@ public class Transaction implements Serializable {
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -90,10 +94,17 @@ public class Transaction implements Serializable {
 	public Date getTransactionDate() {
 		return transactionDate;
 	}
+
 	public void setTransactionDate(Date transactionDate) {
 		this.transactionDate = transactionDate;
 	}
 
-	
-	
+	public String getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
+	}
+
 }

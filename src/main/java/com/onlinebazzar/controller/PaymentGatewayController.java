@@ -1,5 +1,6 @@
 package com.onlinebazzar.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,7 +37,7 @@ import com.onlinebazzar.services.TransactionService;
 import com.onlinebazzar.services.VendorService;
 
 @Controller
-@SessionAttributes({ "shoppingCart", "user", "order" })
+@SessionAttributes({ "shoppingCart", "user"})
 public class PaymentGatewayController {
 
 	@Autowired
@@ -108,20 +110,17 @@ public class PaymentGatewayController {
 			order.setPrice(shoppingCart.getPrice());
 			order.setItems(shoppingCart.getItems());
 			order.setCustomer(currentUser);
-			orderService.save(order);
-
-			model.addAttribute("order", order);
+			order = orderService.update(order);
+			calculateBenefit(order);
 			model.addAttribute("shoppingCart", new ShoppingCart());
-			return "confirmPayment";
+			model.addAttribute("order", order);
+			return "orderDetails";
 		}
 		return "redirect:/HomePage";
 	}
 
-		
-
-	public String confirmPayment(Model model,
-			@ModelAttribute("order") Order order,
-			@ModelAttribute("user") Customer customer) {
+	@Async
+	public void calculateBenefit(Order order) {
 
 		// calculate the bazzar benefit and call the finance.com web service
 		List<LineItem> lineItems = order.getItems();
@@ -129,8 +128,10 @@ public class PaymentGatewayController {
 		Map<Vendor, Double> vendorList = new HashMap<Vendor, Double>();
 		double bazzarBenefit = 0D;
 
+		//list of transaction to send to web service
+		List<Transaction> transactionList = new ArrayList<Transaction>();
+		
 		while (it.hasNext()) {
-			System.out.println("inside map iteration :: ");
 			LineItem item = it.next();
 			Vendor vendor = item.getProduct().getVendor();
 			double bazzarPartialBenefit = item.getPrice()
@@ -147,7 +148,6 @@ public class PaymentGatewayController {
 
 			bazzarBenefit += bazzarPartialBenefit;
 		}
-		System.out.println("first break ::: ");
 		// vendor transaction
 		for (Map.Entry<Vendor, Double> entry : vendorList.entrySet()) {
 			Vendor vendor = (Vendor) entry.getKey();
@@ -161,19 +161,19 @@ public class PaymentGatewayController {
 
 			// now connect to finance.com and save a transaction local db
 			transactionService.save(transaction);
+			transactionList.add(transaction);
 		}
-
-		System.out.println("second break :: ");
 
 		Transaction customerTransaction = new Transaction();
 		customerTransaction.setOrderId(order.getId());
-		customerTransaction.setAccountNumber(customer.getPaymentDetails()
-				.get(0).getCardNumber());
+		customerTransaction.setAccountNumber(order.getCustomer()
+				.getPaymentDetails().get(0).getCardNumber());
 		customerTransaction.setEntryType(EntryType.WITHDRAW);
 		customerTransaction.setPrice(order.getPrice());
-		customerTransaction.setType(customer.getPaymentDetails().get(0)
-				.getType());
+		customerTransaction.setType(order.getCustomer().getPaymentDetails()
+				.get(0).getType());
 		transactionService.save(customerTransaction);
+		transactionList.add(customerTransaction);
 
 		Transaction bazzarTransaction = new Transaction();
 		bazzarTransaction.setOrderId(order.getId());
@@ -181,8 +181,6 @@ public class PaymentGatewayController {
 		bazzarTransaction.setEntryType(EntryType.DEPOSIT);
 		bazzarTransaction.setPrice(bazzarBenefit);
 		transactionService.save(bazzarTransaction);
-
-		model.addAttribute("shoppingCart", new ShoppingCart());
-		return "redirect:/HomePage";
+		transactionList.add(bazzarTransaction);
 	}
 }
