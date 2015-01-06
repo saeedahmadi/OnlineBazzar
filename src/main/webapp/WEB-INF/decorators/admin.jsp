@@ -112,7 +112,7 @@
 				</div>
 				<!-- start header menu -->
 				<ul class="megamenu skyblue">
-					<li><a class="color1" href="index.html">Home</a></li>
+					<li><a class="color1" href="<c:url value='/adminPanel'/>">Home</a></li>
 					<li class="grid"><a class="color2" href="#">Category</a>
 						<div class="megapanel">
 							<div class="row">
@@ -122,7 +122,7 @@
 										<ul>
 											<li><a href="<c:url value='/admin/categories' />">Add
 													Category</a></li>
-											<li><a href="<c:url value='/admin/webusers' />">Manage
+											<li><a href="<c:url value='/admin/categories' />">Manage
 													Categories</a></li>
 										</ul>
 									</div>

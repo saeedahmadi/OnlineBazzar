@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
+<link href="<c:url value="/font-awesome.min.css"/>" rel='stylesheet' type='text/css' />
 <div class="top_bg">
 	<div class="container">
 		<div class="header_top">
@@ -13,7 +14,6 @@
 				</h2>
 			</div>
 
-<a href="<c:url value="/vendor"/>">Vender Regestration</a>
 
 			<div class="top_right">
 				<ul>
@@ -41,7 +41,7 @@
 						<li><a href="#">Recently viewed</a></li>|
 						<li><a href="contact.html">Contact</a></li>|
 						<li><a href="login">Signin</a></li>|
-						<li><a href="shoppingCart">${fn:length(shoppingCart.items)}</a></li>|
+						<li><a href="shoppingCart">${fn:length(shoppingCart.items)}<i class="fa fa-shopping-cart"></i></a></li>|
 						<li><a href="./userRegister">Register</a></li>|
 						<li class="login">
 
@@ -867,11 +867,13 @@
 				<h4>
 					<a href="#">a touch of glamour </a>
 				</h4>
-				<p>It is a long established fact that a reader will be
+				<p>It is a long established fact that
+				<i class="fa fa-shopping-cart"></i> a reader will be
 					distracted by the readable content of a page when looking at its
 					layout. The point of using Lorem Ipsum is that it has a
 					more-or-less normal distribution of letters, as opposed to using
 					'Content here, content here',</p>
+					
 			</div>
 			<!-- grids_of_3 -->
 			<div class="row grids">

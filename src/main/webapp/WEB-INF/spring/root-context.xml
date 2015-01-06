@@ -47,6 +47,7 @@
 				<value>com.onlinebazzar.model.Product</value>
 				<value>com.onlinebazzar.model.ShoppingCart</value>
 				<value>com.onlinebazzar.model.Vendor</value>
+				<value>com.onlinebazzar.model.Transaction</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

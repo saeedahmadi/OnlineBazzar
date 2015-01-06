@@ -84,9 +84,9 @@ public class HomeController {
 			WebUser user = webUserService.getUserByUserName(username);
 			
 			if (user.getRole().equals(Role.ADMIN)) {
-				model.addAttribute("category", new Category());
+				//model.addAttribute("category", new Category());
 				request.getSession().setAttribute("user", user);
-				return "/admin/index";
+				return "redirect:/adminPanel";
 			}
 
 			if (user.getRole().equals(Role.CUSTOMER)) {
@@ -94,6 +94,14 @@ public class HomeController {
 				request.getSession().setAttribute("user", customer);
 				return "/HomePage";
 			}
+			
+			if (user.getRole().equals(Role.VADMIN)) {
+				//model.addAttribute("category", new Category());
+				request.getSession().setAttribute("user", user);
+				return "redirect:/vendorPanel";
+			}
+			
+			
 		}
 
 		return "/HomePage";

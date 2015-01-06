@@ -24,6 +24,7 @@ import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.PersonService;
 import com.onlinebazzar.services.VendorService;
+import com.onlinebazzar.services.WebUserService;
 
 @Controller
 public class VendorAdminController {
@@ -38,6 +39,8 @@ public class VendorAdminController {
 	VendorService vendorService;
 	@Autowired
 	PersonService personService;
+	@Autowired
+	WebUserService webuserService;
 	@Autowired
 	MailMail mail;	
 	@RequestMapping(value = "/roleManagement", method = RequestMethod.GET)
@@ -72,7 +75,10 @@ BindingResult result, HttpServletRequest request, Locale locale){
 		}
 		vendor =vendorService.update(vendor);
 		 Person p = createVendorAdmin(vendor);
-         personService.save(p);
+         p=personService.save(p);
+     	 WebUser webUser = p.getWebuser();
+     	 webUser.setPerson(p);
+     	 webUser= webuserService.update(webUser);
          notifyVendorAdmin(p);
 	    		
 		//notifyAdminVendor(vendor.getEmail(),vendor.getName(),msg);
@@ -93,6 +99,7 @@ BindingResult result, HttpServletRequest request, Locale locale){
 	    	user.setUsername(v.getName());
 	    	user.setPassword(v.getName()+"123");
 	    	p.setWebuser(user);
+	    	//p.getWebuser().setPerson(p);
 	    	p.setVendor(v);
 	    	p.getWebuser().setEnabled(false);
 			return p;
@@ -102,9 +109,11 @@ BindingResult result, HttpServletRequest request, Locale locale){
 	@Async
 	private void notifyVendorAdmin(Person p){
 		String msg="";
-		msg=("Dear "+p.getFirstName()+" ( "+p.getLastName()+" )"+ ", thank you for using our service!"
-	    		+ "Please use the link below to set you settings.");
-		msg+="<a href='http://localhost:8080/onlinebazzar/validateRegister/"+p.getWebuser().getPasswordRecovery();
+		msg=("Dear "+p.getFirstName()+" ( "+p.getLastName()+" )"+ ", thank you for using our service!\n"
+	    		+ "Please use the link below to activate your account.\n");
+		msg+="<a href='http://localhost:8080/onlinebazzar/validateRegister/"+p.getWebuser().getPasswordRecovery()+">"+"Activate"+"</a>";
+		msg+="Your Account Details are:\nUsername: "+p.getWebuser().getUsername()+"\nPassword: "+p.getWebuser().getPassword();
+		msg+="\nWarm Regards,\nOnline Bazzar Team";
 		mail.sendMail("testmeluck@gmail.com",
 				p.getEmail(),
 				"OnlineBazzar Activatioin", 

@@ -13,6 +13,8 @@
     <script src="https://code.jquery.com/jquery.js"></script> 
      
 <link href="<c:url value="/resources/css/bootstrap.css"/>" rel='stylesheet' type='text/css' />
+<link href="<c:url value="/font-awesome.min.css"/>" rel='stylesheet' type='text/css' />
+
 <!-- jQuery (necessary JavaScript plugins) -->
 <script type='text/javascript' src="<c:url value="/resources/js/jquery-1.11.1.min.js"/>"></script>
 <!-- Custom Theme files -->

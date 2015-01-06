@@ -2,13 +2,9 @@ package com.onlinebazzar.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
-import com.onlinebazzar.commons.AcctType;
 import com.onlinebazzar.commons.CardType;
 import com.onlinebazzar.commons.EntryType;
 
@@ -21,11 +17,18 @@ public class Transaction {
 	private Date transactionDate;
 	
 	private Long orderId;
-	private Long accountNumber;
+	private String accountNumber;
 	private CardType type;
+	
 	private String accountCompany;
 	private EntryType entryType;
 	private double price;
+	
+	
+	public Transaction() {
+		this.transactionDate = new Date();
+	}
+	
 	public Long getOrderId() {
 		return orderId;
 	}
@@ -34,11 +37,11 @@ public class Transaction {
 		this.orderId = orderId;
 	}
 
-	public Long getAccountNumber() {
+	public String getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(Long accountNumber) {
+	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 
@@ -73,12 +76,7 @@ public class Transaction {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	
-	public Transaction() {
-		this.transactionDate = new Date();
-	}
-	
+
 	public Long getId() {
 		return id;
 	}

@@ -1,5 +1,6 @@
 package com.onlinebazzar.model;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import javax.persistence.OneToOne;
 import com.onlinebazzar.commons.OrderStatus;
 
 @Entity(name="COrder")
-public class Order {
+public class Order implements Serializable{
 	@Id
 	@GeneratedValue
 	private Long id;

@@ -54,16 +54,6 @@
 <script src="<c:url value="/resources/js/menu_jquery.js"/>"></script>
 </head>
 <body>
-
-	<%-- <div class="container">
-  <div class="jumbotron">
-    <h1>Online Bazzar</h1>      
-    <p>Welcome to Admin Page</p>      
-    <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-search"></span> Search</a>
-  </div>
-
- --%>
-
 	<%@ taglib uri="http://www.springframework.org/security/tags"
 		prefix="sec"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -79,10 +69,8 @@
 				</div>
 				<div class="top_right">
 					<ul>
-
 						<sec:authorize access="hasRole('ROLE_VADMIN')">
-							<li><a href="<c:url value="/customer/edit"/>">Manage
-									Profile</a></li>|						
+						<li><a href="<c:url value="/vendor/edit"/>">Manage Profile</a></li>|						
 						<li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
 						</sec:authorize>
 					</ul>
@@ -111,7 +99,7 @@
 				</div>
 				<!-- start header menu -->
 				<ul class="megamenu skyblue">
-					<li><a class="color1" href="index.html">Home</a></li>
+					<li><a class="color1" href="<c:url value='/vendorPanel'/>">Home</a></li>
 					<li class="grid"><a class="color2" href="#">Manage Staff</a>
 						<div class="megapanel">
 							<div class="row">
