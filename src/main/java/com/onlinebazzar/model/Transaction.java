@@ -1,15 +1,18 @@
 package com.onlinebazzar.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
 import com.onlinebazzar.commons.CardType;
 import com.onlinebazzar.commons.EntryType;
 
 @Entity
-public class Transaction {
+public class Transaction implements Serializable {
+	private static final long serialVersionUID = -7788619177798333712L;
 
 	@Id
 	@GeneratedValue
