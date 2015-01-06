@@ -1,14 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-<%@ taglib uri="http://www.springframework.org/security/tags"
-	prefix="sec"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>Shoppe Bootstarp Website Template | Women :: w3layouts</title>
+<title>Shoppe Bootstarp Website Template | Details :: w3layouts</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary JavaScript plugins) -->
 <script type='text/javascript' src="js/jquery-1.11.1.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -22,6 +19,24 @@
 <script type="text/javascript" src="js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <script src="js/menu_jquery.js"></script>
+<link rel="stylesheet" href="css/etalage.css">
+<script src="js/jquery.etalage.min.js"></script>
+<script>
+			jQuery(document).ready(function($){
+
+				$('#etalage').etalage({
+					thumb_image_width: 300,
+					thumb_image_height: 400,
+					source_image_width: 900,
+					source_image_height: 1200,
+					show_hint: true,
+					click_callback: function(image_anchor, instance_id){
+						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+					}
+				});
+
+			});
+		</script>
 <!-- the jScrollPane script -->
 <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
 		<script type="text/javascript" id="sourcecode">
@@ -29,7 +44,7 @@
 			{
 				$('.scroll-pane').jScrollPane();
 			});
-		</script>
+		</script> 
 </head>
 <body>
 <!-- header_top -->
@@ -108,7 +123,7 @@
 		</div>
 		<!-- start header menu -->
 		<ul class="megamenu skyblue">
-			<li><a class="color1" href="<c:url value='/'/>">Home</a></li>
+			<li><a class="color1" href="index.html">Home</a></li>
 			<li class="grid"><a class="color2" href="#">new arrivals</a>
 				<div class="megapanel">
 					<div class="row">
@@ -768,15 +783,115 @@
 						</div>
 					</div>
 				</li>
-		  </ul>
+		</ul>
 	</div>
 </div>
 </div>
 <!-- content -->
 <div class="container">
 <div class="women_main">
-	<!-- start sidebar -->
-	<div class="col-md-3">
+	<!-- start content -->
+			<div class="row single">
+				<div class="col-md-9">
+				  <div class="single_left">
+					<div class="grid images_3_of_2">
+						<ul id="etalage">
+							<li>
+								<a href="optionallink.html">
+									<img class="etalage_source_image" src="${product.url} " class="img-responsive" alt="" />
+									<!-- <img class="etalage_thumb_image" src="images/d1.jpg" class="img-responsive" /> -->
+									<!-- <img class="etalage_source_image" src="images/d1.jpg" class="img-responsive" title="" /> -->
+								</a>
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/d2.jpg" class="img-responsive" />
+								<img class="etalage_source_image" src="images/d2.jpg" class="img-responsive" title="" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/d3.jpg" class="img-responsive"  />
+								<img class="etalage_source_image" src="images/d3.jpg"class="img-responsive"  />
+							</li>
+						    <li>
+								<img class="etalage_thumb_image" src="images/d4.jpg" class="img-responsive"  />
+								<img class="etalage_source_image" src="images/d4.jpg"class="img-responsive"  />
+							</li>
+						</ul>
+						 <div class="clearfix"></div>		
+				  </div>
+				  <div class="desc1 span_3_of_2">
+					<h3>soluta nobis eleifend option</h3>
+					<p>Rs. 999 <a href="#">click for offer</a></p>
+					<div class="det_nav">
+						<h4>related styles :</h4>
+						<ul>
+							<li><a href="#"><img src="images/w6.jpg" class="img-responsive" alt=""/></a></li>
+							<li><a href="#"><img src="images/w8.jpg" class="img-responsive" alt=""/></a></li>
+							<li><a href="#"><img src="images/w4.jpg" class="img-responsive" alt=""/></a></li>
+							<li><a href="#"><img src="images/w9.jpg" class="img-responsive" alt=""/></a></li>
+						</ul>
+					</div>
+					<div class="det_nav1">
+						<h4>Select a size :</h4>
+							<div class=" sky-form col col-4">
+								<ul>
+									<li><label class="checkbox"><input type="checkbox" name="checkbox"><i></i>L</label></li>
+									<li><label class="checkbox"><input type="checkbox" name="checkbox"><i></i>S</label></li>
+									<li><label class="checkbox"><input type="checkbox" name="checkbox"><i></i>M</label></li>
+									<li><label class="checkbox"><input type="checkbox" name="checkbox"><i></i>XL</label></li>
+								</ul>
+							</div>
+					</div>
+					<div class="btn_form">
+						<a href="buy.html">buy</a>
+					</div>
+					<a href="#"><span>login to save in wishlist </span></a>
+					
+			   	 </div>
+          	    <div class="clearfix"></div>
+          	   </div>
+          	    <div class="single-bottom1">
+					<h6>Details</h6>
+					<p class="prod-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option</p>
+				</div>
+				<div class="single-bottom2">
+					<h6>Related Products</h6>
+						<div class="product">
+						   <div class="product-desc">
+								<div class="product-img">
+		                           <img src="images/pic1.jpg" class="img-responsive " alt=""/>
+		                       </div>
+		                       <div class="prod1-desc">
+		                           <h5><a class="product_link" href="#">Excepteur sint</a></h5>
+		                           <p class="product_descr"> Vivamus ante lorem, eleifend nec interdum non, ullamcorper et arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>									
+							   </div>
+							  <div class="clearfix"></div>
+					      </div>
+						  <div class="product_price">
+								<span class="price-access">$597.51</span>								
+								<button class="button1"><span>Add to cart</span></button>
+		                  </div>
+						 <div class="clearfix"></div>
+				     </div>
+				     <div class="product">
+						   <div class="product-desc">
+								<div class="product-img">
+		                           <img src="images/pic2.jpg" class="img-responsive " alt=""/>
+		                       </div>
+		                       <div class="prod1-desc">
+		                           <h5><a class="product_link" href="#">Excepteur sint</a></h5>
+		                           <p class="product_descr"> Vivamus ante lorem, eleifend nec interdum non, ullamcorper et arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>									
+							   </div>
+							   <div class="clearfix"></div>
+					      </div>
+						  <div class="product_price">
+								<span class="price-access">$597.51</span>								
+								<button class="button1"><span>Add to cart</span></button>
+		                  </div>
+						 <div class="clearfix"></div>
+				     </div>
+		   	  </div>
+	       </div>	
+	       			<div class="col-md-3">
 	  <div class="w_sidebar">
 		<div class="w_nav1">
 			<h4>All</h4>
@@ -880,214 +995,8 @@
 		</section>
 	</div>
    </div>
-	<!-- start content -->
-	<div class="col-md-9 w_content">
-		<div class="women">
-			<a href="#"><h4>Enthecwear - <span>4449 itemms</span> </h4></a>
-			<ul class="w_nav">
-						<li>Sort : </li>
-		     			<li><a class="active" href="#">popular</a></li> |
-		     			<li><a href="#">new </a></li> |
-		     			<li><a href="#">discount</a></li> |
-		     			<li><a href="#">price: Low High </a></li> 
-		     			<div class="clear"></div>	
-		     </ul>
-		     <div class="clearfix"></div>	
-		</div>
-		<!-- grids_of_4 -->
-		<div class="grids_of_4">
-			<c:forEach var="product" items="${productList}">
-		  <div class="grid1_of_4">
-				
-			   
-		
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="${product.url} " class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> ${product.name} </a></h4>
-				     <p>It is a long established fact that a reader</p>
-				    ${product.price} 
-				    <a href="<c:url value='/product/addtocart/${product.id}' />" >Add TO Cart</a>
-			   	</div>
-				</c:forEach>
-			</div>
-			<div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="images/w2.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> Duis autem</a></h4>
-				     <p>It is a long established fact that a reader</p>
-				     Rs. 499
-			   	</div>
-			</div>
-			<div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="images/w3.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> Duis autem</a></h4>
-				     <p>It is a long established fact that a reader</p>
-				     Rs. 499
-			   	</div>
-			</div>
-			<div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="images/w4.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> Duis autem</a></h4>
-				     <p>It is a long established fact that a reader</p>
-				     Rs. 499
-			   	</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		
-		
-		<div class="grids_of_4">
-		  <div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="images/w5.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> Duis autem</a></h4>
-				     <p>It is a long established fact that a reader</p>
-				     Rs. 499
-			   	</div>
-			</div>
-			<div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="images/w6.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> Duis autem</a></h4>
-				     <p>It is a long established fact that a reader</p>
-				     Rs. 499
-			   	</div>
-			</div>
-			<div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="images/w7.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> Duis autem</a></h4>
-				     <p>It is a long established fact that a reader</p>
-				     Rs. 499
-			   	</div>
-			</div>
-			<div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="images/w8.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> Duis autem</a></h4>
-				     <p>It is a long established fact that a reader</p>
-				     Rs. 499
-			   	</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		
-		
-		<div class="grids_of_4">
-		  <div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="images/w9.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> Duis autem</a></h4>
-				     <p>It is a long established fact that a reader</p>
-				     Rs. 499
-			   	</div>
-			</div>
-			<div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="images/w10.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> Duis autem</a></h4>
-				     <p>It is a long established fact that a reader</p>
-				     Rs. 499
-			   	</div>
-			</div>
-			<div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="images/w11.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> Duis autem</a></h4>
-				     <p>It is a long established fact that a reader</p>
-				     Rs. 499
-			   	</div>
-			</div>
-			<div class="grid1_of_4">
-				<div class="content_box"><a href="details.html">
-			   	  <div class="view view-fifth">
-			   	   	 <img src="images/w12.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="mask">
-	                        <div class="info">Quick View</div>
-			            </div>
-				   	  </a>
-				   </div>
-				    <h4><a href="details.html"> Duis autem</a></h4>
-				     <p>It is a long established fact that a reader</p>
-				     Rs. 499
-			   	</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		<!-- end grids_of_4 -->
-		
-		
-	</div>
-	<div class="clearfix"></div>
-	
+		   <div class="clearfix"></div>		
+	  </div>
 	<!-- end content -->
 </div>
 </div>
