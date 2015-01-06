@@ -1,5 +1,7 @@
 package com.onlinebazzar.commons;
 
-public enum CardType {
+import java.io.Serializable;
+
+public enum CardType implements Serializable{
 DEBITCARD,CREDITCARD
 }
