@@ -49,7 +49,7 @@ public class RestClient {
 
 	    }
 	private static String makeURL(String cardNumber, double amount){
-        String url = "http://10.10.34.185:8080/PayementService/webresources/com.mycompany."
+        String url = "http://10.10.11.167:8080/PayementService/webresources/com.mycompany."
         		+ "payementservice.accountdetails"
         		+ "/cValidation?cardnumber="+cardNumber+"&totalprice=+"+amount;
 
