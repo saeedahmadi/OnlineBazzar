@@ -20,6 +20,11 @@ public class Transaction {
 	private String accountNumber;
 	private CardType type;
 	
+	private String accountCompany;
+	private EntryType entryType;
+	private double price;
+	
+	
 	public Transaction() {
 		this.transactionDate = new Date();
 	}
@@ -71,10 +76,7 @@ public class Transaction {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	private String accountCompany;
-	private EntryType entryType;
-	private double price;
-	
+
 	public Long getId() {
 		return id;
 	}
