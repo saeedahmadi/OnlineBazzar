@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -103,23 +104,24 @@ public class VendorProductController {
 
 	}
 
-	@RequestMapping("/products/edit/${product.id}")
+	@RequestMapping("/products/edit/{id}")
 	public String editProduct(@PathVariable("id") Long id, Model model) {
 		Product product = productService.findOne(id);
 		System.out.println("::::::::::::::::::::::::" + product.getName() + ":::::::");
 		model.addAttribute("product", product);
+		model.addAttribute("category",catagoryservice.findAll());
 		return "vendor/editProduct";
 	}
 
-	/*
-	 * @RequestMapping(value="/admin/vendor/product/edit", method =
-	 * RequestMethod.GET) public String showProductEdit(Model model,
-	 * @RequestParam("pid") String productId, HttpServletRequest request){
-	 * 
-	 * int id = Integer.parseInt(productId);
-	 * model.addAttribute("product",productService.getProductById(id));
-	 * model.addAttribute("categories", categoryService.listCategories());
-	 * return "/admin/vendor/product_edit"; }
+	
+/*	 @RequestMapping(value="/admin/vendor/product/edit", method = RequestMethod.GET)
+	 public String showProductEdit(Model model,
+	 @RequestParam("id") Long id, HttpServletRequest request){
+	 
+	// int id = Integer.parseInt(id);
+	 model.addAttribute("product", productService.findOne(id));
+	 / model.addAttribute("categories", categoryService.listCategories());
+	 return "/admin/vendor/product_edit"; }
 	 */
 
 	@RequestMapping("/products/remove/{id}")

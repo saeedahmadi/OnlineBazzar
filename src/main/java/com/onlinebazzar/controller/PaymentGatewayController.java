@@ -1,4 +1,4 @@
-package com.onlinebazzar.controller;
+/*package com.onlinebazzar.controller;
 
 import java.util.Iterator;
 import java.util.List;
@@ -114,23 +114,24 @@ public class PaymentGatewayController {
 	@RequestMapping(value = "/confirmPayment")
 	public String confirmPayment(Model model,@ModelAttribute("order")Order order, @ModelAttribute("shoppingCart") ShoppingCart shoppingCart){	
 		
-		//calculate the bazzar benefit and call the finance.com web service
-		List<LineItem> lineItems = shoppingCart.getItems();
-		Iterator<LineItem> it = lineItems.iterator();
-		while(it.hasNext()){
-			LineItem item = it.next();
-			Vendor vendor = item.getProduct().getVendor();
-						
-			double bazzarBenefit =   (item.getProduct().getBazzarBenefit() / 100) * item.getPrice();
-			
-			//connect with the web service here send the information
-			Transaction transaction = new Transaction();
-						
-			transactionService.save(transaction);
-			model.addAttribute("order", new Order());
-		}
+//		//calculate the bazzar benefit and call the finance.com web service
+//		List<LineItem> lineItems = shoppingCart.getItems();
+//		Iterator<LineItem> it = lineItems.iterator();
+//		while(it.hasNext()){
+//			LineItem item = it.next();
+//			Vendor vendor = item.getProduct().getVendor();
+//						
+//			double bazzarBenefit =   (item.getProduct().getBazzarBenefit() / 100) * item.getPrice();
+//			
+//			//connect with the web service here send the information
+//			Transaction transaction = new Transaction();
+//						
+//			transactionService.save(transaction);
+//			model.addAttribute("order", new Order());
+//		}
 		
 		model.addAttribute("shoppingCart", new ShoppingCart());
 		return "redirect:/HomePage";
 	}
 }
+*/

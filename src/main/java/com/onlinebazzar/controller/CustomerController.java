@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.onlinebazzar.commons.Role;
 import com.onlinebazzar.model.Customer;
 import com.onlinebazzar.services.CustomerService;
 
@@ -74,4 +75,25 @@ public class CustomerController {
 	public String checkOut(){
 		return"confirmPayment";
 	}
+	
+	//user registeration mapping
+	@RequestMapping(value = "/UserRegisteration", method = RequestMethod.GET)
+	public String createUSerForm(Model model) {
+		model.addAttribute("customer", new Customer());
+		return "customer/UserRegister";
+	}
+
+	@RequestMapping(value = "/registeredUsers", method = RequestMethod.POST)
+	public String saveUser(
+			@ModelAttribute("customer") @Valid Customer customer,
+			BindingResult result, HttpServletRequest request, Locale locale,Model model) {
+
+		if (result.hasErrors()) {
+			return "customer/UserRegister";
+		}
+		customer.getWebuser().setRole(Role.CUSTOMER);
+		customerService.save(customer);
+		return "redirect:/login";
+	}
+	
 }
