@@ -15,31 +15,35 @@ public class Vendor {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	private String name;
-	
+
 	private String phoneNumber;
 	private String email;
-	
+
 	@OneToMany
-	@JoinColumn(name="vendor_id")
+	@JoinColumn(name = "vendor_id")
 	private List<Category> categories;
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	private BankAccount bankAccount;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
-	
+	private double bazzarProfit;
 
-	
+	public Vendor() {
+		this.bazzarProfit = 10;
+	}
+
 	
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
@@ -48,23 +52,26 @@ public class Vendor {
 		this.email = email;
 	}
 
-
-
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public List<Category> getCategories() {
 		return categories;
 	}
+
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
 	}
+
 	public BankAccount getBankAccount() {
 		return bankAccount;
 	}
+
 	public void setBankAccount(BankAccount bankAccount) {
 		this.bankAccount = bankAccount;
 	}
@@ -84,6 +91,13 @@ public class Vendor {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	
-	
+
+	public double getBazzarProfit() {
+		return bazzarProfit;
+	}
+
+	public void setBazzarProfit(double bazzarProfit) {
+		this.bazzarProfit = bazzarProfit;
+	}
+
 }

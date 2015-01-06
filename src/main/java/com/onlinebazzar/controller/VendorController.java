@@ -61,6 +61,16 @@ public class VendorController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "/vendor/vusers", method = RequestMethod.GET)
+	public String getVendorUsers(Model model) {
+
+		List<Person> vusers = personService.findAllVendorPersons();
+		model.addAttribute("vuser", new Person());
+		model.addAttribute("vusers", vusers);
+		return "vendor/vadmin";
+	}
+
+
 	@RequestMapping(value = "/vendor/edit", method = RequestMethod.GET)
 	public String editVendorProfile(HttpServletRequest request, Model model) {
 		
@@ -71,6 +81,8 @@ public class VendorController {
 		return "vendor/vendorEditProfile";
 	}
 	
+
+
 	@RequestMapping(value = "/vendor/editProfile", method = RequestMethod.POST)
 	public String editVendor(@ModelAttribute("currentVendor") @Valid Person person,
 			BindingResult result, HttpServletRequest request, Locale locale) {
@@ -81,15 +93,15 @@ public class VendorController {
 		personService.update(person);
 		return "redirect:/";
 	}
-
-	@RequestMapping(value = "/vendor/vusers", method = RequestMethod.GET)
-	public String getVendorUsers(Model model) {
-
-		List<Person> vusers = personService.findAllVendorPersons();
-		model.addAttribute("vuser", new Person());
-		model.addAttribute("vusers", vusers);
-		return "vendor/vadmin";
-	}
+//
+//	@RequestMapping(value = "/vendor/vusers", method = RequestMethod.GET)
+//	public String getVendorUsers(Model model) {
+//
+//		List<Person> vusers = personService.findAllVendorPersons();
+//		model.addAttribute("vuser", new Person());
+//		model.addAttribute("vusers", vusers);
+//		return "vendor/vadmin";
+//	}
 
 	@RequestMapping(value = "/vendor/user/add", method = RequestMethod.GET)
 	public String showVendorUser(Model model) {
