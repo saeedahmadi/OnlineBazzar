@@ -102,9 +102,11 @@ BindingResult result, HttpServletRequest request, Locale locale){
 	@Async
 	private void notifyVendorAdmin(Person p){
 		String msg="";
-		msg=("Dear "+p.getFirstName()+" ( "+p.getLastName()+" )"+ ", thank you for using our service!"
-	    		+ "Please use the link below to set you settings.");
-		msg+="<a href='http://localhost:8080/onlinebazzar/validateRegister/"+p.getWebuser().getPasswordRecovery();
+		msg=("Dear "+p.getFirstName()+" ( "+p.getLastName()+" )"+ ", thank you for using our service!\n"
+	    		+ "Please use the link below to activate your account.\n");
+		msg+="<a href='http://localhost:8080/onlinebazzar/validateRegister/"+p.getWebuser().getPasswordRecovery()+">"+"Activate"+"</a>";
+		msg+="Your Account Details are:\nUsername: "+p.getWebuser().getUsername()+"\nPassword: "+p.getWebuser().getPassword();
+		msg+="\nWarm Regards,\nOnline Bazzar Team";
 		mail.sendMail("testmeluck@gmail.com",
 				p.getEmail(),
 				"OnlineBazzar Activatioin", 

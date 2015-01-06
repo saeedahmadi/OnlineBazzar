@@ -29,13 +29,13 @@ public class Vendor {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
-
 	private double bazzarProfit;
 
 	public Vendor() {
 		this.bazzarProfit = 10;
 	}
 
+	
 	public Long getId() {
 		return id;
 	}
