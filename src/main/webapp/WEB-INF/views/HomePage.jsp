@@ -3,7 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<link href="<c:url value="/font-awesome.min.css"/>" rel='stylesheet' type='text/css' />
+<link href="<c:url value="/font-awesome.min.css"/>" rel='stylesheet'
+	type='text/css' />
 <div class="top_bg">
 	<div class="container">
 		<div class="header_top">
@@ -41,7 +42,8 @@
 						<li><a href="#">Recently viewed</a></li>|
 						<li><a href="contact.html">Contact</a></li>|
 						<li><a href="login">Signin</a></li>|
-						<li><a href="shoppingCart">${fn:length(shoppingCart.items)}<i class="fa fa-shopping-cart"></i></a></li>|
+						<li><a href="shoppingCart">${fn:length(shoppingCart.items)}<i
+								class="fa fa-shopping-cart"></i></a></li>|
 						<li><a href="./userRegister">Register</a></li>|
 						<li class="login">
 
@@ -121,7 +123,7 @@
 			</div>
 			<!-- start header menu -->
 			<ul class="megamenu skyblue">
-				<li><a class="color1" href="index.html">Home</a></li>
+				<li><a class="color1" href="<c:url value='/'/>">Home</a></li>
 				<li class="grid"><a class="color2" href="#">new arrivals</a>
 					<div class="megapanel">
 						<div class="row">
@@ -867,13 +869,14 @@
 				<h4>
 					<a href="#">a touch of glamour </a>
 				</h4>
-				<p>It is a long established fact that
-				<i class="fa fa-shopping-cart"></i> a reader will be
-					distracted by the readable content of a page when looking at its
-					layout. The point of using Lorem Ipsum is that it has a
-					more-or-less normal distribution of letters, as opposed to using
-					'Content here, content here',</p>
-					
+				<p>
+					It is a long established fact that <i class="fa fa-shopping-cart"></i>
+					a reader will be distracted by the readable content of a page when
+					looking at its layout. The point of using Lorem Ipsum is that it
+					has a more-or-less normal distribution of letters, as opposed to
+					using 'Content here, content here',
+				</p>
+
 			</div>
 			<!-- grids_of_3 -->
 			<div class="row grids">
@@ -914,148 +917,42 @@
 		</div>
 		<!-- end content -->
 	</div>
-	<!-- start content -->
-	<div class="content">
-		<div class="content_text">
-			<h3>brand of the week</h3>
-			<h4>
-				<a href="#">a touch of glamour </a>
-			</h4>
-			<p>It is a long established fact that a reader will be distracted
-				by the readable content of a page when looking at its layout. The
-				point of using Lorem Ipsum is that it has a more-or-less normal
-				distribution of letters, as opposed to using 'Content here, content
-				here',</p>
+<!-- footer_top -->
+<div class="footer_top">
+ <div class="container">
+	<div class="span_of_4">
+		<div class="clearfix"></div>
 		</div>
-		<!-- grids_of_3 -->
-		<div class="row grids">
-			<c:forEach items="${products}" var="product">
-				<div class="col-md-3 grid1">
-					<a href="details.html"> <img src="${product.url}"
-						class="img-responsive" alt="" />
-						<div class="look">
-							<h4>get scraves</h4>
-							<p>read more</p>
-						</div></a>
-				</div>
-			</c:forEach>
-			<div class="col-md-3 grid1">
-				<a href="details.html"> <img src="resources/images/pic1.jpg"
-					class="img-responsive" alt="" />
-					<div class="look">
-						<h4>get scraves</h4>
-						<p>read more</p>
-					</div></a>
+		<!-- start span_of_2 -->
+		<div class="span_of_2">
+		<div class="span1_of_2">
+			<h5>need help? <a href="#">contact us <span> ></span> </a> </h5>
+			<p>(or) Call us: +91-70-45022088</p>
+		</div>
+		<div class="span1_of_2">
+			<h5>follow us </h5>
+			<div class="social-icons">
+				     <ul>
+				        <li><a href="#" target="_blank"></a></li>
+				        <li><a href="#" target="_blank"></a></li>
+				        <li><a href="#" target="_blank"></a></li>
+				        <li><a href="#" target="_blank"></a></li>
+				        <li><a href="#" target="_blank"></a></li>
+					</ul>
 			</div>
-			<!-- footer_top -->
-			<div class="footer_top">
-				<div class="container">
-					<div class="span_of_4">
-						<div class="span1_of_4">
-							<h4>Shop</h4>
-							<ul class="f_nav">
-								<li><a href="#">new arrivals</a></li>
-								<li><a href="#">men</a></li>
-								<li><a href="#">women</a></li>
-								<li><a href="#">accessories</a></li>
-								<li><a href="#">kids</a></li>
-								<li><a href="#">brands</a></li>
-								<li><a href="#">trends</a></li>
-								<li><a href="#">sale</a></li>
-								<li><a href="#">style videos</a></li>
-							</ul>
-						</div>
-						<div class="span1_of_4">
-							<h4>help</h4>
-							<ul class="f_nav">
-								<li><a href="#">frequently asked questions</a></li>
-								<li><a href="#">men</a></li>
-								<li><a href="#">women</a></li>
-								<li><a href="#">accessories</a></li>
-								<li><a href="#">kids</a></li>
-								<li><a href="#">brands</a></li>
-							</ul>
-							<h4 class="top">company name</h4>
-							<ul class="f_nav">
-								<li><a href="#">frequently asked questions</a></li>
-								<li><a href="#">men</a></li>
-								<li><a href="#">women</a></li>
-								<li><a href="#">accessories</a></li>
-								<li><a href="#">kids</a></li>
-								<li><a href="#">brands</a></li>
-							</ul>
-						</div>
-						<div class="span1_of_4">
-							<h4>account</h4>
-							<ul class="f_nav">
-								<li><a href="#">login</a></li>
-								<li><a href="#">create an account</a></li>
-								<li><a href="#">create wishlist</a></li>
-								<li><a href="#">my shopping bag</a></li>
-								<li><a href="#">brands</a></li>
-								<li><a href="#">create wishlist</a></li>
-							</ul>
-							<h4 class="top">style zone</h4>
-							<ul class="f_nav">
-								<li><a href="#">frequently asked questions</a></li>
-								<li><a href="#">men</a></li>
-								<li><a href="#">women</a></li>
-								<li><a href="#">accessories</a></li>
-								<li><a href="#">kids</a></li>
-								<li><a href="#">brands</a></li>
-							</ul>
-						</div>
-						<div class="span1_of_4">
-							<h4>popular</h4>
-							<ul class="f_nav">
-								<li><a href="#">new arrivals</a></li>
-								<li><a href="#">men</a></li>
-								<li><a href="#">women</a></li>
-								<li><a href="#">accessories</a></li>
-								<li><a href="#">kids</a></li>
-								<li><a href="#">brands</a></li>
-								<li><a href="#">trends</a></li>
-								<li><a href="#">sale</a></li>
-								<li><a href="#">style videos</a></li>
-								<li><a href="#">login</a></li>
-								<li><a href="#">brands</a></li>
-							</ul>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<!-- start span_of_2 -->
-					<div class="span_of_2">
-						<div class="span1_of_2">
-							<h5>
-								need help? <a href="#">contact us <span> ></span>
-								</a>
-							</h5>
-							<p>(or) Call us: +91-70-45022088</p>
-						</div>
-						<div class="span1_of_2">
-							<h5>follow us</h5>
-							<div class="social-icons">
-								<ul>
-									<li><a href="#" target="_blank"></a></li>
-									<li><a href="#" target="_blank"></a></li>
-									<li><a href="#" target="_blank"></a></li>
-									<li><a href="#" target="_blank"></a></li>
-									<li><a href="#" target="_blank"></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
-			<!-- footer -->
-			<div class="footer">
-				<div class="container">
-					<div class="copy">
-						<p class="link">
-							&copy; All rights reserved | Design by&nbsp; <a
-								href="http://w3layouts.com/"> W3Layouts</a>
-						</p>
-					</div>
-				</div>
-			</div>
+		</div>
+		<div class="clearfix"></div>
+		</div>
+  </div>
+</div>
+<!-- footer -->
+<div class="footer">
+	<div class="container">
+		<div class="copy">
+			<p class="link">
+				&copy; All rights reserved | Design by&nbsp; <a
+					href="http://w3layouts.com/"> W3Layouts</a>
+			</p>
+		</div>
+	</div>
+</div>
