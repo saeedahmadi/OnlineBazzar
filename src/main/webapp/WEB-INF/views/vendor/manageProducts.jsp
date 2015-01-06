@@ -11,13 +11,13 @@
 <title>Insert title here</title>
 </head>
 <body>
- Welcome To Online Bazzar Admin Page
+
+
  
- <h1>
-    Manage products g
-</h1>
+
+
  
-<c:url var="addAction" value="/product/add" ></c:url>
+<%-- <c:url var="addAction" value="/product/add" ></c:url>
  
  <form:form action="${addAction}" commandName="product"> 
 <table>
@@ -61,12 +61,14 @@
         </td>
     </tr>
 </table>
- </form:form>
+ </form:form> --%>
       
 <br>
-<h3>product List</h3>
+<br/>
+<h6><strong>Product List</strong></h6>
 <c:if test="${!empty products}">
-    <table class="table table-bordered">
+
+   <table class="table table-hover">
     <thead>
     <tr>
     	<th width="60">Id</th>

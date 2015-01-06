@@ -133,20 +133,7 @@
 
 							</div>
 							
-							<table class="table table-bordered">
- 					 
- 					    <thead>
-    <tr>
-        <th data-field="state" data-radio="true">Product ID</th>
-        <th data-field="id" data-align="right">Product catagory</th>
-        <th data-field="name" data-align="center">Prodyct  Name</th>
-        <th data-field="price" data-align="left">Product Price</th>
-    </tr>
-    </thead>
- 					
-</table>
-
-
+	
 						</fieldset>
 					</div>
 				</div>

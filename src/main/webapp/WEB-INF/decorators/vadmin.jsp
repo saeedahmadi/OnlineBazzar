@@ -122,7 +122,7 @@
 										<h4>shop</h4>
 										<ul>											
 											<li><a href="<c:url value='/vendor/product/add' />">Add Products</a></li>
-											<li><a href="<c:url value=''/>">Manage Products</a></li>
+											<li><a href="<c:url value='/vendor/managedProducts'/>">Manage Products</a></li>
 										</ul>
 									</div>
 								</div>

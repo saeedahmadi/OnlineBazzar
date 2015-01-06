@@ -1,5 +1,4 @@
-
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -30,34 +29,27 @@
 <body>
 	<div class="content-section">
 		<div class="container">
-			<form:form role="form" method="POST"
-				action="${pageContext.request.contextPath}/product/add"
-				modelAttribute = "product" class="form-horizontal"
+
+			<form:form role="form" method="POST" action="/onlinebazzar/product/add"
+				modelAttribute="product" class="form-horizontal"
 				enctype="multipart/form-data">
 				<div class="panel panel-default">
-					<div class="panel-heading">Product Registration</div>
+					<div class="panel-heading">Product Edit</div>
 					<div class="panel-body">
 						<fieldset>
 							<form:errors path="*" cssClass="alert alert-danger" element="div" />
-							
-							
 							<div class="form-group">
-
-						<div class="col-lg-3">
-							<form:input type="hidden" class="form-control" path="id" />
-							<form:errors path="id" />
-							<br>
-						</div> 
-					</div>
-							<div class="form-group">
-
+								<div class="col-lg-3">
+									<form:input type="hidden" class="form-control" path="id" />
+									<form:errors path="id" />
+									<br>
+								</div>
 								<label for="name" class="control-label col-lg-2 col-lg-2">Name:
 								</label>
 								<div class="col-lg-3">
-									<form:input type="text" class="form-control"
-										path="name" />
+									<form:input type="text" class="form-control" path="name" />
 									<form:errors path="name" />
-									
+
 								</div>
 							</div>
 							<div class="form-group" spellcheck="true">
@@ -83,16 +75,19 @@
 									class="control-label col-lg-2 col-lg-2">BazzarBenefit:
 								</label>
 								<div class="col-lg-3">
-									<form:input type="number" class="form-control" path="bazzarBenefit" />
+									<form:input type="number" class="form-control"
+										path="bazzarBenefit" />
 									<form:errors path="bazzarBenefit" />
 								</div>
 							</div>
 							<div class="form-group">
 
 								<label for="creationDate"
-									class="control-label col-lg-2 col-lg-2">Creation Date: </label>
+									class="control-label col-lg-2 col-lg-2">Creation Date:
+								</label>
 								<div class="col-lg-3">
-									<form:input type="date" class="form-control" path="creationDate" />
+									<form:input type="date" class="form-control"
+										path="creationDate" />
 									<form:errors path="creationDate" />
 								</div>
 							</div>
@@ -102,7 +97,7 @@
 								<label for="url" class="control-label col-lg-2 col-lg-2">Url:
 								</label>
 								<div class="col-lg-3">
-									<form:input type="text" class="form-control"										path="url" />
+									<form:input type="text" class="form-control" path="url" />
 									<form:errors path="url" />
 								</div>
 							</div>
@@ -112,7 +107,6 @@
 								</label>
 								<div class="col-lg-6">
 									<form:select path="category.id">
-										<form:option value="-" label="--Please Select" />
 										<form:options items="${category}" itemValue="id"
 											itemLabel="name" />
 									</form:select>
@@ -133,12 +127,11 @@
 							<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
 									<input type="submit" id="btnSumbit" class="btn btn-primary"
-										value="updateProduct" />
+										value="UpdateProduct" />
 								</div>
 
 							</div>
-							
-							
+
 
 
 						</fieldset>

@@ -100,36 +100,28 @@ public class VendorProductController {
 
 		productService.update(p);
 
-		return "vendor/manageProducts";
+		return "redirect:/vendor/managedProducts";
 
 	}
 
 	@RequestMapping("/products/edit/{id}")
 	public String editProduct(@PathVariable("id") Long id, Model model) {
+		
 		Product product = productService.findOne(id);
-		System.out.println("::::::::::::::::::::::::" + product.getName() + ":::::::");
+		
 		model.addAttribute("product", product);
 		model.addAttribute("category",catagoryservice.findAll());
 		return "vendor/editProduct";
 	}
 
-	
-/*	 @RequestMapping(value="/admin/vendor/product/edit", method = RequestMethod.GET)
-	 public String showProductEdit(Model model,
-	 @RequestParam("id") Long id, HttpServletRequest request){
-	 
-	// int id = Integer.parseInt(id);
-	 model.addAttribute("product", productService.findOne(id));
-	 / model.addAttribute("categories", categoryService.listCategories());
-	 return "/admin/vendor/product_edit"; }
-	 */
+
 
 	@RequestMapping("/products/remove/{id}")
 	public String deleteProduct(@PathVariable("id") Long id, Model model) {
 		productService.deleteById(id);
 		model.addAttribute("product", new Product());
 		model.addAttribute("products", this.productService.findAll());
-		return "vendor/manageProducts";
+		return "redirect:/vendor/managedProducts";
 	}
 
 }
