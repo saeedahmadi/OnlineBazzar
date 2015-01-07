@@ -1,30 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<html>
-
-<head>
-<title>Check out</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
-	type="text/css" />
-<!-- <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-  -->
-<script type="text/javascript" src="bootstrap/js/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Order details</title>
-</head>
-<body>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+	<div class="container">
 
 	<h4>
 		Thank you
@@ -59,5 +37,4 @@
 			</div>
 		</div>
 	</form>
-</body>
-</html>
+</div>
