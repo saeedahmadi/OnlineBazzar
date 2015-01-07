@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.onlinebazzar.model.Person;
+import com.onlinebazzar.model.Product;
 import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.PersonService;
@@ -60,7 +61,7 @@ public class VendorController {
 		// after the custmer service implimentation created
 		return "home";
 	}
-	
+
 	@RequestMapping(value = "/vendor/vusers", method = RequestMethod.GET)
 	public String getVendorUsers(Model model) {
 
@@ -70,38 +71,37 @@ public class VendorController {
 		return "vendor/vadmin";
 	}
 
-
 	@RequestMapping(value = "/vendor/edit", method = RequestMethod.GET)
 	public String editVendorProfile(HttpServletRequest request, Model model) {
-		
+
 		WebUser webuser = (WebUser) request.getSession().getAttribute("user");
 		Person person = webuser.getPerson();
-		
+
 		model.addAttribute("currentVendor", person);
 		return "vendor/vendorEditProfile";
 	}
-	
-
 
 	@RequestMapping(value = "/vendor/editProfile", method = RequestMethod.POST)
-	public String editVendor(@ModelAttribute("currentVendor") @Valid Person person,
+	public String editVendor(
+			@ModelAttribute("currentVendor") @Valid Person person,
 			BindingResult result, HttpServletRequest request, Locale locale) {
-		
+
 		if (result.hasErrors()) {
 			return "redirect:/";
 		}
 		personService.update(person);
 		return "redirect:/";
 	}
-//
-//	@RequestMapping(value = "/vendor/vusers", method = RequestMethod.GET)
-//	public String getVendorUsers(Model model) {
-//
-//		List<Person> vusers = personService.findAllVendorPersons();
-//		model.addAttribute("vuser", new Person());
-//		model.addAttribute("vusers", vusers);
-//		return "vendor/vadmin";
-//	}
+
+	//
+	// @RequestMapping(value = "/vendor/vusers", method = RequestMethod.GET)
+	// public String getVendorUsers(Model model) {
+	//
+	// List<Person> vusers = personService.findAllVendorPersons();
+	// model.addAttribute("vuser", new Person());
+	// model.addAttribute("vusers", vusers);
+	// return "vendor/vadmin";
+	// }
 
 	@RequestMapping(value = "/vendor/user/add", method = RequestMethod.GET)
 	public String showVendorUser(Model model) {
@@ -114,25 +114,23 @@ public class VendorController {
 		return "vendor/vuserregistration";
 	}
 
-	// @RequestMapping(value="/vendor/user/add", method=RequestMethod.POST)
-	// public String addVendorUser(@ModelAttribute("vendor") @Valid Person p,
-	// BindingResult result){
-	//
-	//
-	// if (result.hasErrors()) {
-	// return "redirect:vendor/vendorRegister";
-	// }
-	//
-	// if(p.getId() == null){
-	//
-	//
-	// personService.save(p);
-	//
-	// }else{
-	// personService.update(p);
-	// }
-	// return "vendor/vadmin";
-	// }
+	@RequestMapping(value = "/vendor/user/add", method = RequestMethod.POST)
+	public String addVendorUser(@ModelAttribute("vendor") @Valid Person p,
+			BindingResult result) {
+
+		if (result.hasErrors()) {
+			return "redirect:vendor/vendorRegister";
+		}
+
+		if (p.getId() == null) {
+
+			personService.save(p);
+
+		} else {
+			personService.update(p);
+		}
+		return "vendor/vadmin";
+	}
 
 	@RequestMapping(value = "/vendor/enableWebuser/{id}", method = RequestMethod.GET)
 	public String enableWebUser(@PathVariable("id") Long id, Model model) {
@@ -142,4 +140,24 @@ public class VendorController {
 		model.addAttribute("vusers", vusers);
 		return "vendor/vadmin";
 	}
+	
+	@RequestMapping("/vendor/user/edit/{id}")
+	public String editProduct(@PathVariable("id") Long id, Model model) {
+		
+		Vendor vendor = vendorService.findOne(id);
+		
+		model.addAttribute("vendor", vendor);
+		return "vendor/vadmin";
+	}
+
+
+
+	@RequestMapping("/vendor/user/remove/{id}")
+	public String deleteProduct(@PathVariable("id") Long id, Model model) {
+		vendorService.deleteById(id);
+		model.addAttribute("vendor", new Vendor());
+		model.addAttribute("vendors", this.vendorService.findAll());
+		return "redirect:/vendor/vadmin";
+	}
+
 }

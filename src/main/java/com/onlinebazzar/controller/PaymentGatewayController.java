@@ -100,12 +100,14 @@ public class PaymentGatewayController {
 			return "paymentDetails";
 		}
 
+		currentUser.getPaymentDetails().add(paymentDetails);
+		
 		// Web service for payment gateway to check the balance and card number
 		int paymentgatewayResult = RestClient.validateCC(
 				paymentDetails.getCardNumber(), shoppingCart.getPrice());
 		System.out.println(paymentgatewayResult);
 		if (paymentgatewayResult == 1) {
-			currentUser.getPaymentDetails().add(paymentDetails);
+			
 
 			Order order = new Order();
 			order.setPrice(shoppingCart.getPrice());

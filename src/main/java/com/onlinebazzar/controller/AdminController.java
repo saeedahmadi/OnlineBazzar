@@ -38,6 +38,7 @@ import com.onlinebazzar.services.CategoryService;
 import com.onlinebazzar.services.PersonService;
 import com.onlinebazzar.services.VendorService;
 import com.onlinebazzar.services.WebUserService;
+import com.onlinebazzar.emailservice.Notification;
 
 /**
  * Handles requests for the application home page.
@@ -56,6 +57,8 @@ public class AdminController {
 	WebUserService webuserService;
 	@Autowired
 	PersonService personService;
+	@Autowired
+	MailMail mail;	
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(AdminController.class);
@@ -126,23 +129,30 @@ public class AdminController {
 			categoryService.update(c);
 		}
 
-		return "redirect:/categories";
+		return "redirect:/admin/manageCategories";
 
 	}
+	
+	@RequestMapping(value = "/admin/manageCategories", method = RequestMethod.GET)
+	public String manageCategories(Model model) {
+		model.addAttribute("category", new Category());
+		model.addAttribute("categories", categoryService.findAll());
+		return "admin/manageCategory";
+	}
 
-	@RequestMapping("/edit/{id}")
+	@RequestMapping("/admin/edit/{id}")
 	public String editCategory(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("category", this.categoryService.findOne(id));
 		model.addAttribute("categories", this.categoryService.findAll());
-		return "admin/index";
+		return "admin/manageCategory";
 	}
 
-	@RequestMapping("/remove/{id}")
+	@RequestMapping("/admin/remove/{id}")
 	public String deleteCategory(@PathVariable("id") Long id, Model model) {
 		categoryService.deleteById(id);
 		model.addAttribute("category", new Category());
 		model.addAttribute("categories", this.categoryService.findAll());
-		return "admin/index";
+		return "admin/manageCategory";
 	}
 
 	@RequestMapping(value = "/admin/vendors", method = RequestMethod.GET)
@@ -191,7 +201,11 @@ public class AdminController {
 			v = vendorService.update(v);
 			Person p = createVendorAdmin(v);
 			personService.save(p);
-
+			
+			notifyVendorAdmin(p);
+			//Notification.notifyVendorAdmin(p);
+			
+			
 		} else {
 			vendorService.update(v);
 		}
@@ -267,5 +281,19 @@ public class AdminController {
 		model.addAttribute("webuser", new WebUser());
 		model.addAttribute("webuser", this.webuserService.findAll());
 		return "admin/webusers";
+	}
+	
+	@Async
+	private void notifyVendorAdmin(Person p){
+		String msg="";
+		msg=("Dear "+p.getFirstName()+" ( "+p.getLastName()+" )"+ ", thank you for using our service!\n"
+	    		+ "Please use the link below to activate your account.\n");
+		msg+="<a href='http://localhost:8080/onlinebazzar/validateRegister/"+p.getWebuser().getPasswordRecovery()+">"+"Activate"+"</a>";
+		msg+="Your Account Details are:\nUsername: "+p.getWebuser().getUsername()+"\nPassword: "+p.getWebuser().getPassword();
+		msg+="\nWarm Regards,\nOnline Bazzar Team";
+		mail.sendMail("testmeluck@gmail.com",
+				p.getEmail(),
+				"OnlineBazzar Activatioin", 
+				msg);
 	}
 }

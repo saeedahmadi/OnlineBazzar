@@ -768,8 +768,13 @@
 								
 													</div>
 											</div>
+<<<<<<< HEAD
 										</div> --%>
 										</li>
+=======
+										</div>
+										
+>>>>>>> branch 'dev' of https://github.com/saeedahmadi/OnlineBazzar
 									</c:forEach>
 									
 								</ul>

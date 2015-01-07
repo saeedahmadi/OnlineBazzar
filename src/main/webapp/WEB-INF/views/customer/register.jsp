@@ -67,7 +67,7 @@
 								<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">Phone
 									Number </label>
 								<div class="col-lg-3">
-									<form:input type="number" class="form-control"
+									<form:input type="text" class="form-control"
 										placeholder="phoneNumber" path="phoneNumber" />
 									<form:errors path="phoneNumber" />
 								</div>

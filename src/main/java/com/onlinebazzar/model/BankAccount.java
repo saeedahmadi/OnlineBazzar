@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 import com.onlinebazzar.commons.AccountType;
+import com.onlinebazzar.encryption.EncryptDecryptStringWithDES;
+
 
 @Entity
 public class BankAccount {
@@ -32,10 +34,11 @@ public class BankAccount {
 		this.ownerName = ownerName;
 	}
 	public String getAccountNumber() {
-		return accountNumber;
+		
+		return EncryptDecryptStringWithDES.decrypt(accountNumber);
 	}
 	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
+		this.accountNumber =EncryptDecryptStringWithDES.encrypt(accountNumber);
 	}
 	public AccountType getType() {
 		return type;

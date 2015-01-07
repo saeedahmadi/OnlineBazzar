@@ -121,7 +121,7 @@
 										<ul>
 											<li><a href="<c:url value='/admin/categories' />">Add
 													Category</a></li>
-											<li><a href="<c:url value='/admin/categories' />">Manage
+											<li><a href="<c:url value='/admin/manageCategories' />">Manage
 													Categories</a></li>
 										</ul>
 									</div>

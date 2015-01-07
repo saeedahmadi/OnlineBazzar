@@ -14,6 +14,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import com.onlinebazzar.commons.CardType;
+import com.onlinebazzar.encryption.EncryptDecryptStringWithDES;
+
 
 @Entity
 public class PaymentDetails implements Serializable{
@@ -24,7 +26,7 @@ public class PaymentDetails implements Serializable{
 	
 	private String ownerName;
 	
-	@Size(min = 16, max = 16, message = "Card number should be of 16 digits.")
+	//@Size(min = 16, max = 16, message = "Card number should be of 16 digits.")
 	private String cardNumber;
 	
 	private CardType type;
@@ -49,10 +51,11 @@ public class PaymentDetails implements Serializable{
 		this.ownerName = ownerName;
 	}
 	public String getCardNumber() {
-		return cardNumber;
+		
+		return EncryptDecryptStringWithDES.decrypt(cardNumber); 
 	}
 	public void setCardNumber(String cardNumber) {
-		this.cardNumber = cardNumber;
+		this.cardNumber =EncryptDecryptStringWithDES.encrypt(cardNumber); 
 	}
 	public CardType getType() {
 		return type;
