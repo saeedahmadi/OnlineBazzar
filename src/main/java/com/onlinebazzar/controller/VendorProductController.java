@@ -71,9 +71,10 @@ public class VendorProductController {
 		
 		
 		MultipartFile productImage = product.getProductImage();
-		//String rootDirectory = request.getServletContext().getRealPath("/");
-		String rootDirectory = "C:\\Users\\gizachew\\git"
-				+ "\\OnlineBazzar(Final)\\src\\main\\webapp\\resources\\images\\";
+		String rootDirectory = request.getServletContext().getRealPath("/")+
+				"\\resources\\images\\";
+		//String rootDirectory = System.getProperty("user.dir")+
+			//	"\\OnlineBazzar\\resources\\images\\";
 		System.out.println("im"+rootDirectory);
 		
 	
