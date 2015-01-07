@@ -141,23 +141,33 @@ public class VendorController {
 		return "vendor/vadmin";
 	}
 	
-	@RequestMapping("/vendor/user/edit/{id}")
-	public String editProduct(@PathVariable("id") Long id, Model model) {
+	@RequestMapping(value = "/vendor/user/edit/{id}", method = RequestMethod.GET)
+	public String editUser(@PathVariable("id") Long id, Model model) {
 		
-		Vendor vendor = vendorService.findOne(id);
+		List<Person> vusers = personService.findAllVendorPersons();
+		model.addAttribute("vuser", personService.findOne(id));
+		model.addAttribute("vusers", vusers);
+		return "vendor/vadmin";
+	}
+	
+	
+	@RequestMapping(value = "/vendor/user/remove/{id}", method = RequestMethod.GET)
+	public String deleteUser(@PathVariable("id") Long id, Model model) {
 		
-		model.addAttribute("vendor", vendor);
+		List<Person> vusers = personService.findAllVendorPersons();
+		personService.deleteById(id);
+		model.addAttribute("vuser", personService.findOne(id));
+		model.addAttribute("vusers", vusers);
 		return "vendor/vadmin";
 	}
 
 
-
-	@RequestMapping("/vendor/user/remove/{id}")
+	/*@RequestMapping("/vendor/user/remove/{id}")
 	public String deleteProduct(@PathVariable("id") Long id, Model model) {
 		vendorService.deleteById(id);
 		model.addAttribute("vendor", new Vendor());
 		model.addAttribute("vendors", this.vendorService.findAll());
-		return "redirect:/vendor/vadmin";
-	}
+		return "redirect:/vendor/vusers";
+	}*/
 
 }
