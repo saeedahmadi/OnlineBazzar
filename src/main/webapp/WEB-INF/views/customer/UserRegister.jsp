@@ -36,7 +36,6 @@
 					<div class="panel-heading">Customer Registration</div>
 					<div class="panel-body">
 						<fieldset>
-							<form:errors path="*" cssClass="alert alert-danger" element="div" />
 							<div class="form-group">
 
 								<label for="firstName" class="control-label col-lg-2 col-lg-2">First
@@ -67,7 +66,7 @@
 								<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">Phone
 									Number </label>
 								<div class="col-lg-3">
-									<form:input type="number" class="form-control"
+									<form:input type="text" class="form-control"
 										placeholder="phoneNumber" path="phoneNumber" />
 									<form:errors path="phoneNumber" />
 								</div>
@@ -149,7 +148,7 @@
 									<form:input type="text" class="form-control" placeholder="zip"
 										path="address.zip" />
 
-									<form:errors path="address.zip" />
+									<form:errors path="address.zip" cssClass="text-danger" />
 								</div>
 							</div>
 
@@ -159,25 +158,25 @@
 								<label for="username" class="control-label col-lg-2 col-lg-2">UserName:
 								</label>
 								<div class="col-lg-3">
-						
-				<form:input type="text" class="form-control" placeholder="User Name"
-					path="webuser.username" />
-					<form:errors path="webuser.username" />
-			</div>
-		</div> 
-	
-						<div class="form-group">
+
+									<form:input type="text" class="form-control"
+										placeholder="User Name" path="webuser.username" />
+									<form:errors path="webuser.username" />
+								</div>
+							</div>
+
+							<div class="form-group">
 
 
 								<label for="password" class="control-label col-lg-2 col-lg-2">Password:
 								</label>
 								<div class="col-lg-3">
-						
-				<form:input type="password" class="form-control" placeholder="Password"
-					path="webuser.password" />
-					<form:errors path="webuser.password" />
-			</div>
-		</div> 
+
+									<form:input type="password" class="form-control"
+										placeholder="Password" path="webuser.password" />
+									<form:errors path="webuser.password" cssClass="text-danger" />
+								</div>
+							</div>
 
 							<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">
