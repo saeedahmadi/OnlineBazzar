@@ -31,11 +31,13 @@
 			</div>
 			<div class="form-group">
 				<tr>
-					<form:label path="name">
-						<spring:message text="Name" />
-					</form:label>
+					<c:if test="${!empty vendor.name}">
+						<form:label path="name">
+							<spring:message text="Name" />
+						</form:label>
 
-					<form:input path="name" />
+						<form:input path="name" />
+					</c:if>
 				</tr>
 			</div>
 			<div class="form-group">
@@ -44,9 +46,9 @@
 					<c:if test="${!empty vendor.name}">
 						<input type="submit" value="<spring:message text="Edit Vendor"/>" />
 					</c:if>
-					<c:if test="${empty vendor.name}">
+					<%-- <c:if test="${empty vendor.name}">
 						<input type="submit" value="Add Vendor" />
-					</c:if>
+					</c:if> --%>
 
 				</tr>
 			</div>
