@@ -91,97 +91,9 @@
 				</div>
 				<!-- start header menu -->
 				<ul class="megamenu skyblue">
-					<li><a class="color1" href="index.html">Home</a></li>
-					<li class="grid"><a class="color2" href="#">new arrivals</a>
-						<div class="megapanel">
-							<div class="row">
-								<div class="col1">
-									<div class="h_nav">
-										<h4>shop</h4>
-										<ul>
-											<li><a href="women.html">new arrivals</a></li>
-											<li><a href="women.html">men</a></li>
-											<li><a href="women.html">women</a></li>
-											<li><a href="women.html">accessories</a></li>
-											<li><a href="women.html">kids</a></li>
-											<li><a href="women.html">brands</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="col1">
-									<div class="h_nav">
-										<h4>help</h4>
-										<ul>
-											<li><a href="women.html">trends</a></li>
-											<li><a href="women.html">sale</a></li>
-											<li><a href="women.html">style videos</a></li>
-											<li><a href="women.html">accessories</a></li>
-											<li><a href="women.html">kids</a></li>
-											<li><a href="women.html">style videos</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="col1">
-									<div class="h_nav">
-										<h4>my company</h4>
-										<ul>
-											<li><a href="women.html">trends</a></li>
-											<li><a href="women.html">sale</a></li>
-											<li><a href="women.html">style videos</a></li>
-											<li><a href="women.html">accessories</a></li>
-											<li><a href="women.html">kids</a></li>
-											<li><a href="women.html">style videos</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="col1">
-									<div class="h_nav">
-										<h4>account</h4>
-										<ul>
-											<li><a href="women.html">login</a></li>
-											<li><a href="women.html">create an account</a></li>
-											<li><a href="women.html">create wishlist</a></li>
-											<li><a href="women.html">my shopping bag</a></li>
-											<li><a href="women.html">brands</a></li>
-											<li><a href="women.html">create wishlist</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="col1">
-									<div class="h_nav">
-										<h4>my company</h4>
-										<ul>
-											<li><a href="women.html">trends</a></li>
-											<li><a href="women.html">sale</a></li>
-											<li><a href="women.html">style videos</a></li>
-											<li><a href="women.html">accessories</a></li>
-											<li><a href="women.html">kids</a></li>
-											<li><a href="women.html">style videos</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="col1">
-									<div class="h_nav">
-										<h4>popular</h4>
-										<ul>
-											<li><a href="women.html">new arrivals</a></li>
-											<li><a href="women.html">men</a></li>
-											<li><a href="women.html">women</a></li>
-											<li><a href="women.html">accessories</a></li>
-											<li><a href="women.html">kids</a></li>
-											<li><a href="women.html">style videos</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col2"></div>
-								<div class="col1"></div>
-								<div class="col1"></div>
-								<div class="col1"></div>
-								<div class="col1"></div>
-							</div>
-						</div></li>
+					<li><a class="color1" href="<c:url value='/'/>">Home</a></li>
+					<li class="grid"><a class="color2" href="<c:url value='/newArrivals'/>">new arrivals</a>
+						</li>
 					<li class="active grid"><a class="color4" href="#">women</a>
 						<div class="megapanel">
 							<div class="row">
@@ -753,10 +665,11 @@
 					<div class="single_left">
 						<div class="grid images_3_of_2">
 							<ul id="etalage">
-								<li><a href="optionallink.html"> <img
-										class="etalage_source_image" src="${product.url} "
-										class="img-responsive" alt="" /> <!-- <img class="etalage_thumb_image" src="images/d1.jpg" class="img-responsive" /> -->
-										<!-- <img class="etalage_source_image" src="images/d1.jpg" class="img-responsive" title="" /> -->
+								<li><a href="optionallink.html"> 
+								<img src="<c:url value="/resources/images/${product.url}.jpg"></c:url>" alt="image"  style = "width:100%"/>
+								<%-- <img class="etalage_source_image" src="${product.url} " class="img-responsive" alt="" /> --%> 
+								<!-- <img class="etalage_thumb_image" src="images/d1.jpg" class="img-responsive" /> -->
+								<!-- <img class="etalage_source_image" src="images/d1.jpg" class="img-responsive" title="" /> -->
 								</a></li>
 								<li><img class="etalage_thumb_image" src="images/d2.jpg"
 									class="img-responsive" /> <img class="etalage_source_image"
@@ -783,7 +696,8 @@
 										<div class="col-md-3 grid1">
 											<div class="content_box">
 												<div class="view view-fifth">
-														<img src="${relatedProduct.url}" class="img-responsive" />
+														<%-- <img src="${relatedProduct.url}" class="img-responsive" /> --%>
+														<img src="<c:url value="/resources/images/${relatedProduct.url}.jpg"></c:url>" alt="image"  style = "width:100%"/>
 								
 													</div>
 											</div>
@@ -791,16 +705,6 @@
 										
 									</c:forEach>
 									
-
-
-									<!-- <li><a href="#"><img src="images/w6.jpg"
-											class="img-responsive" alt="" /></a></li>
-									<li><a href="#"><img src="images/w8.jpg"
-											class="img-responsive" alt="" /></a></li>
-									<li><a href="#"><img src="images/w4.jpg"
-											class="img-responsive" alt="" /></a></li>
-									<li><a href="#"><img src="images/w9.jpg"
-											class="img-responsive" alt="" /></a></li> -->
 								</ul>
 							</div>
 							<div class="det_nav1">
