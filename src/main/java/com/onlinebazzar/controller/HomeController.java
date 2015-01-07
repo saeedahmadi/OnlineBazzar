@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.onlinebazzar.commons.Role;
+import com.onlinebazzar.encryption.EncryptDecryptStringWithDES;
 import com.onlinebazzar.model.Category;
 import com.onlinebazzar.model.Customer;
 import com.onlinebazzar.model.Person;
@@ -84,6 +85,9 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String clientHome(HttpServletRequest request,Model model) {
+		
+		System.out.println(EncryptDecryptStringWithDES.encrypt("abc"));
+		System.out.println(EncryptDecryptStringWithDES.decrypt(EncryptDecryptStringWithDES.encrypt("abc")));
 		if(!model.containsAttribute("shoppingCart"))
 			model.addAttribute("shoppingCart", new ShoppingCart());
 		Object principal = SecurityContextHolder.getContext()
