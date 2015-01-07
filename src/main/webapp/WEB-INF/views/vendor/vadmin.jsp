@@ -40,7 +40,7 @@
 <form:form action="${addAction}" commandName="vuser" role="form">
 <div class="form-group">
 
-    <c:if test="${!empty vusers}">
+    <c:if test="${!empty vuser.firstName}">
     <tr>
             <form:label path="id">
                 <spring:message text="ID"/>
@@ -52,7 +52,7 @@
 </div>
 <div class="form-group">    
     <tr>
-    		<c:if test="${!empty vusers}">
+    		<c:if test="${!empty vuser.firstName}">
             <form:label path="firstName">
                 <spring:message text="Name"/>
             </form:label>
@@ -65,7 +65,7 @@
 <div class="form-group">
     
     <tr>
-            <c:if test="${!empty vusers}">
+            <c:if test="${!empty vuser.firstName}">
                 <input type="submit"
                     value="<spring:message text="Edit Vendor User"/>" />
             </c:if>
