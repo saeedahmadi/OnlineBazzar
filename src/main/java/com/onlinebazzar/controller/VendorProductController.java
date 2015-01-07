@@ -115,7 +115,7 @@ public class VendorProductController {
 
 	}
 
-	@RequestMapping("/products/edit/{id}")
+	@RequestMapping("/vendor/products/edit/{id}")
 	public String editProduct(@PathVariable("id") Long id, Model model) {
 		
 		Product product = productService.findOne(id);
@@ -127,7 +127,7 @@ public class VendorProductController {
 
 
 
-	@RequestMapping("/products/remove/{id}")
+	@RequestMapping("/vendor/products/remove/{id}")
 	public String deleteProduct(@PathVariable("id") Long id, Model model) {
 		productService.deleteById(id);
 		model.addAttribute("product", new Product());

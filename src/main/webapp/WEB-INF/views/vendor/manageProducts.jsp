@@ -63,33 +63,43 @@
 </table>
  </form:form> --%>
 
-	<br>
-	<br />
-	<h6>
-		<strong>Product List</strong>
-	</h6>
-	<c:if test="${!empty products}">
+	<div class="container">
+		<div class="main">
+			<div class="row content_top">
+				<div class="col-md-9 content_left">
 
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th width="60">Id</th>
-					<th width="80">Product Name</th>
+					<br> <br />
+					<h1>
+						<strong>Product List</strong>
+					</h1>
+					<c:if test="${!empty products}">
 
-					<th width="60">Edit</th>
-					<th width="60">Delete</th>
-				</tr>
-			</thead>
-			<c:forEach items="${products}" var="product">
-				<tr>
-					<td>${product.id}</td>
-					<td>${product.name}</td>
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th width="60">Id</th>
+									<th width="80">Product Name</th>
 
-					<td><a href="<c:url value='/products/edit/${product.id}' />">Edit</a></td>
-					<td><a href="<c:url value='/products/remove/${product.id}' />">Delete</a></td>
-				</tr>
-			</c:forEach>
-		</table>
-	</c:if>
+									<th width="60">Edit</th>
+									<th width="60">Delete</th>
+								</tr>
+							</thead>
+							<c:forEach items="${products}" var="product">
+								<tr>
+									<td>${product.id}</td>
+									<td>${product.name}</td>
+
+									<td><a
+										href="<c:url value='/vendor/products/edit/${product.id}' />">Edit</a></td>
+									<td><a
+										href="<c:url value='/vendor/products/remove/${product.id}' />">Delete</a></td>
+								</tr>
+							</c:forEach>
+						</table>
+					</c:if>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -37,12 +37,11 @@
 			<form:form role="form" method="post" action="registerGuest"
 				modelAttribute="customer" class="form-horizontal">
 				<fieldset>
-					<form:errors path="*" cssClass="alert alert-danger" element="div" />
 					<div class="form-group">
 
 						<div class="col-lg-3">
 							<form:input type="hidden" class="form-control" path="id" />
-							<form:errors path="id" />
+							<form:errors path="id" cssClass="text-danger"/>
 							<br>
 						</div>
 					</div>
@@ -53,7 +52,7 @@
 							Name: </label>
 						<div class="col-lg-3">
 							<form:input type="text" class="form-control" path="firstName" />
-							<form:errors path="firstName" />
+							<form:errors path="firstName" cssClass="text-danger"/>
 							<br>
 						</div>
 					</div>
@@ -66,7 +65,7 @@
 							Name </label>
 						<div class="col-lg-3">
 							<form:input type="text" class="form-control" path="lastName" />
-							<form:errors path="lastName" />
+							<form:errors path="lastName" cssClass="text-danger"/>
 						</div>
 					</div>
 
@@ -75,8 +74,8 @@
 						<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">Phone
 							Number: </label>
 						<div class="col-lg-3">
-							<form:input type="number" class="form-control" path="phoneNumber" />
-							<form:errors path="phoneNumber" />
+							<form:input type="text" class="form-control" path="phoneNumber" />
+							<form:errors path="phoneNumber" cssClass="text-danger"/>
 						</div>
 					</div>
 					<div class="form-group">
@@ -85,7 +84,7 @@
 							Of Birth: </label>
 						<div class="col-lg-3">
 							<form:input type="date" class="form-control" path="dob" />
-							<form:errors path="dob" />
+							<form:errors path="dob" cssClass="text-danger"/>
 						</div>
 					</div>
 					<div class="form-group">
@@ -95,7 +94,7 @@
 						</label>
 						<div class="col-lg-3">
 							<form:input type="text" class="form-control" path="email" />
-							<form:errors path="email" />
+							<form:errors path="email" cssClass="text-danger"/>
 						</div>
 					</div>
 					<div class="form-group">
@@ -105,7 +104,7 @@
 						<div class="col-lg-3">
 							<form:input type="text" class="form-control"
 								path="address.street" />
-							<form:errors path="address.street" />
+							<form:errors path="address.street" cssClass="text-danger"/>
 						</div>
 					</div>
 
@@ -115,7 +114,7 @@
 						</label>
 						<div class="col-lg-3">
 							<form:input type="text" class="form-control" path="address.city" />
-							<form:errors path="address.city" />
+							<form:errors path="address.city" cssClass="text-danger"/>
 
 						</div>
 					</div>
