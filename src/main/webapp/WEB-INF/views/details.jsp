@@ -3,6 +3,56 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<link href="resources/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary JavaScript plugins) -->
+<script type='text/javascript' src="js/jquery-1.11.1.min.js"></script>
+<!-- Custom Theme files -->
+<link href="resources/css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<!-- start menu -->
+<link href="resources/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<script src="js/menu_jquery.js"></script>
+<link rel="stylesheet" href="resources/css/etalage.css">
+<script src="js/jquery.etalage.min.js"></script>
+<script>
+
+
+			jQuery(document).ready(function($){
+				alert("test");
+				$('#etalage').etalage({
+					thumb_image_width: 300,
+					thumb_image_height: 400,
+					source_image_width: 900,
+					source_image_height: 1200,
+					show_hint: true,
+					click_callback: function(image_anchor, instance_id){
+						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+					}
+				});
+
+			});
+		</script>
+<!-- the jScrollPane script -->
+<script type="text/javascript" src="resources/js/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" id="sourcecode">
+			$(function()
+			{
+				$('.scroll-pane').jScrollPane();
+			});
+		</script> 
+		</head>
+		
 	<div class="top_bg">
 		<div class="container">
 			<div class="header_top">
@@ -664,44 +714,62 @@
 				<div class="col-md-9">
 					<div class="single_left">
 						<div class="grid images_3_of_2">
-							<ul id="etalage">
-								<li><a href="optionallink.html"> 
-								<img src="<c:url value="/resources/images/${product.url}.jpg"></c:url>" alt="image"  style = "width:100%"/>
-								<%-- <img class="etalage_source_image" src="${product.url} " class="img-responsive" alt="" /> --%> 
-								<!-- <img class="etalage_thumb_image" src="images/d1.jpg" class="img-responsive" /> -->
-								<!-- <img class="etalage_source_image" src="images/d1.jpg" class="img-responsive" title="" /> -->
-								</a></li>
-								<li><img class="etalage_thumb_image" src="images/d2.jpg"
-									class="img-responsive" /> <img class="etalage_source_image"
-									src="images/d2.jpg" class="img-responsive" title="" /></li>
-								<li><img class="etalage_thumb_image" src="images/d3.jpg"
-									class="img-responsive" /> <img class="etalage_source_image"
-									src="images/d3.jpg" class="img-responsive" /></li>
-								<li><img class="etalage_thumb_image" src="images/d4.jpg"
-									class="img-responsive" /> <img class="etalage_source_image"
-									src="images/d4.jpg" class="img-responsive" /></li>
+							
+							<ul id="etalage" class="etalage">
+							
+								<li>
+							
+									<img class="etalage_magnifier" src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image"  style = "height:500px;width:100%"/>
+								
+								</li>
+					
+			<%-- 		
+					<li class ="etalage_small_thumbs style = "with:400px; hieght:410px;" >
+					<ul>
+					<li class="etalage_smallthumbs_navtostart">
+					<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 				
+					</li>
+					
+						<li class="etalage_smallthumbs_navtofirst">
+					<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 				
+					</li>
+						<li class="etalage_smallthumbs_navtoactive">
+					<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 				
+					</li>
+						<li class="etalage_smallthumbs_navtoend">
+					<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 				
+					</li>
+					</ul>
+					</li> --%>
+								
 							</ul>
+							
 							<div class="clearfix"></div>
 						</div>
 						<div class="desc1 span_3_of_2">
 							<h3>${product.name}</h3>
-							<p>${product.price}
+							<p>${product.price}$		
 								<a href="#">click for offer</a>
 							</p>
 							<div class="det_nav">
 								<h4>related styles :</h4>
 								<ul>
+									
 									<c:forEach var="realtedProduct" items="${productList}">
-
-										<div class="col-md-3 grid1">
+									<li>
+									<a href="#">
+										<img src="<c:url value="/resources/images/${realtedProduct.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 
+									</a>
+										<%-- <div class="col-md-3 grid1">
 											<div class="content_box">
 												<div class="view view-fifth">
-														<%-- <img src="${relatedProduct.url}" class="img-responsive" /> --%>
-														<img src="<c:url value="/resources/images/${relatedProduct.url}.jpg"></c:url>" alt="image"  style = "width:100%"/>
+													
+											<img src="<c:url value="/resources/images/${realtedProduct.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 
 								
 													</div>
 											</div>
-										</div>
+										</div> --%>
+										</li>
 									</c:forEach>
 									
 								</ul>
@@ -722,7 +790,7 @@
 								</div>
 							</div>
 							<div class="btn_form">
-								<a href="shoppingCart">buy</a>
+								<a href="<c:url value='/product/addtocart/${product.id}' />">Add to cart</a>
 							</div>
 							<a href="#"><span>login to save in wishlist </span></a>
 
@@ -731,68 +799,54 @@
 					</div>
 					<div class="single-bottom1">
 						<h6>Details</h6>
-						<p class="prod-desc">Lorem ipsum dolor sit amet, consectetuer
-							adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-							laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim
-							veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
-							nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
-							iriure dolor in hendrerit in vulputate velit esse molestie
-							consequat, vel illum dolore eu feugiat nulla facilisis at vero
-							eros et accumsan et iusto odio dignissim qui blandit praesent
-							luptatum zzril delenit augue duis dolore te feugait nulla
-							facilisi. Nam liber tempor cum soluta nobis eleifend option</p>
+						<p class="prod-desc">
+						
+						${product.productDetails}
+						
+						</p>
 					</div>
-					<div class="single-bottom2">
+				
+					
+					<div class="single-bottom1">
 						<h6>Related Products</h6>
+			
+			
+			<c:forEach var="realtedProduct" items="${productList}">
 						<div class="product">
 							<div class="product-desc">
 								<div class="product-img">
-									<img src="images/pic1.jpg" class="img-responsive " alt="" />
+								
+								
+								<a href="#">
+										<img src="<c:url value="/resources/images/${realtedProduct.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 
+									</a>
+									
 								</div>
 								<div class="prod1-desc">
-									<h5>
-										<a class="product_link" href="#">Excepteur sint</a>
+								
+													<h5>
+									<a class="product_link" href="#">${realtedProduct.name}</a>
 									</h5>
-									<p class="product_descr">Vivamus ante lorem, eleifend nec
-										interdum non, ullamcorper et arcu. Class aptent taciti
-										sociosqu ad litora torquent per conubia nostra, per inceptos
-										himenaeos.</p>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="product_price">
-								<span class="price-access">$597.51</span>
-								<button class="button1">
-									<span>Add to cart</span>
-								</button>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="product">
-							<div class="product-desc">
-								<div class="product-img">
-									<img src="images/pic2.jpg" class="img-responsive " alt="" />
-								</div>
-								<div class="prod1-desc">
-									<h5>
-										<a class="product_link" href="#">Excepteur sint</a>
-									</h5>
-									<p class="product_descr">Vivamus ante lorem, eleifend nec
-										interdum non, ullamcorper et arcu. Class aptent taciti
-										sociosqu ad litora torquent per conubia nostra, per inceptos
-										himenaeos.</p>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="product_price">
-								<span class="price-access">$597.51</span>
-								<button class="button1">
-									<span>Add to cart</span>
-								</button>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
+								
+									<p class="product_descr"> ${realtedProduct.productDetails} </p>
+											<%-- <img src="<c:url value="/resources/images/${realtedProduct.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/>  --%>
+								
+													</div>
+													<div class="clearfix">
+													</div>
+											</div>
+											
+											
+											<div class="product_price">
+								<span class="price-access">${product.price}$</span>								
+								<button class="button1"><span>Add to cart</span></button>
+		                  </div>
+						 <div class="clearfix">
+						 </div>
+				     </div>
+				     	</c:forEach>
+		   		</div>
+		   		
 				</div>
 				<div class="col-md-3">
 					<div class="w_sidebar">
@@ -840,6 +894,7 @@
 									name="checkbox"><i></i>fashion sari</label>
 							</div>
 						</div>
+						
 						</section>
 						<section class="sky-form">
 						<h4>brand</h4>
@@ -917,6 +972,7 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
+			</div>
 			<!-- end content -->
 		</div>
 	</div>
@@ -962,3 +1018,7 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	</body>
+</html>

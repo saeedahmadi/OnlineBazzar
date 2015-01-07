@@ -796,23 +796,28 @@
 				<c:forEach var="product" items="${productList}">
 
 					<div class="col-md-3 grid1">
-						<div class="content_box">
+					
+								<a href="<c:url value="/details/${product.id}"/>"> 
+							
+					<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image" width="263px" height="340px"  class="img-responsive"/>
+					
+						<%--  <div class="content_box">
 							<a href="<c:url value="/details/${product.id} "/>">
 								<div class="view view-fifth">
 									
-									<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image"  style = "width:100%"/>
 									
-									<%-- <img src="${product.url} " class="img-responsive" alt="" /> --%>
+									
+									<img src="${product.url} " class="img-responsive" alt="" />
 									<div class="mask">
 										<div class="info">Quick View</div>
 									</div>
 								</div>
 							</a>
-						</div>
+						</div>  --%>
 
 						<div class="look">
 							<h4>
-								<a href="<c:url value="/details/${product.id}"/>"> ${product.name} </a>
+							get scarvs
 							</h4>
 							<p>read more</p>
 						</div>

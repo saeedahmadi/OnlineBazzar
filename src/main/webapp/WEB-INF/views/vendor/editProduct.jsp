@@ -9,7 +9,7 @@
 <title>Customer Registration</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
+<link href="resources/css/bootstrap.min.css" rel="stylesheet"
 	type="text/css" />
 <!-- <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
   -->
@@ -38,12 +38,16 @@
 					<div class="panel-body">
 						<fieldset>
 							<form:errors path="*" cssClass="alert alert-danger" element="div" />
+							
 							<div class="form-group">
 								<div class="col-lg-3">
 									<form:input type="hidden" class="form-control" path="id" />
 									<form:errors path="id" />
 									<br>
 								</div>
+								</div>
+								
+								<div class="form-group" spellcheck="true">
 								<label for="name" class="control-label col-lg-2 col-lg-2">Name:
 								</label>
 								<div class="col-lg-3">
@@ -122,7 +126,15 @@
 								</div>
 							</div>
 
-
+							<div class="form-group">
+								<label class="control-label col-lg-2" for="productDetails">
+									ProductDetails: </label>
+								<div class="col-lg-10">
+									<form:textarea id="productDetails" path="productDetails" rows="5" cols="30" class="form:input-large" />
+									
+										
+								</div>
+								</div>
 
 							<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">

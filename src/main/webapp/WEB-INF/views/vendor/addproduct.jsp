@@ -122,6 +122,24 @@
 										class="form:input-large" />
 								</div>
 							</div>
+							
+								<div class="form-group">
+								<label class="control-label col-lg-2" for="productDetails">
+									ProductDetails: </label>
+								<div class="col-lg-10">
+									<form:textarea id="productDetails" path="productDetails" rows="5" cols="30" class="form:input-large" />
+									
+										
+								</div>
+								</div>
+								
+								<%-- <div class="input-group">
+								
+    <form:textarea class="form-control custom-control" rows="3" style="resize:none"></form:textarea>     
+    <span class="input-group-addon btn btn-primary">ProductDetails:</span>
+</div> --%>
+							
+							
 
 
 

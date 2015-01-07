@@ -1,5 +1,6 @@
 package com.onlinebazzar.controller;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -142,7 +143,17 @@ public class HomeController {
 		Product product = productService.findOne(id);
 		model.addAttribute("product", product);
 		Category category = categoryService.findOne(product.getCategory().getId());
+		
+		
 		List<Product> searchResult = category.getProducts();
+		
+		Iterator<Product> it = searchResult.iterator();
+		
+		while (it.hasNext()) {
+			Product p = (Product) it.next();
+			if(p.getId() == id)
+				it.remove();
+		}
 		model.addAttribute("productList",searchResult);
  		return "details";
 	}

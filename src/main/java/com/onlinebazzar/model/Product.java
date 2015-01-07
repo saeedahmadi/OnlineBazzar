@@ -26,6 +26,13 @@ public class Product  {
 	private String name;
 	private double price;
 	private String descritpion;
+	private String productDetails;
+	public String getProductDetails() {
+		return productDetails;
+	}
+	public void setProductDetails(String productDetails) {
+		this.productDetails = productDetails;
+	}
 	private String url;
 	private double bazzarBenefit;
 	@ManyToOne(cascade=CascadeType.ALL)
