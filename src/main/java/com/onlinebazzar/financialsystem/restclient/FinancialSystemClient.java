@@ -25,7 +25,8 @@ public static final String SERVER_URI = "http://10.10.11.128:8080/SpringRestExam
 	}
 	
 	 @Async
-	 private static void testPostTransaction(List<Transaction> transactions) {
+	public
+	 static void testPostTransaction(List<Transaction> transactions) {
 	        RestTemplate restTemplate = new RestTemplate();
 	        //we can't get List<Employee> because JSON convertor doesn't know the type of
 	        //object in the list and hence convert it to default JSON object type LinkedHashMap
