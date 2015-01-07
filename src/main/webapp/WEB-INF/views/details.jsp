@@ -753,10 +753,11 @@
 					<div class="single_left">
 						<div class="grid images_3_of_2">
 							<ul id="etalage">
-								<li><a href="optionallink.html"> <img
-										class="etalage_source_image" src="${product.url} "
-										class="img-responsive" alt="" /> <!-- <img class="etalage_thumb_image" src="images/d1.jpg" class="img-responsive" /> -->
-										<!-- <img class="etalage_source_image" src="images/d1.jpg" class="img-responsive" title="" /> -->
+								<li><a href="optionallink.html"> 
+								<img src="<c:url value="/resources/images/${product.url}.jpg"></c:url>" alt="image"  style = "width:100%"/>
+								<%-- <img class="etalage_source_image" src="${product.url} " class="img-responsive" alt="" /> --%> 
+								<!-- <img class="etalage_thumb_image" src="images/d1.jpg" class="img-responsive" /> -->
+								<!-- <img class="etalage_source_image" src="images/d1.jpg" class="img-responsive" title="" /> -->
 								</a></li>
 								<li><img class="etalage_thumb_image" src="images/d2.jpg"
 									class="img-responsive" /> <img class="etalage_source_image"
@@ -783,23 +784,14 @@
 										<div class="col-md-3 grid1">
 											<div class="content_box">
 												<div class="view view-fifth">
-														<img src="${relatedProduct.url}" class="img-responsive" />
+														<%-- <img src="${relatedProduct.url}" class="img-responsive" /> --%>
+														<img src="<c:url value="/resources/images/${relatedProduct.url}.jpg"></c:url>" alt="image"  style = "width:100%"/>
 								
 													</div>
 											</div>
 										</div>
 									</c:forEach>
 									
-
-
-									<!-- <li><a href="#"><img src="images/w6.jpg"
-											class="img-responsive" alt="" /></a></li>
-									<li><a href="#"><img src="images/w8.jpg"
-											class="img-responsive" alt="" /></a></li>
-									<li><a href="#"><img src="images/w4.jpg"
-											class="img-responsive" alt="" /></a></li>
-									<li><a href="#"><img src="images/w9.jpg"
-											class="img-responsive" alt="" /></a></li> -->
 								</ul>
 							</div>
 							<div class="det_nav1">
