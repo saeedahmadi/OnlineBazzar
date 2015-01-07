@@ -768,13 +768,8 @@
 								
 													</div>
 											</div>
-<<<<<<< HEAD
 										</div> --%>
 										</li>
-=======
-										</div>
-										
->>>>>>> branch 'dev' of https://github.com/saeedahmadi/OnlineBazzar
 									</c:forEach>
 									
 								</ul>
@@ -795,7 +790,7 @@
 								</div>
 							</div>
 							<div class="btn_form">
-								<a href="<c:url value='/product/addtocart/${product.id}' />">Add to cart</a>
+								<a href="<c:url value='/product/addtocart/${product.id}' />">buy</a>
 							</div>
 							<a href="#"><span>login to save in wishlist </span></a>
 
