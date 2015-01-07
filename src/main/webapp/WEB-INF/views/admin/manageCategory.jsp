@@ -20,7 +20,7 @@
   </c:forEach>
   
 <h1>
-    Add a Category
+    Manage a Category
 </h1>
  
 <c:url var="addAction" value="/category/add" ></c:url>
@@ -39,11 +39,13 @@
 </div>
 <div class="form-group">    
     <tr>
+    		<c:if test="${!empty category.name}">
             <form:label path="name">
                 <spring:message text="Name"/>
             </form:label>
 
             <form:input path="name" />
+            </c:if>
     </tr>
 </div>
     
@@ -54,16 +56,16 @@
                 <input type="submit"
                     value="<spring:message text="Edit Category"/>" />
             </c:if>
-            <c:if test="${empty category.name}">
+            <%-- <c:if test="${empty category.name}">
                 <input type="submit"
                     value="Add Category" />
-            </c:if>
+            </c:if> --%>
     </tr>
 </div>
 </form:form>
 
 <br>
-<%-- <c:if test="${!empty categories}">
+<c:if test="${!empty categories}">
 <h3>Category List</h3>
     <table class="table table-striped">
     <tr>
@@ -76,12 +78,12 @@
         <tr>
             <td>${category.id}</td>
             <td>${category.name}</td>
-            <td><a href="<c:url value='/edit/${category.id}' />" >Edit</a></td>
-            <td><a href="<c:url value='/remove/${category.id}' />" >Delete</a></td>
+            <td><a href="<c:url value='/admin/edit/${category.id}' />" >Edit</a></td>
+            <td><a href="<c:url value='/admin/remove/${category.id}' />" >Delete</a></td>
         </tr>
     </c:forEach>
     </table>
-</c:if> --%>
+</c:if>
 </div>
 </body>
 </html>

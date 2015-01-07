@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container">
+<%-- <div class="container">
 <br>
 <h3>Vendor User List</h3>
 <c:if test="${!empty vusers}">
@@ -30,6 +30,92 @@
     </c:forEach>
     </table>
 </c:if>
+</div> --%>
+
+
+<div class="container">
+		<div class="main">
+
+<c:url var="addAction" value="/vendor/user/add" ></c:url>
+<form:form action="${addAction}" commandName="vuser" role="form">
+<div class="form-group">
+
+    <c:if test="${!empty vusers}">
+    <tr>
+            <form:label path="id">
+                <spring:message text="ID"/>
+            </form:label>
+            <form:input path="id" readonly="true" size="8"  disabled="true" />
+            <form:hidden path="id" />
+    </tr>
+    </c:if>
 </div>
+<div class="form-group">    
+    <tr>
+    		<c:if test="${!empty vusers}">
+            <form:label path="firstName">
+                <spring:message text="Name"/>
+            </form:label>
+
+            <form:input path="firstName" />
+            </c:if>
+    </tr>
+</div>
+    
+<div class="form-group">
+    
+    <tr>
+            <c:if test="${!empty vusers}">
+                <input type="submit"
+                    value="<spring:message text="Edit Vendor User"/>" />
+            </c:if>
+            <%-- <c:if test="${empty category.name}">
+                <input type="submit"
+                    value="Add Category" />
+            </c:if> --%>
+    </tr>
+</div>
+</form:form>
+</div>
+</div>
+
+<div class="container">
+		<div class="main">
+			<div class="row content_top">
+				<div class="col-md-9 content_left">
+
+					<br> <br />
+					<h1>Vendor User List</h1>
+					<c:if test="${!empty vusers}">
+
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th width="60">Id</th>
+									<th width="120">User Name</th>
+        							<th width="60">Status</th>
+
+									<th width="60">Edit</th>
+									<th width="60">Delete</th>
+								</tr>
+							</thead>
+							<c:forEach items="${vusers}" var="vuser">
+								<tr>
+									<td>${vuser.webuser.id}</td>
+									<td>${vuser.webuser.username}</td>
+									<td><a href="<c:url value='/vendor/enableWebuser/${vuser.webuser.id}' />" >Enable</a></td>
+
+									<td><a
+										href="<c:url value='/vendor/user/edit/${vuser.webuser.id}' />">Edit</a></td>
+									<td><a
+										href="<c:url value='/vendor/user/remove/${vuser.webuser.id}' />">Delete</a></td>
+								</tr>
+							</c:forEach>
+						</table>
+					</c:if>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
