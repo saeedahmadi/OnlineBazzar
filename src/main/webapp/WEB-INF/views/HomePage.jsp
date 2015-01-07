@@ -799,7 +799,10 @@
 						<div class="content_box">
 							<a href="<c:url value="/details/${product.id} "/>">
 								<div class="view view-fifth">
-									<img src="${product.url} " class="img-responsive" alt="" />
+									
+									<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image"  style = "width:100%"/>
+									
+									<%-- <img src="${product.url} " class="img-responsive" alt="" /> --%>
 									<div class="mask">
 										<div class="info">Quick View</div>
 									</div>

@@ -68,14 +68,25 @@ public class VendorProductController {
 			return "vendor/addproduct";
 		}
 
+		
+		
 		MultipartFile productImage = product.getProductImage();
+		String rootDirectory = request.getServletContext().getRealPath("/");
+		System.out.println("im"+rootDirectory);
+		
+	
+		if (productImage != null && !productImage.isEmpty()) {
+			try {
+				productImage.transferTo(new File(rootDirectory
+						+ "resources/images/" + product.getName() + ".jpg"));
+		/*MultipartFile productImage = product.getProductImage();
 		String rootDirectory = request.getSession().getServletContext()
 				.getRealPath("/");
 
 		if (productImage != null && !productImage.isEmpty()) {
 			try {
 				productImage.transferTo(new File(rootDirectory
-						+ "resources\\images\\" + product.getName() + ".png"));
+						+ "resources\\images\\" + product.getName() + ".png"));*/
 
 			} catch (Exception e) {
 				throw new RuntimeException("Product Image saving failed", e);
