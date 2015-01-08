@@ -132,9 +132,9 @@
 			<!-- start content -->
 			<div class="col-md-9 w_content">
 				<div class="women">
-					<a href="#"><h4>
-							Enthecwear - <span>4449 itemms</span>
-						</h4></a>
+					<a href="#">
+							Search Result- <span> number items</span>
+						</h4>
 					<ul class="w_nav">
 						<li>Sort :</li>
 						<li><a class="active" href="#">popular</a></li> |
@@ -145,231 +145,45 @@
 					</ul>
 					<div class="clearfix"></div>
 				</div>
+				
+				
+				
 				<!-- grids_of_4 -->
+				<c:forEach var="product" items="${productList}">
 				<div class="grids_of_4">
-					<c:forEach var="product" items="${productList}">
+					
+					
 						<div class="grid1_of_4">
 
 
 
 							<div class="content_box">
-								<a href="details.html">
+								<a href="#">
 									<div class="view view-fifth">
-										<img src="${product.url} " class="img-responsive" alt="" />
+										
+										
+							<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image" width="263px" height="340px"  class="img-responsive"/>
+										
 										<div class="mask">
 											<div class="info">Quick View</div>
 										</div>
 								</a>
 							</div>
 							<h4>
-								<a href="details.html"> ${product.name} </a>
+								<a href="#"> ${product.name} </a>
 							</h4>
-							<p>It is a long established fact that a reader</p>
-							${product.price} <a
+							<p>${product.productDetails}</p>
+							${product.price}$ <a
 								href="<c:url value='/product/addtocart/${product.id}' />">Add
 								TO Cart</a>
+					
+					
 						</div>
-					</c:forEach>
 				</div>
-				<div class="grid1_of_4">
-					<div class="content_box">
-						<a href="details.html">
-							<div class="view view-fifth">
-								<img src="images/w2.jpg" class="img-responsive" alt="" />
-								<div class="mask">
-									<div class="info">Quick View</div>
-								</div>
-						</a>
-					</div>
-					<h4>
-						<a href="details.html"> Duis autem</a>
-					</h4>
-					<p>It is a long established fact that a reader</p>
-					Rs. 499
-				</div>
-			</div>
-			<div class="grid1_of_4">
-				<div class="content_box">
-					<a href="details.html">
-						<div class="view view-fifth">
-							<img src="images/w3.jpg" class="img-responsive" alt="" />
-							<div class="mask">
-								<div class="info">Quick View</div>
-							</div>
-					</a>
-				</div>
-				<h4>
-					<a href="details.html"> Duis autem</a>
-				</h4>
-				<p>It is a long established fact that a reader</p>
-				Rs. 499
-			</div>
-		</div>
-		<div class="grid1_of_4">
-			<div class="content_box">
-				<a href="details.html">
-					<div class="view view-fifth">
-						<img src="images/w4.jpg" class="img-responsive" alt="" />
-						<div class="mask">
-							<div class="info">Quick View</div>
-						</div>
-				</a>
-			</div>
-			<h4>
-				<a href="details.html"> Duis autem</a>
-			</h4>
-			<p>It is a long established fact that a reader</p>
-			Rs. 499
-		</div>
-	</div>
-	<div class="clearfix"></div>
-	</div>
-
-
-	<div class="grids_of_4">
-		<div class="grid1_of_4">
-			<div class="content_box">
-				<a href="details.html">
-					<div class="view view-fifth">
-						<img src="images/w5.jpg" class="img-responsive" alt="" />
-						<div class="mask">
-							<div class="info">Quick View</div>
-						</div>
-				</a>
-			</div>
-			<h4>
-				<a href="details.html"> Duis autem</a>
-			</h4>
-			<p>It is a long established fact that a reader</p>
-			Rs. 499
-		</div>
-	</div>
-	<div class="grid1_of_4">
-		<div class="content_box">
-			<a href="details.html">
-				<div class="view view-fifth">
-					<img src="images/w6.jpg" class="img-responsive" alt="" />
-					<div class="mask">
-						<div class="info">Quick View</div>
-					</div>
-			</a>
-		</div>
-		<h4>
-			<a href="details.html"> Duis autem</a>
-		</h4>
-		<p>It is a long established fact that a reader</p>
-		Rs. 499
-	</div>
-	</div>
-	<div class="grid1_of_4">
-		<div class="content_box">
-			<a href="details.html">
-				<div class="view view-fifth">
-					<img src="images/w7.jpg" class="img-responsive" alt="" />
-					<div class="mask">
-						<div class="info">Quick View</div>
-					</div>
-			</a>
-		</div>
-		<h4>
-			<a href="details.html"> Duis autem</a>
-		</h4>
-		<p>It is a long established fact that a reader</p>
-		Rs. 499
-	</div>
-	</div>
-	<div class="grid1_of_4">
-		<div class="content_box">
-			<a href="details.html">
-				<div class="view view-fifth">
-					<img src="images/w8.jpg" class="img-responsive" alt="" />
-					<div class="mask">
-						<div class="info">Quick View</div>
-					</div>
-			</a>
-		</div>
-		<h4>
-			<a href="details.html"> Duis autem</a>
-		</h4>
-		<p>It is a long established fact that a reader</p>
-		Rs. 499
-	</div>
-	</div>
-	<div class="clearfix"></div>
-	</div>
-
-
-	<div class="grids_of_4">
-		<div class="grid1_of_4">
-			<div class="content_box">
-				<a href="details.html">
-					<div class="view view-fifth">
-						<img src="images/w9.jpg" class="img-responsive" alt="" />
-						<div class="mask">
-							<div class="info">Quick View</div>
-						</div>
-				</a>
-			</div>
-			<h4>
-				<a href="details.html"> Duis autem</a>
-			</h4>
-			<p>It is a long established fact that a reader</p>
-			Rs. 499
-		</div>
-	</div>
-	<div class="grid1_of_4">
-		<div class="content_box">
-			<a href="details.html">
-				<div class="view view-fifth">
-					<img src="images/w10.jpg" class="img-responsive" alt="" />
-					<div class="mask">
-						<div class="info">Quick View</div>
-					</div>
-			</a>
-		</div>
-		<h4>
-			<a href="details.html"> Duis autem</a>
-		</h4>
-		<p>It is a long established fact that a reader</p>
-		Rs. 499
-	</div>
-	</div>
-	<div class="grid1_of_4">
-		<div class="content_box">
-			<a href="details.html">
-				<div class="view view-fifth">
-					<img src="images/w11.jpg" class="img-responsive" alt="" />
-					<div class="mask">
-						<div class="info">Quick View</div>
-					</div>
-			</a>
-		</div>
-		<h4>
-			<a href="details.html"> Duis autem</a>
-		</h4>
-		<p>It is a long established fact that a reader</p>
-		Rs. 499
-	</div>
-	</div>
-	<div class="grid1_of_4">
-		<div class="content_box">
-			<a href="details.html">
-				<div class="view view-fifth">
-					<img src="images/w12.jpg" class="img-responsive" alt="" />
-					<div class="mask">
-						<div class="info">Quick View</div>
-					</div>
-			</a>
-		</div>
-		<h4>
-			<a href="details.html"> Duis autem</a>
-		</h4>
-		<p>It is a long established fact that a reader</p>
-		Rs. 499
-	</div>
-	</div>
-	<div class="clearfix"></div>
-	</div>
+				
+				</c:forEach>
+				
+		
 	<!-- end grids_of_4 -->
 
 

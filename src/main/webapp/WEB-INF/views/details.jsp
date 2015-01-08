@@ -15,7 +15,7 @@
 							
 								<li>
 							
-									<img class="etalage_magnifier" src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image"  style = "height:500px;width:100%"/>
+									<img class="etalage_magnifier" src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image"  style = "width:100%"/>
 								
 								</li>
 					

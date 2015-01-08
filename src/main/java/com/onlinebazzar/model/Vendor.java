@@ -1,5 +1,6 @@
 package com.onlinebazzar.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -33,6 +34,7 @@ public class Vendor {
 
 	public Vendor() {
 		this.bazzarProfit = 10;
+		categories        = new ArrayList<Category>();
 	}
 
 	

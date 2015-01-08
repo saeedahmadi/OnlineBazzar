@@ -6,6 +6,6 @@ import com.onlinebazzar.model.Person;
 
 public interface PersonService extends GenericService<Person>{
 	
-	public List<Person> findAllVendorPersons();
+	public List<Person> findAllVendorPersons(Long long1);
 
 }

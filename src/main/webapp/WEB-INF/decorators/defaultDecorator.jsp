@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
-<%@ page session="false" %>
+
 <html>
   <head>
     <title>Online Bazzar</title>
@@ -121,7 +121,7 @@
 	<div class="container">
 		<div class="header">
 			<div class="logo">
-				<a href="HomePage.jsp"><img src="resources/images/logo.png"
+				<a href="<c:url value='/'/>"><img src="resources/images/logo.png"
 					alt="" /> </a>
 			</div>
 			<!-- start header_right -->
@@ -167,88 +167,31 @@
 					href="<c:url value='/newArrivals'/>">New Arrivals</a></li>
 				
 				
-				
 				<li><a class="color7" href="#">brands</a>
 					<div class="megapanel">
 						<div class="row">
-							<div class="col1">
+				<c:forEach var="vendor" items="${vendorList}">
+				<div class="col1">
 								<div class="h_nav">
-									<h4>shop</h4>
+								<h4>
+								<a href="<c:url value='/product/vendorCatagorie/${product.id}' />">${vendor.name}</a>
+							
+									</h4>
 									<ul>
-										<li><a href="women.html">new arrivals</a></li>
-										<li><a href="women.html">men</a></li>
-										<li><a href="women.html">women</a></li>
-										<li><a href="women.html">accessories</a></li>
-										<li><a href="women.html">kids</a></li>
-										<li><a href="women.html">brands</a></li>
+									
+									
+																	
+										
+										<c:forEach var="catagories" items="${vendor.categories}">
+										
+										<li><a href="<c:url value='/product/vendorCategory/${vendor.id}/${catagories.id}' />">${catagories.name}</a></li>
+										</c:forEach>
+										
 									</ul>
 								</div>
 							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<h4>help</h4>
-									<ul>
-										<li><a href="women.html">trends</a></li>
-										<li><a href="women.html">sale</a></li>
-										<li><a href="women.html">style videos</a></li>
-										<li><a href="women.html">accessories</a></li>
-										<li><a href="women.html">kids</a></li>
-										<li><a href="women.html">style videos</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<h4>my company</h4>
-									<ul>
-										<li><a href="women.html">trends</a></li>
-										<li><a href="women.html">sale</a></li>
-										<li><a href="women.html">style videos</a></li>
-										<li><a href="women.html">accessories</a></li>
-										<li><a href="women.html">kids</a></li>
-										<li><a href="women.html">style videos</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<h4>account</h4>
-									<ul>
-										<li><a href="women.html">login</a></li>
-										<li><a href="women.html">create an account</a></li>
-										<li><a href="women.html">create wishlist</a></li>
-										<li><a href="women.html">my shopping bag</a></li>
-										<li><a href="women.html">brands</a></li>
-										<li><a href="women.html">create wishlist</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<h4>my company</h4>
-									<ul>
-										<li><a href="women.html">trends</a></li>
-										<li><a href="women.html">sale</a></li>
-										<li><a href="women.html">style videos</a></li>
-										<li><a href="women.html">accessories</a></li>
-										<li><a href="women.html">kids</a></li>
-										<li><a href="women.html">style videos</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<h4>popular</h4>
-									<ul>
-										<li><a href="women.html">new arrivals</a></li>
-										<li><a href="women.html">men</a></li>
-										<li><a href="women.html">women</a></li>
-										<li><a href="women.html">accessories</a></li>
-										<li><a href="women.html">kids</a></li>
-										<li><a href="women.html">style videos</a></li>
-									</ul>
-								</div>
-							</div>
+				
+					</c:forEach>
 						</div>
 						<div class="row">
 							<div class="col2"></div>
@@ -422,12 +365,12 @@
 		<div class="container">
 			<div class="copy">
 				<p class="link">
-					&copy; All rights reserved | Design by&nbsp; <a
-						href="http://w3layouts.com/"> W3Layouts</a>
+					&copy; Designed by&nbsp; <a href="http://w3layouts.com/">
+						OnlineBazzar 2015 </a>
 				</p>
 			</div>
 		</div>
 	</div>
-    
-  </body>
+
+</body>
 </html>

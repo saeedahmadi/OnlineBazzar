@@ -57,7 +57,7 @@
 								<label for="webuser.password"
 									class="control-label col-lg-2 col-lg-2">Password: </label>
 								<div class="col-lg-3">
-									<form:input type="text" class="form-control"
+									<form:input type="password" class="form-control"
 										placeholder="webuser.password" path="webuser.password" />
 									<form:errors path="webuser.password" />
 									<br>
@@ -78,7 +78,7 @@
 							</div>
 							<div class="form-group">
 
-								<label for="firstName" class="control-label col-lg-2 col-lg-2">firstName:
+								<label for="firstName" class="control-label col-lg-2 col-lg-2">First Name:
 								</label>
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control"
@@ -92,7 +92,7 @@
 							<div class="form-group" spellcheck="true">
 
 
-								<label for="lastName" class="control-label col-lg-2 col-lg-2">lastName:
+								<label for="lastName" class="control-label col-lg-2 col-lg-2">Last Name:
 								</label>
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control"
@@ -103,7 +103,7 @@
 
 							<div class="form-group">
 
-								<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">phoneNumber:
+								<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">Phone Number:
 								</label>
 								<div class="col-lg-3">
 									<form:input type="number" class="form-control"

@@ -63,9 +63,10 @@ public class VendorController {
 	}
 
 	@RequestMapping(value = "/vendor/vusers", method = RequestMethod.GET)
-	public String getVendorUsers(Model model) {
-
-		List<Person> vusers = personService.findAllVendorPersons();
+	public String getVendorUsers(Model model, HttpServletRequest request) {
+		WebUser webuser = (WebUser) request.getSession().getAttribute("user");
+		Person person = webuser.getPerson();
+		List<Person> vusers = personService.findAllVendorPersons(person.getVendor().getId());
 		model.addAttribute("vuser", new Person());
 		model.addAttribute("vusers", vusers);
 		return "vendor/vadmin";
@@ -115,7 +116,7 @@ public class VendorController {
 	}
 
 	@RequestMapping(value = "/vendor/user/add", method = RequestMethod.POST)
-	public String addVendorUser(@ModelAttribute("vendor") @Valid Person p,
+	public String addVendorUser(@ModelAttribute("vendor") @Valid Person p,HttpServletRequest request,
 			BindingResult result) {
 
 		if (result.hasErrors()) {
@@ -123,28 +124,35 @@ public class VendorController {
 		}
 
 		if (p.getId() == null) {
-
-			personService.save(p);
+			WebUser webuser = (WebUser) request.getSession().getAttribute("user");
+			Person person = webuser.getPerson();
+			p.setVendor(person.getVendor());
+			personService.update(p);
+			
 
 		} else {
 			personService.update(p);
 		}
-		return "vendor/vadmin";
+		return "thankYou";
 	}
 
 	@RequestMapping(value = "/vendor/enableWebuser/{id}", method = RequestMethod.GET)
-	public String enableWebUser(@PathVariable("id") Long id, Model model) {
+	public String enableWebUser(@PathVariable("id") Long id, HttpServletRequest request, Model model) {
 		webuserService.enable(id);
-		List<Person> vusers = personService.findAllVendorPersons();
+		WebUser webuser = (WebUser) request.getSession().getAttribute("user");
+		Person person = webuser.getPerson();
+		List<Person> vusers = personService.findAllVendorPersons(person.getVendor().getId());
+		
 		model.addAttribute("vuser", new Person());
 		model.addAttribute("vusers", vusers);
-		return "vendor/vadmin";
+		return "redirect:/vendor/vadmin";
 	}
 	
 	@RequestMapping(value = "/vendor/user/edit/{id}", method = RequestMethod.GET)
-	public String editUser(@PathVariable("id") Long id, Model model) {
-		
-		List<Person> vusers = personService.findAllVendorPersons();
+	public String editUser(@PathVariable("id") Long id, HttpServletRequest request, Model model) {
+		WebUser webuser = (WebUser) request.getSession().getAttribute("user");
+		Person person = webuser.getPerson();
+		List<Person> vusers = personService.findAllVendorPersons(person.getVendor().getId());
 		model.addAttribute("vuser", personService.findOne(id));
 		model.addAttribute("vusers", vusers);
 		return "vendor/vadmin";
@@ -152,13 +160,15 @@ public class VendorController {
 	
 	
 	@RequestMapping(value = "/vendor/user/remove/{id}", method = RequestMethod.GET)
-	public String deleteUser(@PathVariable("id") Long id, Model model) {
+	public String deleteUser(@PathVariable("id") Long id, HttpServletRequest request, Model model) {
 		
-		List<Person> vusers = personService.findAllVendorPersons();
 		personService.deleteById(id);
-		model.addAttribute("vuser", personService.findOne(id));
+		WebUser webuser = (WebUser) request.getSession().getAttribute("user");
+		Person person = webuser.getPerson();
+		List<Person> vusers = personService.findAllVendorPersons(person.getVendor().getId());
+		//model.addAttribute("vuser", personService.findOne(id));
 		model.addAttribute("vusers", vusers);
-		return "vendor/vadmin";
+		return "vendor/vusers";
 	}
 
 

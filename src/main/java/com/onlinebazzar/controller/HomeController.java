@@ -122,7 +122,6 @@ public class HomeController {
 		model.addAttribute("productList", searchResult);
 
 		List<Vendor> vendorList = vendorService.findAll();
-		System.out.println("::::::::::::::" + vendorList.size());
 		model.addAttribute("vendorList", vendorList);
 		
 		List<Category> categoryList = categoryService.findAll();
