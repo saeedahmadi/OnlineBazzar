@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -17,7 +18,7 @@ public class Customer extends Person implements Serializable{
 	
 	@OneToOne
 	private ShoppingCart shoppingCart;
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name="customer_id")
 	private List<PaymentDetails> paymentDetails;
 	@OneToMany
