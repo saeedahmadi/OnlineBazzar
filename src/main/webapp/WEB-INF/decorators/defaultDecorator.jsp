@@ -96,33 +96,9 @@
 							<li><a href="#">Recently viewed</a></li>|
 						<li><a href="contact.html">Contact</a></li>|
 						<li><a href="login">Signin</a></li>|
-						<li><a href="shoppingCart">${fn:length(shoppingCart.items)}<i
+						<li><a href="shoppingCart">Cart(${fn:length(shoppingCart.items)})<i
 									class="fa fa-shopping-cart"></i></a></li>|
-						<li><a href="/UserRegisteration">Register</a></li>|
-						<li class="login">
-
-								<div id="loginContainer">
-									<a href="#" id="loginButton"><span>Login</span></a>
-									<div id="loginBox">
-										<form id="loginForm">
-											<fieldset id="body">
-												<fieldset>
-													<label for="email">Email Address</label> <input type="text"
-														name="email" id="email">
-												</fieldset>
-												<fieldset>
-													<label for="password">Password</label> <input
-														type="password" name="password" id="password">
-												</fieldset>
-												<input type="submit" id="login" value="Sign in"> <label
-													for="checkbox"><input type="checkbox" id="checkbox">
-													<i>Remember me</i></label>
-											</fieldset>
-											<span><a href="#">Forgot your password?</a></span>
-										</form>
-									</div>
-								</div>
-							</li>
+						<li><a href="/onlinebazzar/UserRegisteration">Register</a></li>
 						</sec:authorize>
 
 					</ul>
