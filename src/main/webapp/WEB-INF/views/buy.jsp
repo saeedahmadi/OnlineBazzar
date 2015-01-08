@@ -24,12 +24,13 @@
 					
 						<div class="shoping1_of_1">
 							
-							
+							<a href="<c:url value="/details/${lineitem.product.id}"/>">
 							<img src="<c:url value="/resources/images/${lineitem.product.name}.jpg" ></c:url>" class="img-responsive" alt=""/> 
+						</a>
 						</div>
 						<div class="shoping1_of_2">
 							<h4>
-								<a href="#">${lineitem.product.name }</a>
+									<a href="<c:url value="/details/${lineitem.product.id}"/>">${lineitem.product.name }</a>
 							</h4>
 							<span>size <b>xl</b>&nbsp;&nbsp; QTY<b>&nbsp;&nbsp;
 									${lineitem.quantity }</b> 
