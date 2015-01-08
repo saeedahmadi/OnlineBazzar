@@ -127,7 +127,7 @@ public class VendorController {
 			WebUser webuser = (WebUser) request.getSession().getAttribute("user");
 			Person person = webuser.getPerson();
 			p.setVendor(person.getVendor());
-			personService.save(p);
+			personService.update(p);
 			
 
 		} else {

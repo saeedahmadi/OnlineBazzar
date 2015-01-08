@@ -52,7 +52,7 @@
 
 					<div class="form-group">
 
-						<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">phoneNumber:
+						<label for="phoneNumber" class="control-label col-lg-2 col-lg-2">Phone Number:
 						</label>
 						<div class="col-lg-3">
 							<form:input type="number" class="form-control"
