@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
-
+<%@ page session="false" %>
 <html>
 <head>
 <title>Online Bazzar</title>
@@ -263,7 +263,7 @@
 			<div class="span_of_2">
 				<div class="span1_of_2">
 					<h5>
-						need help? <a href="#">contact us <span> ></span>
+							need help? <a href="#">contact us <span> ></span>
 						</a>
 					</h5>
 					<p>(or) Call us: +91-70-45022088</p>
@@ -289,12 +289,12 @@
 		<div class="container">
 			<div class="copy">
 				<p class="link">
-					&copy; Designed by&nbsp; <a href="http://w3layouts.com/">
-						OnlineBazzar 2015 </a>
+					&copy; All rights reserved &nbsp; <a
+						href="http://w3layouts.com/"> OnlineBazzar 2015	</a>
 				</p>
 			</div>
 		</div>
 	</div>
-
-</body>
+    
+  </body>
 </html>
