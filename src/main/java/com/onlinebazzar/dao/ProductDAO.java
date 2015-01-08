@@ -11,4 +11,5 @@ public interface ProductDAO extends GenericDAO<Product>{
 	List<Product> findByName(String name);
 	List<Product> findByVendorAndCategoryName(Long vid, Long cid);
 	List<Product> findByCategory(Long id);
+	List<Product> findDiscountProduct();
 }

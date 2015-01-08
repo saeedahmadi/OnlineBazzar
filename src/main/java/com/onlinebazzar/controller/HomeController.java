@@ -40,7 +40,7 @@ import com.onlinebazzar.services.WebUserService;
  * Handles requests for the application home page.
  */
 @Controller
-@SessionAttributes({ "user", "shoppingCart","vendorList","categoryList" })
+@SessionAttributes({ "user", "shoppingCart", "vendorList", "categoryList" })
 public class HomeController {
 
 	private static final Logger logger = LoggerFactory
@@ -53,8 +53,6 @@ public class HomeController {
 
 	@Autowired
 	VendorService vendorService;
-
-	
 
 	@Autowired
 	WebUserService webUserService;
@@ -100,10 +98,15 @@ public class HomeController {
 
 		List<Vendor> vendorList = vendorService.findAll();
 		model.addAttribute("vendorList", vendorList);
-		
+
 		List<Category> categoryList = categoryService.findAll();
 		model.addAttribute("categoryList", categoryList);
-		
+
+		// discount products
+		List<Product> discountProducts = productService.findDiscountProduct();
+		System.out.println(discountProducts.size());
+		model.addAttribute("discountProductList", discountProducts);
+
 		return "/HomePage";
 
 	}
