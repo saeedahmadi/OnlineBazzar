@@ -96,7 +96,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
+							<%-- <div class="form-group">
 
 								<label for="url" class="control-label col-lg-2 col-lg-2">Url:
 								</label>
@@ -104,7 +104,7 @@
 									<form:input type="text" class="form-control" path="url" />
 									<form:errors path="url" />
 								</div>
-							</div>
+							</div> --%>
 
 							<div class="form-group">
 								<label for="url" class="control-label col-lg-2 col-lg-2">Category:

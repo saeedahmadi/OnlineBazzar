@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -23,12 +24,16 @@ public class Product  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@NotNull
 	private String name;
+	@NotNull
 	private double price;
+	@NotNull
 	private int onSale;
 	
-	
+	@NotNull
 	private String descritpion;
+	@NotNull
 	private String productDetails;
 	public String getProductDetails() {
 		return productDetails;

@@ -2,6 +2,9 @@
 	prefix="sec"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<link rel="stylesheet" type="text/css" href="/resources/css/cloudzoom.css" />
+<script type="text/javascript" src="/resources/js/cloudzoom.js"></script>
+
 	<!-- content -->
 	<div class="container">
 		<div class="women_main">
@@ -53,7 +56,7 @@
 									
 									<c:forEach var="realtedProduct" items="${productList}">
 									<li>
-									<a href="#">
+										<a href="<c:url value="/details/${realtedProduct.id}"/>">
 										<img src="<c:url value="/resources/images/${realtedProduct.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 
 									</a>
 										<%-- <div class="col-md-3 grid1">
@@ -113,7 +116,7 @@
 								<div class="product-img">
 								
 								
-								<a href="#">
+								<a href="<c:url value="/details/${realtedProduct.id}"/>">
 										<img src="<c:url value="/resources/images/${realtedProduct.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 
 									</a>
 									

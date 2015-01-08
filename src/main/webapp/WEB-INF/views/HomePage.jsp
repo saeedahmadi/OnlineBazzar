@@ -44,33 +44,37 @@
 				<!-- end  slider -->
 			</div>
 			<div class="col-md-3 sidebar">
+			<c:forEach var="productOnSale" items="${discountProductList}">
 				<div class="grid_list">
-					<a href="details.html">
-						<div class="grid_img">
-						
-						<%-- <c:forEach var="productOnSale" items="${productList}">
-						<img src="<c:url value="/resources/images/${productOnSale.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 
+				
+						<a href="<c:url value="/details/${productOnSale.id}"/>">
 							
-								</c:forEach> --%>
-						</div>
-						
-						<div class="grid_text left">
-							<h3>
-								<a href="#">extra 35<sub>%</sub> off
-								</a>
-							</h3>
-							<p>on select merchandise</p>
+							<div class ="grid_img">
 							
+													<img src="<c:url value="/resources/images/${productOnSale.name}.jpg" ></c:url>" class="img-responsive" alt=""/> 
+							
+							</div>
+					
+							</a>
+							<div class="grid_text left">
+						
+				<!-- 	<p>on select merchandise</p> -->
+								
+							<h3><a href="<c:url value="/details/${productOnSale.id}"/>">extra ${productOnSale.onSale}<sub>%</sub> off
+								</a></h3>
+							<p>${productOnSale.name}</p>
+							</div>
+							<div class="clearfix"></div>
 						</div>
+						</c:forEach> 
 						
-						<div class="clearfix"></div>
 						
-					</a>
+					
 				</div>
 				
-			</div>
+			
 			<div class="clearfix"></div>
-		</div>
+		
 		<!-- start content -->
 		<div class="content">
 			<div class="content_text">
@@ -86,7 +90,7 @@
 					using 'Content here, content here',
 				</p>
 
-			</div>
+			</div> 
 			<!-- grids_of_3 -->
 
 			<div class="row grids">
