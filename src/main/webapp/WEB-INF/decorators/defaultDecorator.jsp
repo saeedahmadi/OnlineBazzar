@@ -76,7 +76,7 @@
 						<sec:authorize access="hasRole('ROLE_CUSTOMER')">
 							<li><a href="<c:url value="/customer/edit"/>">Manage
 									Profile</a></li>|
-						<li><a href="<c:url value="/addToCart"/>">Cart(${fn:length(shoppingCart.items)})</a></li>|
+						<li><a href="<c:url value="shoppingCart"/>">Cart(${fn:length(shoppingCart.items)})</a></li>|
 						<li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
 						</sec:authorize>
 
@@ -93,8 +93,8 @@
 						</sec:authorize>
 
 						<sec:authorize access="isAnonymous()">
-							<li><a href="#">Recently viewed</a></li>|
-						<li><a href="contact.html">Contact</a></li>|
+							
+						
 						<li><a href="login">Signin</a></li>|
 						<li><a href="shoppingCart">Cart(${fn:length(shoppingCart.items)})<i
 									class="fa fa-shopping-cart"></i></a></li>|
@@ -236,28 +236,12 @@
 				<div class="clearfix"></div>
 			</div>
 			<!-- start span_of_2 -->
+			<div class="container">
 			<div class="span_of_2">
-				<div class="span1_of_2">
-					<h5>
-							need help? <a href="#">contact us <span> ></span>
-						</a>
-					</h5>
-					<p>(or) Call us: +91-70-45022088</p>
-				</div>
-				<div class="span1_of_2">
-					<h5>follow us</h5>
-					<div class="social-icons">
-						<ul>
-							<li><a href="#" target="_blank"></a></li>
-							<li><a href="#" target="_blank"></a></li>
-							<li><a href="#" target="_blank"></a></li>
-							<li><a href="#" target="_blank"></a></li>
-							<li><a href="#" target="_blank"></a></li>
-						</ul>
-					</div>
-				</div>
+				
 				<div class="clearfix"></div>
 			</div>
+		</div>
 		</div>
 	</div>
 	<!-- footer -->
