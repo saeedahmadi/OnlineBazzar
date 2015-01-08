@@ -45,4 +45,10 @@ public class ProductServiceImpl extends GenericServiceImpl<Product> implements P
 		return productDAO.findByCategory(id);
 	}
 
+	@Override
+	public List<Product> findDiscountProduct() {
+		// TODO Auto-generated method stub
+		return productDAO.findDiscountProduct();
+	}
+
 }

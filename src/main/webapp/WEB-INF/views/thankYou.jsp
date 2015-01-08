@@ -9,8 +9,8 @@
 		<div class="main">
 			<h1>Thank You!</h1>
 
-			<P>The time on the server is ${serverTime}.</P>
-			<a href="userRegister">register</a>
+			
+			
 		</div>
 	</div>
 </body>

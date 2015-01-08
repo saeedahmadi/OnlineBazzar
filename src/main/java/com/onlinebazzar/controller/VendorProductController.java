@@ -97,7 +97,7 @@ public class VendorProductController {
 
 		productService.save(product);
 
-		return "home";
+		return "redirect:/vendor/managedProducts";
 	}
 
 	@RequestMapping(value = "/vendor/managedProducts", method = RequestMethod.GET)

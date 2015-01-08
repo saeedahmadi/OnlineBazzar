@@ -45,4 +45,13 @@ public class ProductDAOImpl extends GenericDAOImpl<Product> implements
 		List<Product> productList = query.list();
 		return productList;
 	}
+
+	@Override
+	public List<Product> findDiscountProduct() {
+		int value = 0;
+		Query query = getCurrentSession().createQuery(
+				"from Product p where onSale > 0");
+		List<Product> productList = query.list();
+		return productList;
+	}
 }

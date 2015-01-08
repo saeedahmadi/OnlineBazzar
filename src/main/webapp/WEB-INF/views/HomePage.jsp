@@ -47,49 +47,27 @@
 				<div class="grid_list">
 					<a href="details.html">
 						<div class="grid_img">
-							<img src="resources/images/grid_pic1.jpg" class="img-responsive"
-								alt="" />
+						
+						<%-- <c:forEach var="productOnSale" items="${productList}">
+						<img src="<c:url value="/resources/images/${productOnSale.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 
+							
+								</c:forEach> --%>
 						</div>
+						
 						<div class="grid_text left">
 							<h3>
 								<a href="#">extra 35<sub>%</sub> off
 								</a>
 							</h3>
 							<p>on select merchandise</p>
+							
 						</div>
+						
 						<div class="clearfix"></div>
+						
 					</a>
 				</div>
-				<div class="grid_list">
-					<a href="details.html">
-						<div class="grid_text-middle">
-							<h3>
-								<a href="#">celina unpluged</a>
-							</h3>
-							<p>on select merchandise</p>
-						</div>
-						<div class="grid_img last">
-							<img src="resources/images/grid_pic2.jpg" class="img-responsive"
-								alt="" />
-						</div>
-						<div class="clearfix"></div>
-					</a>
-				</div>
-				<div class="grid_list">
-					<a href="details.html">
-						<div class="grid_img">
-							<img src="resources/images/grid_pic3.jpg" class="img-responsive"
-								alt="" />
-						</div>
-						<div class="grid_text left">
-							<h3>
-								<a href="#">active gear store</a>
-							</h3>
-							<p>shop now</p>
-						</div>
-						<div class="clearfix"></div>
-					</a>
-				</div>
+				
 			</div>
 			<div class="clearfix"></div>
 		</div>

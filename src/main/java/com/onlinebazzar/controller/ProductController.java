@@ -54,6 +54,14 @@ public class ProductController {
  		return "searchresult";
 	}
 	
+	@RequestMapping(value = "/productSearch", method = RequestMethod.POST)
+	public String productSearchResult(Model model, @RequestParam String name,HttpServletRequest request){
+		System.out.println("name:: " + name);
+		List<Product> searchResult = productService.findByName(name);
+		model.addAttribute("productList",searchResult);
+ 		return "searchresult";
+	}
+	
 	@RequestMapping("/product/category/{id}")
 	public String getProductWithCategory(@PathVariable("id") Long id, Model model){
 	

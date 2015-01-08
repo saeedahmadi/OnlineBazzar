@@ -40,7 +40,7 @@ import com.onlinebazzar.services.WebUserService;
  * Handles requests for the application home page.
  */
 @Controller
-@SessionAttributes({ "user", "shoppingCart","vendorList","categoryList" })
+@SessionAttributes({ "user", "shoppingCart", "vendorList", "categoryList" })
 public class HomeController {
 
 	private static final Logger logger = LoggerFactory
@@ -53,30 +53,6 @@ public class HomeController {
 
 	@Autowired
 	VendorService vendorService;
-
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	/*
-	 * @RequestMapping(value = "/", method = RequestMethod.GET) public String
-	 * home(Locale locale, Model model, HttpServletRequest request) {
-	 * logger.info("Welcome home! The client locale is {}.", locale);
-	 * 
-	 * Date date = new Date(); DateFormat dateFormat =
-	 * DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-	 * 
-	 * String formattedDate = dateFormat.format(date);
-	 * model.addAttribute("products", productService.findAll());
-	 * model.addAttribute("serverTime", formattedDate );
-	 * 
-	 * model.addAttribute("serverTime", formattedDate);
-	 * System.out.println("test"); System.out.println("test");
-	 * System.out.println("test"); System.out.println("test");
-	 * model.addAttribute("shoppingCart", new ShoppingCart()); //Authentication
-	 * auth = SecurityContextHolder.getContext().getAuthentication(); //String
-	 * name = auth.getName(); //get logged in username
-	 * //System.out.println(name); return "HomePage"; }
-	 */
 
 	@Autowired
 	WebUserService webUserService;
@@ -107,7 +83,6 @@ public class HomeController {
 			if (user.getRole().equals(Role.CUSTOMER)) {
 				Customer customer = (Customer) user.getPerson();
 				request.getSession().setAttribute("user", customer);
-				return "/HomePage";
 			}
 
 			if (user.getRole().equals(Role.VADMIN)) {
@@ -123,10 +98,15 @@ public class HomeController {
 
 		List<Vendor> vendorList = vendorService.findAll();
 		model.addAttribute("vendorList", vendorList);
-		
+
 		List<Category> categoryList = categoryService.findAll();
 		model.addAttribute("categoryList", categoryList);
-		
+
+		// discount products
+		List<Product> discountProducts = productService.findDiscountProduct();
+		System.out.println(discountProducts.size());
+		model.addAttribute("discountProductList", discountProducts);
+
 		return "/HomePage";
 
 	}
