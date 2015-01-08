@@ -108,7 +108,8 @@
 										<h4>shop</h4>
 										<ul>
 											<li><a href="<c:url value='/vendor/user/add' />">Add Vendor Users</a></li>
-											<li><a href="<c:url value='/vendor/vusers' />">Manage Users</a></li>											
+											<li><a href="<c:url value='/vendor/vusers' />">Manage Users</a></li>
+											<li><a href="<c:url value='/report/vendor_list_report/pdf' />">Report</a></li>											
 										</ul>
 									</div>
 								</div>
