@@ -62,13 +62,19 @@ public class VendorAdminController {
 	}*/
 
 
-	@RequestMapping(value="/vendor", method=RequestMethod.GET)
+	@RequestMapping(value="/registerAsVendor", method=RequestMethod.GET)
 	public String vendorRegistration(Model model){
 		model.addAttribute("vendor", new Vendor());
 		return "vendor/vendorRegistration";
 
 	}
+	
+	@RequestMapping(value="/thankYou", method=RequestMethod.GET)
+	public String thankYou(Model model){
+		
+		return "thankYou";
 
+	}
 
 	@RequestMapping(value="/vendor", method=RequestMethod.POST)
 	public String saveVendor(@ModelAttribute("vendor") @Valid Vendor vendor,
@@ -89,7 +95,7 @@ BindingResult result, HttpServletRequest request, Locale locale){
 	    		
 		//notifyAdminVendor(vendor.getEmail(),vendor.getName(),msg);
 		//after the custmer service implimentation created
-		return "home";
+		return "redirect:/thankYou";
 	}
 	
 	 private void chargeSubscriptionFee(Vendor vendor) {

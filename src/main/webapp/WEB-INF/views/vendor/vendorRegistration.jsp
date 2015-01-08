@@ -76,7 +76,7 @@
 
 					<div class="form-group">
 						<label for="name" class="control-label col-lg-2 col-lg-2">Account
-							Name: </label>
+							Number: </label>
 						<div class="col-lg-3">
 							<form:input type="text" class="form-control" placeholder="name"
 								path="bankAccount.accountNumber" />
