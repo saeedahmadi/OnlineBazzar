@@ -1,19 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-    <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
- 
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
+	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+	
 <div class="container">
 <c:forEach var="p" items="${addresses}">
     Id: ${p.id} City: ${p.city}<br/>
@@ -63,25 +55,4 @@
 </form:form>
 
 <br>
-<%-- <c:if test="${!empty categories}">
-<h3>Category List</h3>
-    <table class="table table-striped">
-    <tr>
-        <th width="80">Category ID</th>
-        <th width="120">Category Name</th>
-        <th width="60">Edit</th>
-        <th width="60">Delete</th>
-    </tr>
-    <c:forEach items="${categories}" var="category">
-        <tr>
-            <td>${category.id}</td>
-            <td>${category.name}</td>
-            <td><a href="<c:url value='/edit/${category.id}' />" >Edit</a></td>
-            <td><a href="<c:url value='/remove/${category.id}' />" >Delete</a></td>
-        </tr>
-    </c:forEach>
-    </table>
-</c:if> --%>
 </div>
-</body>
-</html>

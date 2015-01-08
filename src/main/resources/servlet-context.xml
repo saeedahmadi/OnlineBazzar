@@ -22,6 +22,16 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!--Jasper report-->
+	<beans:bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <beans:property name="location" value="/WEB-INF/jasper-views.xml"/>
+        <beans:property name="order" value="0"/>
+    </beans:bean> 
+    
+    <beans:import resource="jasper-views.xml"/>
+	
+	
+	
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="maxUploadSize" value="10240000" />

@@ -133,7 +133,7 @@ public class VendorController {
 		} else {
 			personService.update(p);
 		}
-		return "vendor/vadmin";
+		return "thankYou";
 	}
 
 	@RequestMapping(value = "/vendor/enableWebuser/{id}", method = RequestMethod.GET)
@@ -145,7 +145,7 @@ public class VendorController {
 		
 		model.addAttribute("vuser", new Person());
 		model.addAttribute("vusers", vusers);
-		return "vendor/vadmin";
+		return "redirect:/vendor/vadmin";
 	}
 	
 	@RequestMapping(value = "/vendor/user/edit/{id}", method = RequestMethod.GET)
@@ -168,7 +168,7 @@ public class VendorController {
 		List<Person> vusers = personService.findAllVendorPersons(person.getVendor().getId());
 		//model.addAttribute("vuser", personService.findOne(id));
 		model.addAttribute("vusers", vusers);
-		return "vendor/vadmin";
+		return "vendor/vusers";
 	}
 
 
