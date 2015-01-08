@@ -17,12 +17,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.onlinebazzar.commons.EntryType;
 import com.onlinebazzar.commons.MailMail;
 import com.onlinebazzar.commons.Role;
 import com.onlinebazzar.model.Person;
+import com.onlinebazzar.model.Transaction;
 import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.PersonService;
+import com.onlinebazzar.services.TransactionService;
 import com.onlinebazzar.services.VendorService;
 import com.onlinebazzar.services.WebUserService;
 
@@ -41,6 +44,8 @@ public class VendorAdminController {
 	PersonService personService;
 	@Autowired
 	WebUserService webuserService;
+	@Autowired
+	TransactionService transactionService;
 	@Autowired
 	MailMail mail;	
 	@RequestMapping(value = "/roleManagement", method = RequestMethod.GET)
@@ -74,6 +79,7 @@ BindingResult result, HttpServletRequest request, Locale locale){
 			return "vendor/vendorRegistration";
 		}
 		vendor =vendorService.update(vendor);
+		 chargeSubscriptionFee(vendor);
 		 Person p = createVendorAdmin(vendor);
          p=personService.save(p);
      	 WebUser webUser = p.getWebuser();
@@ -86,7 +92,29 @@ BindingResult result, HttpServletRequest request, Locale locale){
 		return "home";
 	}
 	
-	 private Person createVendorAdmin(Vendor v){
+	 private void chargeSubscriptionFee(Vendor vendor) {
+		// TODO Auto-generated method stub
+		
+		 Transaction vendorTransaction = new Transaction();
+		 vendorTransaction.setAccountCompany(vendor.getName());
+		 vendorTransaction.setAccountNumber(vendor.getBankAccount().getAccountNumber());
+		 vendorTransaction.setEntryType(EntryType.WITHDRAW);
+		 vendorTransaction.setPrice(1000);
+		
+		 Transaction bazzarTransaction = new Transaction();
+		 bazzarTransaction.setAccountCompany(vendor.getName());
+		 bazzarTransaction.setAccountNumber("1111111111111111");
+		 bazzarTransaction.setEntryType(EntryType.DEPOSIT);
+		 bazzarTransaction.setPrice(1000);
+		 
+		 transactionService.save(vendorTransaction);
+		 transactionService.save(bazzarTransaction);
+		 
+		 
+	}
+
+
+	private Person createVendorAdmin(Vendor v){
 	    	Person p = new Person();
 	    	p.setFirstName(v.getName());
 	    	p.setLastName(v.getName());
