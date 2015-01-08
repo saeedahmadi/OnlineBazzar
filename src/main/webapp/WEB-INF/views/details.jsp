@@ -175,7 +175,10 @@
 							<c:forEach var="catagories" items="${vendor.categories}">
 										
 								<label class="checkbox"><input type="checkbox"
-									name="checkbox" checked=""><i></i>${catagories.name}</label>
+									name="checkbox" checked=""><i></i>
+									<a href="<c:url value='/product/category/${catagories.id}' />">${catagories.name}</a>
+									
+								</label>
 										
 										</c:forEach>
 						
@@ -189,7 +192,23 @@
 						
 						</section>
 						
+						
+						
+						
+						
+						<%-- <c:forEach var="category" items="${categoryList}">
+									<div class="col1">
+										<div class="h_nav">
+											<h4>
+												
+											</h4>
+										</div>
+									</div>
+
+								</c:forEach> --%>
 						<!-- Brands -->
+						
+						
 						<section class="sky-form">
 						<h4>brand</h4>
 						<div class="row1 scroll-pane">
