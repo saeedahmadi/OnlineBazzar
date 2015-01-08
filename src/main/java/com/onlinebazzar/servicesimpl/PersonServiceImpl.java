@@ -28,9 +28,9 @@ public class PersonServiceImpl extends GenericServiceImpl<Person> implements
 	}
 
 	@Override
-	public List<Person> findAllVendorPersons() {
+	public List<Person> findAllVendorPersons(Long id) {
 		// TODO Auto-generated method stub
-		return personDAO.findAllVendorPersons();
+		return personDAO.findAllVendorPersons(id);
 	}
 
 }

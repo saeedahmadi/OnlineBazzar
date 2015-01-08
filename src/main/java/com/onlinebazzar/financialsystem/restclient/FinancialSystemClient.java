@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import com.onlinebazzar.model.Transaction;
 
 public class FinancialSystemClient {
-public static final String SERVER_URI = "http://10.10.11.128:8080/SpringRestExample";
+public static final String SERVER_URI = "http://10.10.36.162:8080/SpringRestExample";
     
     String test = "http://localhost:8080/SpringRestExample/postTransactions";
 	

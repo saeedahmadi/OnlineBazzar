@@ -1,5 +1,6 @@
 package com.onlinebazzar.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,7 +20,7 @@ public class BankAccount {
 	private String ownerName;
 	private String accountNumber;
 	private AccountType type;
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private Address bankAddress;
 	public Long getId() {
 		return id;

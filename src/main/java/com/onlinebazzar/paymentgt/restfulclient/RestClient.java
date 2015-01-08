@@ -15,6 +15,7 @@ public class RestClient {
 	public static int validateCC(String cardno, double totalPrice) {
         
 		  	int result=0;
+		  	System.out.println("testing"+cardno);
 	
 	  try{  
 	        URL url = new URL(makeURL(cardno, totalPrice));
