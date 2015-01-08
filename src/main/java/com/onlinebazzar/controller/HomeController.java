@@ -29,8 +29,10 @@ import com.onlinebazzar.model.Customer;
 import com.onlinebazzar.model.Person;
 import com.onlinebazzar.model.Product;
 import com.onlinebazzar.model.ShoppingCart;
+import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.services.CategoryService;
 import com.onlinebazzar.services.ProductService;
+import com.onlinebazzar.services.VendorService;
 import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.WebUserService;
 
@@ -38,7 +40,7 @@ import com.onlinebazzar.services.WebUserService;
  * Handles requests for the application home page.
  */
 @Controller
-@SessionAttributes({"user", "shoppingCart"})
+@SessionAttributes({ "user", "shoppingCart","vendorList","categoryList" })
 public class HomeController {
 
 	private static final Logger logger = LoggerFactory
@@ -48,33 +50,33 @@ public class HomeController {
 	ProductService productService;
 	@Autowired
 	CategoryService categoryService;
-	
+
+	@Autowired
+	VendorService vendorService;
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-/*	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model, HttpServletRequest request) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
-				DateFormat.LONG, locale);
-
-		String formattedDate = dateFormat.format(date);
-		model.addAttribute("products", productService.findAll());
-		model.addAttribute("serverTime", formattedDate );
-
-		model.addAttribute("serverTime", formattedDate);
-		System.out.println("test");
-		System.out.println("test");
-		System.out.println("test");
-		System.out.println("test");
-		model.addAttribute("shoppingCart", new ShoppingCart());
-		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-	      //String name = auth.getName(); //get logged in username
-	      //System.out.println(name);
-		return "HomePage";
-	}*/
+	/*
+	 * @RequestMapping(value = "/", method = RequestMethod.GET) public String
+	 * home(Locale locale, Model model, HttpServletRequest request) {
+	 * logger.info("Welcome home! The client locale is {}.", locale);
+	 * 
+	 * Date date = new Date(); DateFormat dateFormat =
+	 * DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+	 * 
+	 * String formattedDate = dateFormat.format(date);
+	 * model.addAttribute("products", productService.findAll());
+	 * model.addAttribute("serverTime", formattedDate );
+	 * 
+	 * model.addAttribute("serverTime", formattedDate);
+	 * System.out.println("test"); System.out.println("test");
+	 * System.out.println("test"); System.out.println("test");
+	 * model.addAttribute("shoppingCart", new ShoppingCart()); //Authentication
+	 * auth = SecurityContextHolder.getContext().getAuthentication(); //String
+	 * name = auth.getName(); //get logged in username
+	 * //System.out.println(name); return "HomePage"; }
+	 */
 
 	@Autowired
 	WebUserService webUserService;
@@ -85,11 +87,9 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String clientHome(HttpServletRequest request,Model model) {
-		
-		System.out.println(EncryptDecryptStringWithDES.encrypt("abc"));
-		System.out.println(EncryptDecryptStringWithDES.decrypt(EncryptDecryptStringWithDES.encrypt("abc")));
-		if(!model.containsAttribute("shoppingCart"))
+	public String clientHome(HttpServletRequest request, Model model) {
+
+		if (!model.containsAttribute("shoppingCart"))
 			model.addAttribute("shoppingCart", new ShoppingCart());
 		Object principal = SecurityContextHolder.getContext()
 				.getAuthentication().getPrincipal();
@@ -97,35 +97,37 @@ public class HomeController {
 		if (principal instanceof UserDetails) {
 			String username = ((UserDetails) principal).getUsername();
 			WebUser user = webUserService.getUserByUserName(username);
-			
+
 			if (user.getRole().equals(Role.ADMIN)) {
-				//model.addAttribute("category", new Category());
+				// model.addAttribute("category", new Category());
 				request.getSession().setAttribute("user", user);
 				return "redirect:/adminPanel";
 			}
 
 			if (user.getRole().equals(Role.CUSTOMER)) {
-				Customer customer=(Customer) user.getPerson();
+				Customer customer = (Customer) user.getPerson();
 				request.getSession().setAttribute("user", customer);
 				return "/HomePage";
 			}
-			
+
 			if (user.getRole().equals(Role.VADMIN)) {
-				//model.addAttribute("category", new Category());
+				// model.addAttribute("category", new Category());
 				request.getSession().setAttribute("user", user);
 				return "redirect:/vendorPanel";
 			}
-			
-			
-			
-		}
-		
-		
-		List<Product> searchResult = productService.findAll();
-		model.addAttribute("productList",searchResult);
-	 		
-		
 
+		}
+
+		List<Product> searchResult = productService.findAll();
+		model.addAttribute("productList", searchResult);
+
+		List<Vendor> vendorList = vendorService.findAll();
+		System.out.println("::::::::::::::" + vendorList.size());
+		model.addAttribute("vendorList", vendorList);
+		
+		List<Category> categoryList = categoryService.findAll();
+		model.addAttribute("categoryList", categoryList);
+		
 		return "/HomePage";
 
 	}
@@ -139,27 +141,25 @@ public class HomeController {
 	public String index() {
 		return "/HomePage";
 	}
-	
+
 	@RequestMapping(value = "/details/{id}", method = RequestMethod.GET)
-	public String detailsSearchResult(Model model, @ModelAttribute("id")  Long id ){
-		
-		
+	public String detailsSearchResult(Model model, @ModelAttribute("id") Long id) {
+
 		Product product = productService.findOne(id);
 		model.addAttribute("product", product);
-		Category category = categoryService.findOne(product.getCategory().getId());
-		
-		
+		Category category = categoryService.findOne(product.getCategory()
+				.getId());
+
 		List<Product> searchResult = category.getProducts();
-		
+
 		Iterator<Product> it = searchResult.iterator();
-		
+
 		while (it.hasNext()) {
 			Product p = (Product) it.next();
-			if(p.getId() == id)
+			if (p.getId() == id)
 				it.remove();
 		}
-		model.addAttribute("productList",searchResult);
- 		return "details";
+		model.addAttribute("productList", searchResult);
+		return "details";
 	}
-
 }
