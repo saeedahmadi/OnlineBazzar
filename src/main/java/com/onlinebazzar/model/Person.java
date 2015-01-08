@@ -57,6 +57,7 @@ public class Person {
 
 	public void setWebuser(WebUser webuser) {
 		this.webuser = webuser;
+		webuser.setPerson(this);
 	}
 
 	public Long getId() {

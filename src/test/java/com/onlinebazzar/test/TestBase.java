@@ -7,8 +7,10 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.onlinebazzar.commons.AccountType;
 import com.onlinebazzar.commons.Role;
 import com.onlinebazzar.model.Address;
+import com.onlinebazzar.model.BankAccount;
 import com.onlinebazzar.model.Category;
 import com.onlinebazzar.model.Customer;
 import com.onlinebazzar.model.Person;
@@ -109,7 +111,7 @@ public class TestBase {
     	p.setAddress(createOneNewAddress());
     	
     	p.setWebuser(createOneNewWebUser(Role.VADMIN));
-    	//p.setVendor(createOneNewVendor());
+    	p.setVendor(createOneNewVendor());
 		
 		
 		return p;
@@ -119,7 +121,25 @@ public class TestBase {
 
 	private static Vendor createOneNewVendor() {
 		// TODO Auto-generated method stub
-		return null;
+		Vendor vendor = new Vendor();
+		String random = RandomData.randomName("Vendor");
+		vendor.setName(random);
+		vendor.setEmail("test@gmail.com");
+		vendor.setPhoneNumber("1111111111");
+		vendor.setAddress(createOneNewAddress());
+		vendor.setBankAccount(createOneNewBankAccount());
+		return vendor;
+	}
+
+	private static BankAccount createOneNewBankAccount() {
+		// TODO Auto-generated method stub
+		BankAccount bankAccount = new BankAccount();
+		String random = RandomData.randomName("BankAccount");
+		bankAccount.setAccountNumber("11111111111111"+RandomData.randomId());
+		bankAccount.setBankAddress(createOneNewAddress());
+		bankAccount.setOwnerName(random);
+		bankAccount.setType(AccountType.CHECKING);
+		return bankAccount;
 	}
 
 	private static WebUser createOneNewWebUser(Role role) {
