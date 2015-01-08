@@ -50,7 +50,7 @@ public class CustomerController {
 		}
 		
 		customerService.save(customer);
-		return "home";
+		return "thankYou";
 	}
 	
 	@RequestMapping(value = "/customer/edit", method = RequestMethod.GET)
