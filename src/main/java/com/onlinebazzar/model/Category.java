@@ -1,6 +1,7 @@
 package com.onlinebazzar.model;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -27,7 +28,11 @@ public class Category  {
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
 	private List<Product> products;
 	
-
+	public Category() {
+		this.products = new ArrayList<Product>();
+	}
+	
+	
 	public Long getId() {
 		return id;
 	}
