@@ -123,6 +123,20 @@
 								</div>
 							</div>
 							
+							
+							<div class="form-group">
+
+								<label for="url" class="control-label col-lg-2 col-lg-2">OnSale:
+								</label>
+								
+								
+								<div class="col-lg-3">
+									<form:input type="text" class="form-control" placeholder="onSale"
+										path="onSale" />
+									<form:errors path="onSale" />
+								</div>
+							</div>
+
 								<div class="form-group">
 								<label class="control-label col-lg-2" for="productDetails">
 									ProductDetails: </label>

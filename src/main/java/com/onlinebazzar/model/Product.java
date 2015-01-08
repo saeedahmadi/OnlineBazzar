@@ -25,6 +25,9 @@ public class Product  {
 	private Long id;
 	private String name;
 	private double price;
+	private int onSale;
+	
+	
 	private String descritpion;
 	private String productDetails;
 	public String getProductDetails() {
@@ -104,6 +107,12 @@ public class Product  {
 	}
 	public void setBazzarBenefit(double bazzarBenefit) {
 		this.bazzarBenefit = bazzarBenefit;
+	}
+	public int getOnSale() {
+		return onSale;
+	}
+	public void setOnSale(int onSale) {
+		this.onSale = onSale;
 	}
 	@Override
 	public String toString() {

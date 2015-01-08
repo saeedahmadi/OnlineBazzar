@@ -86,7 +86,7 @@
 								</div>
 							</div>
 							<div class="btn_form">
-								<a href="<c:url value='/product/addtocart/${product.id}' />">buy</a>
+								<a href="<c:url value='/product/addtocart/${product.id}' />">Add to cart</a>
 							</div>
 							<a href="#"><span>login to save in wishlist </span></a>
 
@@ -135,7 +135,9 @@
 											
 											<div class="product_price">
 								<span class="price-access">${product.price}$</span>								
-								<button class="button1"><span>Add to cart</span></button>
+								
+							<a href="<c:url value='/product/addtocart/${product.id}' />">Add to cart</a>
+								
 		                  </div>
 						 <div class="clearfix">
 						 </div>
@@ -148,77 +150,54 @@
 					<div class="w_sidebar">
 						<div class="w_nav1">
 							<h4>All</h4>
+							
 							<ul>
-								<li><a href="women.html">women</a></li>
-								<li><a href="#">new arrivals</a></li>
-								<li><a href="#">trends</a></li>
-								<li><a href="#">boys</a></li>
-								<li><a href="#">girls</a></li>
-								<li><a href="#">sale</a></li>
+							<c:forEach var="vendor" items="${vendorList}">
+								<li><a href="#">${vendor.name}</a></li>
+								</c:forEach>
 							</ul>
 						</div>
+						
+						
 						<h3>filter by</h3>
+						
+							<!-- catogories -->
 						<section class="sky-form">
 						<h4>catogories</h4>
+						
 						<div class="row1 scroll-pane">
-							<div class="col col-4">
+						<div class="col col-4">
+						
+						<c:forEach var="vendor" items="${vendorList}">
+							<c:forEach var="catagories" items="${vendor.categories}">
+										
 								<label class="checkbox"><input type="checkbox"
-									name="checkbox" checked=""><i></i>kurtas</label>
+									name="checkbox" checked=""><i></i>${catagories.name}</label>
+										
+										</c:forEach>
+						
+						</c:forEach>
+						
+						
+							
 							</div>
-							<div class="col col-4">
-								<label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>kutis</label> <label class="checkbox"><input
-									type="checkbox" name="checkbox"><i></i>churidar kurta</label> <label
-									class="checkbox"><input type="checkbox" name="checkbox"><i></i>salwar</label>
-								<label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>printed sari</label> <label
-									class="checkbox"><input type="checkbox" name="checkbox"><i></i>shree</label>
-								<label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>Anouk</label> <label class="checkbox"><input
-									type="checkbox" name="checkbox"><i></i>biba</label> <label
-									class="checkbox"><input type="checkbox" name="checkbox"><i></i>fashion
-									sari</label> <label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>fashion sari</label> <label
-									class="checkbox"><input type="checkbox" name="checkbox"><i></i>fashion
-									sari</label> <label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>fashion sari</label> <label
-									class="checkbox"><input type="checkbox" name="checkbox"><i></i>fashion
-									sari</label> <label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>fashion sari</label> <label
-									class="checkbox"><input type="checkbox" name="checkbox"><i></i>fashion
-									sari</label> <label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>fashion sari</label>
-							</div>
+					
 						</div>
 						
 						</section>
+						
+						<!-- Brands -->
 						<section class="sky-form">
 						<h4>brand</h4>
 						<div class="row1 scroll-pane">
 							<div class="col col-4">
+							<c:forEach var="vendor" items="${vendorList}">
+							
 								<label class="checkbox"><input type="checkbox"
-									name="checkbox" checked=""><i></i>shree</label> <label
-									class="checkbox"><input type="checkbox" name="checkbox"><i></i>Anouk</label>
-								<label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>biba</label>
+									name="checkbox" checked=""><i></i>${vendor.name}</label> 
+									</c:forEach>
 							</div>
-							<div class="col col-4">
-								<label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>vishud</label> <label class="checkbox"><input
-									type="checkbox" name="checkbox"><i></i>amari</label> <label
-									class="checkbox"><input type="checkbox" name="checkbox"><i></i>shree</label>
-								<label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>Anouk</label> <label class="checkbox"><input
-									type="checkbox" name="checkbox"><i></i>biba</label> <label
-									class="checkbox"><input type="checkbox" name="checkbox"><i></i>shree</label>
-								<label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>Anouk</label> <label class="checkbox"><input
-									type="checkbox" name="checkbox"><i></i>biba</label> <label
-									class="checkbox"><input type="checkbox" name="checkbox"><i></i>shree</label>
-								<label class="checkbox"><input type="checkbox"
-									name="checkbox"><i></i>Anouk</label> <label class="checkbox"><input
-									type="checkbox" name="checkbox"><i></i>biba</label>
-							</div>
+							
 						</div>
 						</section>
 						<section class="sky-form">
