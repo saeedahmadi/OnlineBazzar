@@ -365,12 +365,12 @@
 		<div class="container">
 			<div class="copy">
 				<p class="link">
-					&copy;  Designed by&nbsp; <a
-						href="http://w3layouts.com/"> OnlineBazzar 2015	</a>
+					&copy; Designed by&nbsp; <a href="http://w3layouts.com/">
+						OnlineBazzar 2015 </a>
 				</p>
 			</div>
 		</div>
 	</div>
-    
-  </body>
+
+</body>
 </html>
