@@ -53,11 +53,11 @@
 <div class="form-group">    
     <tr>
     		<c:if test="${!empty vuser.firstName}">
-            <form:label path="firstName">
+            <form:label path="webuser.username">
                 <spring:message text="Name"/>
             </form:label>
 
-            <form:input path="firstName" />
+            <form:input path="webuser.username" />
             </c:if>
     </tr>
 </div>
@@ -106,9 +106,9 @@
 									<td><a href="<c:url value='/vendor/enableWebuser/${vuser.webuser.id}' />" >Enable</a></td>
 
 									<td><a
-										href="<c:url value='/vendor/user/edit/${vuser.webuser.id}' />">Edit</a></td>
+										href="<c:url value='/vendor/user/edit/${vuser.id}' />">Edit</a></td>
 									<td><a
-										href="<c:url value='/vendor/user/remove/${vuser.webuser.id}' />">Delete</a></td>
+										href="<c:url value='/vendor/user/remove/${vuser.id}' />">Delete</a></td>
 								</tr>
 							</c:forEach>
 						</table>

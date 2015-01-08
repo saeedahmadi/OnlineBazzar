@@ -19,10 +19,12 @@ public class PersonDAOImpl extends GenericDAOImpl<Person> implements
 	}
 
 	@Override
-	public List<Person> findAllVendorPersons() {
+	public List<Person> findAllVendorPersons(Long id) {
 		// TODO Auto-generated method stub
 		
-		Query query = getCurrentSession().createQuery("from Person p where p.webuser.enabled = 0 AND (p.webuser.role=2 OR p.webuser.role=3 OR p.webuser.role=4) ");
+		Query query = getCurrentSession().createQuery("from Person p where  p.vendor.id = :id"
+				+ " AND p.webuser.enabled = 0  AND (p.webuser.role=2 OR p.webuser.role=3 OR p.webuser.role=4) ");
+		query.setParameter("id", id);
 		List<Person> personList = query.list();
 		return personList;
 	}
