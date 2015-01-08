@@ -590,7 +590,7 @@ ul.icon1 {
 /*-- start footer -- */
 /* scroll_top_btn */
 .footer_top{
-	border-top:1px solid rgb(236, 236, 236);
+	border-top:0px solid rgb(236, 236, 236);
 	padding:1em 0;
 }
 /*-- start span_of_4 -- */

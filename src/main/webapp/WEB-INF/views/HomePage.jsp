@@ -136,7 +136,7 @@
 
 						<div class="look">
 							<h4>
-							get scarvs
+							${product.category.name}
 							</h4>
 							<p>read more</p>
 						</div>
