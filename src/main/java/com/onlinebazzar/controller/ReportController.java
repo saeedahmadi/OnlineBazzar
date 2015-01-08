@@ -60,14 +60,18 @@ public class ReportController {
 				transactionList);
 		
 		Double amount = 0.0;
+		Double profit = 0.0;
 		for(Transaction trans : transactionList){
 			amount += trans.getPrice();
+			if(trans.getAccountNumber().equals("1111111111111111"))
+				profit+=trans.getPrice();
 		}
 
 		parameterMap.put("datasource", JRdataSource);
 		parameterMap.put("fromDate","From Date");
 		parameterMap.put("toDate", "To Date");
 		parameterMap.put("amount", amount.toString());
+		parameterMap.put("profit", profit.toString());
 		modelAndView = new ModelAndView("vendorListPdfReport", parameterMap);
 
 		return modelAndView;
