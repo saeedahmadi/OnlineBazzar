@@ -76,7 +76,7 @@
 						<sec:authorize access="hasRole('ROLE_CUSTOMER')">
 							<li><a href="<c:url value="/customer/edit"/>">Manage
 									Profile</a></li>|
-						<li><a href="<c:url value="/addToCart"/>">Add to cart</a></li>|
+						<li><a href="<c:url value="/addToCart"/>">Cart(${fn:length(shoppingCart.items)})</a></li>|
 						<li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
 						</sec:authorize>
 
@@ -121,7 +121,7 @@
 				<!-- start header_right -->
 				<div class="header_right">
 					<div class="search">
-						<form action="productSearch" method="post">
+						<form action="./productSearch" method="post">
 							<input type="text" name="name" value="" placeholder="search...">
 							<input type="submit" value="">
 						</form>
