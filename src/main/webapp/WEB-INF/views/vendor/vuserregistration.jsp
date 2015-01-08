@@ -57,7 +57,7 @@
 								<label for="webuser.password"
 									class="control-label col-lg-2 col-lg-2">Password: </label>
 								<div class="col-lg-3">
-									<form:input type="text" class="form-control"
+									<form:input type="password" class="form-control"
 										placeholder="webuser.password" path="webuser.password" />
 									<form:errors path="webuser.password" />
 									<br>
