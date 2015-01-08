@@ -38,7 +38,7 @@ import com.onlinebazzar.services.TransactionService;
 import com.onlinebazzar.services.VendorService;
 
 @Controller
-@SessionAttributes({ "shoppingCart", "user"})
+@SessionAttributes({ "shoppingCart", "user" })
 public class PaymentGatewayController {
 
 	@Autowired
@@ -66,7 +66,13 @@ public class PaymentGatewayController {
 
 		Customer cust = (Customer) request.getSession().getAttribute("user");
 
-		model.addAttribute("paymentDetails", cust.getPaymentDetails().get(0));
+		if (cust.getPaymentDetails().size() > 0) {
+			model.addAttribute("paymentDetails", cust.getPaymentDetails()
+					.get(0));
+		} else {
+			model.addAttribute("paymentDetails", new PaymentDetails());
+		}
+
 		model.addAttribute("card", CardType.values());
 		return "paymentDetails";
 	}
@@ -101,13 +107,12 @@ public class PaymentGatewayController {
 		}
 
 		currentUser.getPaymentDetails().add(paymentDetails);
-		
+
 		// Web service for payment gateway to check the balance and card number
 		int paymentgatewayResult = RestClient.validateCC(
 				paymentDetails.getCardNumber(), shoppingCart.getPrice());
 		System.out.println(paymentgatewayResult);
 		if (paymentgatewayResult == 1) {
-			
 
 			Order order = new Order();
 			order.setPrice(shoppingCart.getPrice());
@@ -131,9 +136,9 @@ public class PaymentGatewayController {
 		Map<Vendor, Double> vendorList = new HashMap<Vendor, Double>();
 		double bazzarBenefit = 0D;
 
-		//list of transaction to send to web service
+		// list of transaction to send to web service
 		List<Transaction> transactionList = new ArrayList<Transaction>();
-		
+
 		while (it.hasNext()) {
 			LineItem item = it.next();
 			Vendor vendor = item.getProduct().getVendor();
@@ -185,7 +190,8 @@ public class PaymentGatewayController {
 		bazzarTransaction.setPrice(bazzarBenefit);
 		transactionService.save(bazzarTransaction);
 		transactionList.add(bazzarTransaction);
-		System.out.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+		System.out
+				.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
 		FinancialSystemClient.testPostTransaction(transactionList);
 	}
 }
