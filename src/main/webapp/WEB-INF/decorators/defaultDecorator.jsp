@@ -174,7 +174,7 @@
 									<div class="col1">
 										<div class="h_nav">
 											<h4>
-												<a href="<c:url value='/product/catagory/${category.id}' />">${category.name}</a>
+												<a href="<c:url value='/product/category/${category.id}' />">${category.name}</a>
 
 											</h4>
 										</div>
