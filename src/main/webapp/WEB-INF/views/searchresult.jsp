@@ -158,11 +158,13 @@
 
 
 							<div class="content_box">
-								<a href="#">
+								
+									<a href="<c:url value="/details/${product.id}"/>">
 									<div class="view view-fifth">
 										
 										
 							<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image" width="263px" height="340px"  class="img-responsive"/>
+								
 										
 										<div class="mask">
 											<div class="info">Quick View</div>
@@ -170,7 +172,7 @@
 								</a>
 							</div>
 							<h4>
-								<a href="#"> ${product.name} </a>
+								<a href="<c:url value="/details/${product.id}"/>">${product.name} </a>
 							</h4>
 							<p>${product.productDetails}</p>
 							${product.price}$ <a
