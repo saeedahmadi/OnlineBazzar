@@ -54,6 +54,7 @@ public class CategoryServiceImplTest  extends ServiceImplTestBase{
 			
 			for(int j=1; j<=5;j++){
 				Product p = createOneNewProduct(c,v);
+				p.setName(p.getName()+j);
 				productService.save(p);
 			}
 		}

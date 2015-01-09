@@ -30,6 +30,7 @@ public class Vendor {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
+	
 	private double bazzarProfit;
 
 	public Vendor() {

@@ -73,15 +73,15 @@ public class TestBase {
 		Customer p = new Customer();
 		String random = RandomData.randomName("Customer");
 		
-    	p.setFirstName(random);
-    	p.setLastName(random);
+    	p.setFirstName("Customer");
+    	p.setLastName("Customer");
     	p.setEmail("test@onlinebazzar.com");
     	p.setPhoneNumber(RandomData.randomName(random));
     	p.setAddress(createOneNewAddress());
     	WebUser webuser = createOneNewWebUser(Role.CUSTOMER);
     	webuser.setUsername("customer");
     	webuser.setPassword("customer");
-    	p.setWebuser(createOneNewWebUser(Role.CUSTOMER));
+    	p.setWebuser(webuser);
     	//p.setVendor(createOneNewVendor());
 		
 		
@@ -91,8 +91,8 @@ public class TestBase {
 		Person p = new Person();
 		String random = RandomData.randomName("Person");
 		
-    	p.setFirstName(random);
-    	p.setLastName(random);
+    	p.setFirstName("Person");
+    	p.setLastName("Person");
     	p.setEmail("test@onlinebazzar.com");
     	p.setPhoneNumber(RandomData.randomName(random));
     	p.setAddress(createOneNewAddress());
@@ -107,8 +107,8 @@ public class TestBase {
 		Person p = new Person();
 		String random = RandomData.randomName("Person");
 		
-    	p.setFirstName(random);
-    	p.setLastName(random);
+    	p.setFirstName("VendorAdmin");
+    	p.setLastName("VendorAdmin");
     	p.setEmail("test@onlinebazzar.com");
     	p.setPhoneNumber(RandomData.randomName(random));
     	p.setAddress(createOneNewAddress());
@@ -164,7 +164,7 @@ public class TestBase {
     	user.setRole(role);
     	String random = RandomData.randomName("Admin");
     	user.setUsername(random);
-    	user.setPassword(random);
+    	user.setPassword("2222222");
     	return user;
 	}
 
@@ -173,12 +173,13 @@ public class TestBase {
 		
 		String random = RandomData.randomName(category.getName());
 		Product product = new Product();
-		product.setCategory(category);;
-		product.setName(random);
+		product.setCategory(category);
+		product.setName(vendor.getName()+"Product");
 		product.setPrice(100);
-		product.setProductDetails("Description "+random);
+		product.setProductDetails("Description ");
 		product.setVendor(vendor);
 		product.setQuantity(10);
+		
 		
 		
 		return product;

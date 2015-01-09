@@ -32,17 +32,17 @@ public class Product  {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Size(min=1	,max=50)
-	@Pattern(regexp= "[a-zA-Z]*",message="Write the ProductName  correctly")
+	
 	private String name;
 	 @Min(1) @Max(999999)
 	private double price;
 	@Min(0) @Max(99)
 	private int onSale;
+	
 	@NotEmpty
 	private String productDetails;
 	
-	@Min(1) @Max(99)
-	private double bazzarBenefit;
+	
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "vendor") 
 	private Vendor vendor;
@@ -117,12 +117,7 @@ public class Product  {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
-	public double getBazzarBenefit() {
-		return bazzarBenefit;
-	}
-	public void setBazzarBenefit(double bazzarBenefit) {
-		this.bazzarBenefit = bazzarBenefit;
-	}
+	
 	public int getOnSale() {
 		return onSale;
 	}
