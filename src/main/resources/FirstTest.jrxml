@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.0.1.final using JasperReports Library version 6.0.0  -->
-<!-- 2015-01-08T02:31:51 -->
+<!-- 2015-01-08T22:01:21 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FirstTest" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ce391ce7-7c9f-49a7-b0c2-a7b344eebb1a">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -128,7 +128,7 @@
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="187" splitType="Stretch">
+		<band height="154" splitType="Stretch">
 			<textField>
 				<reportElement x="17" y="58" width="100" height="30" uuid="08fa17c8-c97b-4dc2-a99f-28b410a5734b"/>
 				<textElement textAlignment="Right"/>
