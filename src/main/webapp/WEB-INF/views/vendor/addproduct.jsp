@@ -6,7 +6,7 @@
 <html>
 
 <head>
-<title>Customer Registration</title>
+<title>Product Registration</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
@@ -38,7 +38,7 @@
 					<div class="panel-heading">Product Registration</div>
 					<div class="panel-body">
 						<fieldset>
-							<form:errors path="*" cssClass="alert alert-danger" element="div" />
+						
 							<div class="form-group">
 
 								<label for="name" class="control-label col-lg-2 col-lg-2">Name:
@@ -46,7 +46,7 @@
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control" placeholder="name"
 										path="name" />
-									<form:errors path="name" />
+									<form:errors path="name" cssClass="text-danger" />
 									
 								</div>
 							</div>
@@ -56,8 +56,9 @@
 								<div class="col-lg-3">
 									<form:input type="number" class="form-control"
 										placeholder="price: " path="price" />
-									<form:errors path="price" />
+									
 								</div>
+								<form:errors path="price" cssClass="text-danger" />
 							</div>
 
 							
@@ -68,7 +69,7 @@
 								<div class="col-lg-3">
 									<form:input type="number" class="form-control"
 										placeholder="bazzarBenefit " path="bazzarBenefit" />
-									<form:errors path="bazzarBenefit" />
+									<form:errors path="bazzarBenefit"  cssClass="text-danger"/>
 								</div>
 							</div>
 							<div class="form-group">
@@ -78,7 +79,7 @@
 								<div class="col-lg-3">
 									<form:input type="date" class="form-control"
 										placeholder="creationDate" path="creationDate" />
-									<form:errors path="creationDate" />
+									<form:errors path="creationDate"  cssClass="text-danger"/>
 								</div>
 							</div>
 
@@ -89,10 +90,11 @@
 								</label>
 								<div class="col-lg-6">
 									<form:select path="category.id">
-										<form:option value="-" label="--Please Select" />
+										
 										<form:options items="${category}" itemValue="id"
 											itemLabel="name" />
 									</form:select>
+								<form:errors path="category.id" cssClass="text-danger" />
 								</div>
 							</div>
 
@@ -102,6 +104,7 @@
 								<div class="col-lg-10">
 									<form:input id="productImage" path="productImage" type="file"
 										class="form:input-large" />
+										<form:errors path="productImage" cssClass="text-danger" />
 								</div>
 							</div>
 							
@@ -115,7 +118,7 @@
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control" placeholder="onSale"
 										path="onSale" />
-									<form:errors path="onSale" />
+									<form:errors path="onSale" cssClass="text-danger" />
 								</div>
 							</div>
 
@@ -125,7 +128,7 @@
 								<div class="col-lg-10">
 									<form:textarea id="productDetails" path="productDetails" rows="5" cols="30" class="form:input-large" />
 									
-										
+										<form:errors path="productDetails" cssClass="text-danger" />
 								</div>
 								</div>
 								

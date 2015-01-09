@@ -11,8 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.web.multipart.MultipartFile;
@@ -26,14 +29,13 @@ public class Product  {
 	private Long id;
 	@NotNull
 	private String name;
-	@NotNull
+	 @Min(1) @Max(999999)
 	private double price;
-	@NotNull
+	@Min(0) @Max(99)
 	private int onSale;
 	
-	@NotNull
-	private String descritpion;
-	@NotNull
+
+	@NotEmpty
 	private String productDetails;
 	public String getProductDetails() {
 		return productDetails;
@@ -41,7 +43,7 @@ public class Product  {
 	public void setProductDetails(String productDetails) {
 		this.productDetails = productDetails;
 	}
-	private String url;
+	
 	private double bazzarBenefit;
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "vendor") 
@@ -77,18 +79,7 @@ public class Product  {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getDescritpion() {
-		return descritpion;
-	}
-	public void setDescritpion(String descritpion) {
-		this.descritpion = descritpion;
-	}
-	public String getUrl() {
-		return url;
-	}
-	public void setUrl(String url) {
-		this.url = url;
-	}
+
 	public Vendor getVendor() {
 		return vendor;
 	}
