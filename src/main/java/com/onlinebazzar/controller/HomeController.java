@@ -148,6 +148,11 @@ public class HomeController {
 	public String index() {
 		return "/HomePage";
 	}
+	
+	@RequestMapping(value = "/HomePageReload", method = RequestMethod.GET)
+	public String indexReload(@ModelAttribute("orderFailed") boolean order) {
+		return "/HomePage";
+	}
 
 	@RequestMapping(value = "/details/{id}", method = RequestMethod.GET)
 	public String detailsSearchResult(Model model, @ModelAttribute("id") Long id) {
