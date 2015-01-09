@@ -60,16 +60,7 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-
-								<label for="descritpion" class="control-label col-lg-2 col-lg-2">Descritpion:
-								</label>
-								<div class="col-lg-3">
-									<form:input type="text" class="form-control"
-										placeholder="descritpion" path="descritpion" />
-									<form:errors path="descritpion" />
-								</div>
-							</div>
+							
 							<div class="form-group">
 								<label for="bazzarBenefit"
 									class="control-label col-lg-2 col-lg-2">BazzarBenefit:
@@ -91,19 +82,10 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-
-								<label for="url" class="control-label col-lg-2 col-lg-2">Url:
-								</label>
-								<div class="col-lg-3">
-									<form:input type="text" class="form-control" placeholder="url"
-										path="url" />
-									<form:errors path="url" />
-								</div>
-							</div>
+							
 
 							<div class="form-group">
-								<label for="url" class="control-label col-lg-2 col-lg-2">Category:
+								<label for="category" class="control-label col-lg-2 col-lg-2">Category:
 								</label>
 								<div class="col-lg-6">
 									<form:select path="category.id">
@@ -126,7 +108,7 @@
 							
 							<div class="form-group">
 
-								<label for="url" class="control-label col-lg-2 col-lg-2">OnSale:
+								<label for="onSale" class="control-label col-lg-2 col-lg-2">OnSale:
 								</label>
 								
 								
