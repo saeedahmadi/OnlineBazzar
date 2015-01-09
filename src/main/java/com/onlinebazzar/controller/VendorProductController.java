@@ -24,6 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.onlinebazzar.model.Category;
 import com.onlinebazzar.model.Product;
 import com.onlinebazzar.model.Vendor;
+import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.CategoryService;
 import com.onlinebazzar.services.ProductService;
 
@@ -104,15 +105,16 @@ public class VendorProductController {
 	@RequestMapping(value = "/vendor/managedProducts", method = RequestMethod.GET)
 	public String listProducts(Model model, HttpServletRequest request) {
 		model.addAttribute("product", new Product());
-		Vendor v = (Vendor) request.getSession().getAttribute("user");
-		model.addAttribute("products", productService.findByVendor(v.getId()));
+		WebUser webUser =  (WebUser) request.getSession().getAttribute("user");
+		model.addAttribute("products", productService.findByVendor(webUser.getPerson().getVendor().getId()));
 		return "vendor/manageProducts";
 	}
 
 	@RequestMapping(value = "/product/add", method = RequestMethod.POST)
-	public String addProduct(@ModelAttribute("product") Product p) {
+	public String addProduct(@ModelAttribute("product") Product p,HttpServletRequest request) {
 		// System.out.println(v);
-
+		WebUser webUser =  (WebUser) request.getSession().getAttribute("user");
+		p.setVendor(webUser.getPerson().getVendor());
 		productService.update(p);
 
 		return "redirect:/vendor/managedProducts";
