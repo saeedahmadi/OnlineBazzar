@@ -78,6 +78,22 @@
 									</form:select>
 								
 								</div>
+								
+								<form:errors path="category.id" cssClass="text-danger" />
+							</div>
+							
+								<div class="form-group">
+								<label for="vendor" class="control-label col-lg-2 col-lg-2">Vendor:
+								</label>
+								<div class="col-lg-6">
+									<form:select path="vendor.id">
+										<%-- <form:option value="-"></form:option> --%>
+										<form:options items="${vendors}" itemValue="id"
+											itemLabel="name" />
+									</form:select>
+								
+								</div>
+								
 								<form:errors path="category.id" cssClass="text-danger" />
 							</div>
 

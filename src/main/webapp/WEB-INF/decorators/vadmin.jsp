@@ -82,10 +82,11 @@
 	<!-- header -->
 	<div class="header_bg">
 		<div class="container">
-			<div class="header">
+					<div class="header">
+		
 				<div class="logo">
-					<a href="index.html"><img src="resources/images/logo.png"
-						alt="" /> </a>
+					<a href="<c:url value='/'/>"><img
+						src="http://localhost:8080/onlinebazzar/resources/images/logo.png" alt="" /> </a>
 				</div>
 				<!-- start header_right -->
 				<div class="header_right">

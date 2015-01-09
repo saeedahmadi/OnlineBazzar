@@ -25,6 +25,11 @@ public class Vendor {
 	@OneToMany
 	@JoinColumn(name = "vendor_id")
 	private List<Category> categories;
+	
+	@OneToMany(mappedBy = "vendor",cascade = CascadeType.ALL)
+	
+	private List<Product> products;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private BankAccount bankAccount;
 
@@ -95,6 +100,16 @@ public class Vendor {
 		this.address = address;
 	}
 
+	public List<Product> getProducts() {
+		return products;
+	}
+
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
+
 	public double getBazzarProfit() {
 		return bazzarProfit;
 	}
@@ -102,5 +117,7 @@ public class Vendor {
 	public void setBazzarProfit(double bazzarProfit) {
 		this.bazzarProfit = bazzarProfit;
 	}
+	
+	
 
 }
