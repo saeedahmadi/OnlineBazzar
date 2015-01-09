@@ -14,13 +14,11 @@
 					<div class="single_left">
 						<div class="grid images_3_of_2">
 							
-							<ul id="etalage" class="etalage">
 							
-								<li>
-							
-									<img class="etalage_magnifier" src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image"  style = "width:100%"/>
 								
-								</li>
+									<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image"  style = "width:100%"/>
+								
+								
 					
 			<%-- 		
 					<li class ="etalage_small_thumbs style = "with:400px; hieght:410px;" >
@@ -41,7 +39,7 @@
 					</ul>
 					</li> --%>
 								
-							</ul>
+							
 							
 							<div class="clearfix"></div>
 						</div>

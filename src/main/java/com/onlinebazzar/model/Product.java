@@ -11,8 +11,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,33 +29,38 @@ public class Product  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@NotNull
+	@Size(min=1	,max=50)
+	@Pattern(regexp= "[a-zA-Z]*",message="Write the ProductName  correctly")
 	private String name;
-	@NotNull
+	 @Min(1) @Max(999999)
 	private double price;
-	@NotNull
+	@Min(0) @Max(99)
 	private int onSale;
-	
-	@NotNull
-	private String descritpion;
-	@NotNull
+	@NotEmpty
 	private String productDetails;
+	
+	public Product() {
+		this.creationDate = new Date();
+	}
+	
 	public String getProductDetails() {
 		return productDetails;
 	}
 	public void setProductDetails(String productDetails) {
 		this.productDetails = productDetails;
 	}
-	private String url;
+	@Min(1) @Max(99)
 	private double bazzarBenefit;
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "vendor") 
 	private Vendor vendor;
+
 	@ManyToOne
 	@JoinColumn(name = "category") 
 	private Category category;
-	@DateTimeFormat(iso = ISO.DATE)
 	private Date creationDate;
+	@Min(1) @Max(1000)
+	private int quantity;
 	@Transient
 	private MultipartFile  productImage;
 	public MultipartFile getProductImage() {
@@ -65,6 +75,12 @@ public class Product  {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	public String getName() {
 		return name;
 	}
@@ -77,18 +93,7 @@ public class Product  {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getDescritpion() {
-		return descritpion;
-	}
-	public void setDescritpion(String descritpion) {
-		this.descritpion = descritpion;
-	}
-	public String getUrl() {
-		return url;
-	}
-	public void setUrl(String url) {
-		this.url = url;
-	}
+
 	public Vendor getVendor() {
 		return vendor;
 	}
