@@ -145,7 +145,12 @@ public class HomeController {
 	 * @return
 	 */
 	@RequestMapping(value = "/HomePage", method = RequestMethod.GET)
-	public String index(@ModelAttribute("orderFailed") boolean order) {
+	public String index() {
+		return "/HomePage";
+	}
+	
+	@RequestMapping(value = "/HomePageReload", method = RequestMethod.GET)
+	public String indexReload(@ModelAttribute("orderFailed") boolean order) {
 		return "/HomePage";
 	}
 
