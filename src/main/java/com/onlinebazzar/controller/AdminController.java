@@ -271,7 +271,7 @@ public class AdminController {
 	@RequestMapping("/webusers/edit/{id}")
 	public String editWebUser(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("webuser", this.webuserService.findOne(id));
-		model.addAttribute("webuser", this.webuserService.findAll());
+		model.addAttribute("webusers", this.webuserService.findAll());
 		return "admin/webusers";
 	}
 
@@ -279,7 +279,7 @@ public class AdminController {
 	public String deleteWebuser(@PathVariable("id") Long id, Model model) {
 		webuserService.deleteById(id);
 		model.addAttribute("webuser", new WebUser());
-		model.addAttribute("webuser", this.webuserService.findAll());
+		model.addAttribute("webusers", this.webuserService.findAll());
 		return "admin/webusers";
 	}
 	
