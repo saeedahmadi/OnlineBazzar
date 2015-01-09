@@ -95,7 +95,7 @@
 						<sec:authorize access="isAnonymous()">
 							
 						
-						<li><a href="login">Signin</a></li>|
+						<li><a href="<c:url value="/onlinebazzar/j_spring_security_logout"/>">Signin</a></li>|
 						<li><a href="shoppingCart">Cart(${fn:length(shoppingCart.items)})<i
 									class="fa fa-shopping-cart"></i></a></li>|
 						<li><a href="/onlinebazzar/UserRegisteration">Register</a></li>
@@ -116,7 +116,7 @@
 			<div class="header">
 				<div class="logo">
 					<a href="<c:url value='/'/>"><img
-						src="resources/images/logo.png" alt="" /> </a>
+						src="http://localhost:8080/onlinebazzar/resources/images/logo.png" alt="" /> </a>
 				</div>
 				<!-- start header_right -->
 				<div class="header_right">
