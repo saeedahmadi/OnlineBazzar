@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.onlinebazzar.model.Category;
 import com.onlinebazzar.model.Product;
+import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.services.CategoryService;
 import com.onlinebazzar.services.ProductService;
 
@@ -101,9 +102,10 @@ public class VendorProductController {
 	}
 
 	@RequestMapping(value = "/vendor/managedProducts", method = RequestMethod.GET)
-	public String listProducts(Model model) {
+	public String listProducts(Model model, HttpServletRequest request) {
 		model.addAttribute("product", new Product());
-		model.addAttribute("products", productService.findAll());
+		Vendor v = (Vendor) request.getSession().getAttribute("user");
+		model.addAttribute("products", productService.findByVendor(v.getId()));
 		return "vendor/manageProducts";
 	}
 
