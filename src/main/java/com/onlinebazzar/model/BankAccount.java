@@ -36,7 +36,7 @@ public class BankAccount {
 	}
 	public String getAccountNumber() {
 		
-		return accountNumber;
+		return EncryptDecryptStringWithDES.decrypt(accountNumber);
 	}
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber =EncryptDecryptStringWithDES.encrypt(accountNumber);
