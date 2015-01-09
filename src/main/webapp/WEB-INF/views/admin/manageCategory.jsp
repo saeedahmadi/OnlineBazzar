@@ -65,14 +65,14 @@
         <th width="80">Category ID</th>
         <th width="120">Category Name</th>
         <th width="60">Edit</th>
-        <th width="60">Delete</th>
+        <!-- <th width="60">Delete</th> -->
     </tr>
     <c:forEach items="${categories}" var="category">
         <tr>
             <td>${category.id}</td>
             <td>${category.name}</td>
             <td><a href="<c:url value='/admin/edit/${category.id}' />" >Edit</a></td>
-            <td><a href="<c:url value='/admin/remove/${category.id}' />" >Delete</a></td>
+            <%-- <td><a href="<c:url value='/admin/remove/${category.id}' />" >Delete</a></td> --%>
         </tr>
     </c:forEach>
     </table>

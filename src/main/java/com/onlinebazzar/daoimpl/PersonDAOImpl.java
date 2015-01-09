@@ -28,4 +28,13 @@ public class PersonDAOImpl extends GenericDAOImpl<Person> implements
 		List<Person> personList = query.list();
 		return personList;
 	}
+
+	@Override
+	public List<Person> findAllWebUserPersons(Long id) {
+		Query query = getCurrentSession().createQuery("from Person p where  p.webuser.id = :id"
+				+ " AND p.webuser.enabled = 0  AND (p.webuser.role=1)");
+		query.setParameter("id", id);
+		List<Person> personList = query.list();
+		return personList;
+	}
 }

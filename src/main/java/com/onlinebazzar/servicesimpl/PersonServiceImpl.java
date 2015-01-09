@@ -33,4 +33,9 @@ public class PersonServiceImpl extends GenericServiceImpl<Person> implements
 		return personDAO.findAllVendorPersons(id);
 	}
 
+	@Override
+	public List<Person> findAllWebUserPersons(Long id) {
+		return personDAO.findAllWebUserPersons(id);
+	}
+
 }

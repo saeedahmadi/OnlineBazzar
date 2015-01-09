@@ -10,7 +10,7 @@
 
 		<h1>Manage Vendors</h1>
 
-		<c:url var="addAction" value="/vendors/add"></c:url>
+		<c:url var="addAction" value="/admin/vendors/add"></c:url>
 
 		<form:form action="${addAction}" commandName="vendor" role="form">
 			<div class="form-group">
@@ -57,14 +57,14 @@
 					<th width="80">Vendor ID</th>
 					<th width="120">Vendor Name</th>
 					<th width="60">Edit</th>
-					<th width="60">Delete</th>
+					<!-- <th width="60">Delete</th> -->
 				</tr>
 				<c:forEach items="${vendors}" var="vendor">
 					<tr>
 						<td>${vendor.id}</td>
 						<td>${vendor.name}</td>
-						<td><a href="<c:url value='/vendors/edit/${vendor.id}' />">Edit</a></td>
-						<td><a href="<c:url value='/vendors/remove/${vendor.id}' />">Delete</a></td>
+						<td><a href="<c:url value='/admin/vendors/edit/${vendor.id}' />">Edit</a></td>
+						<%-- <td><a href="<c:url value='/admin/vendors/remove/${vendor.id}' />">Delete</a></td> --%>
 					</tr>
 				</c:forEach>
 			</table>

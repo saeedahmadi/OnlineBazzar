@@ -31,11 +31,13 @@ import com.onlinebazzar.commons.Role;
 import com.onlinebazzar.model.Address;
 import com.onlinebazzar.model.Category;
 import com.onlinebazzar.model.Person;
+import com.onlinebazzar.model.Product;
 import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.AddressService;
 import com.onlinebazzar.services.CategoryService;
 import com.onlinebazzar.services.PersonService;
+import com.onlinebazzar.services.ProductService;
 import com.onlinebazzar.services.VendorService;
 import com.onlinebazzar.services.WebUserService;
 import com.onlinebazzar.emailservice.Notification;
@@ -60,6 +62,9 @@ public class AdminController {
 	@Autowired
 	MailMail mail;	
 
+	@Autowired
+	ProductService productService;
+	
 	private static final Logger logger = LoggerFactory
 			.getLogger(AdminController.class);
 
@@ -149,6 +154,11 @@ public class AdminController {
 
 	@RequestMapping("/admin/remove/{id}")
 	public String deleteCategory(@PathVariable("id") Long id, Model model) {
+		
+		List<Product> products = this.productService.findByCategory(id);
+		for(int i = 0; i< products.size(); i++){
+			productService.delete(products.get(i));
+		}
 		categoryService.deleteById(id);
 		model.addAttribute("category", new Category());
 		model.addAttribute("categories", this.categoryService.findAll());
@@ -213,6 +223,32 @@ public class AdminController {
 		return "redirect:/vendors";
 
 	}
+	
+	@RequestMapping(value = "/admin/vendors/add", method = RequestMethod.POST)
+	public String addAdminVendor(@ModelAttribute("vendor") @Valid Vendor v,
+			BindingResult result) {
+
+		if (result.hasErrors()) {
+			return "redirect:/vendorRegister";
+		}
+
+		System.out.println(v);
+		if (v.getId() == null) {
+			v = vendorService.update(v);
+			Person p = createVendorAdmin(v);
+			personService.save(p);
+			
+			notifyVendorAdmin(p);
+			//Notification.notifyVendorAdmin(p);
+			
+			
+		} else {
+			vendorService.update(v);
+		}
+
+		return "redirect:/admin/vendors";
+
+	}
 
 	private Person createVendorAdmin(Vendor v) {
 		Person p = new Person();
@@ -232,19 +268,21 @@ public class AdminController {
 
 	}
 
-	@RequestMapping("/vendors/edit/{id}")
+	@RequestMapping("/admin/vendors/edit/{id}")
 	public String editVendor(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("vendor", this.vendorService.findOne(id));
 		model.addAttribute("vendors", this.vendorService.findAll());
 		return "admin/vendors";
 	}
 
-	@RequestMapping("/vendors/remove/{id}")
+	@RequestMapping("/admin/vendors/remove/{id}")
 	public String deleteVendor(@PathVariable("id") Long id, Model model) {
-		vendorService.deleteById(id);
+//		vendorService.deleteById(id);
+		Vendor v = vendorService.findOne(id);
+		vendorService.delete(v);
 		model.addAttribute("vendor", new Vendor());
 		model.addAttribute("vendors", this.vendorService.findAll());
-		return "admin/vendors";
+		return "redirect:/admin/vendors";
 	}
 
 	@RequestMapping(value = "/admin/webusers", method = RequestMethod.GET)
@@ -281,6 +319,18 @@ public class AdminController {
 		model.addAttribute("webuser", new WebUser());
 		model.addAttribute("webusers", this.webuserService.findAll());
 		return "admin/webusers";
+	}
+	
+	@RequestMapping(value = "/webusers/enableWebuser/{id}", method = RequestMethod.GET)
+	public String enableWebUser(@PathVariable("id") Long id, HttpServletRequest request, Model model) {
+		webuserService.enable(id);
+		WebUser webuser = (WebUser) request.getSession().getAttribute("user");
+		Person person = webuser.getPerson();
+		List<Person> webusers = personService.findAllWebUserPersons(person.getWebuser().getId());
+		
+		model.addAttribute("webuser", new Person());
+		model.addAttribute("webusers", webusers);
+		return "redirect:/admin/webusers";
 	}
 	
 	@Async

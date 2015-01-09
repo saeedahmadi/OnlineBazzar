@@ -14,7 +14,7 @@
 
 					<c:url var="addAction" value="/webusers/add"></c:url>
 
-					<form:form action="${addAction}" commandName="webuser" role="form">
+					<%-- <form:form action="${addAction}" commandName="webuser" role="form">
 						<div class="form-group">
 							<c:if test="${!empty webuser.username}">
 								<tr>
@@ -41,7 +41,7 @@
 								<input type="submit" value="Add webuser" />
 							</c:if>
 						</div>
-					</form:form>
+					</form:form> --%>
 
 					<br>
 					<h3>WebUsers List</h3>
@@ -50,17 +50,18 @@
 							<tr>
 								<th width="80">webuser ID</th>
 								<th width="120">webuser username</th>
-								<th width="60">Edit</th>
-								<th width="60">Delete</th>
+								<th width="60">Enable</th>
 							</tr>
 							<c:forEach items="${webusers}" var="webuser">
 								<tr>
 									<td>${webuser.id}</td>
 									<td>${webuser.username}</td>
+									<td><a href="<c:url value='/webusers/enableWebuser/${webuser.id}' />" >Enable</a></td>
+								<%-- 	
 									<td><a
 										href="<c:url value='/webusers/edit/${webuser.id}' />">Edit</a></td>
 									<td><a
-										href="<c:url value='/webusers/remove/${webuser.id}' />">Delete</a></td>
+										href="<c:url value='/webusers/remove/${webuser.id}' />">Delete</a></td> --%>
 								</tr>
 							</c:forEach>
 						</table>
