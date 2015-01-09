@@ -174,11 +174,11 @@ public class TestBase {
 		String random = RandomData.randomName(category.getName());
 		Product product = new Product();
 		product.setCategory(category);;
-		product.setDescritpion("Description "+random);
 		product.setName(random);
 		product.setPrice(100);
 		product.setProductDetails("Description "+random);
 		product.setVendor(vendor);
+		product.setQuantity(10);
 		
 		
 		return product;
