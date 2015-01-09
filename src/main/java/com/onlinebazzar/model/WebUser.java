@@ -20,10 +20,10 @@ public class WebUser implements Serializable{
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+	@NotNull
 	private String username;
 	
-	@NotNull @Min(value = 3) @Max(value = 10)
+	@NotNull @Min(value = 6) @Max(value = 15)
 	private String password;
 	@Transient
 	private boolean status;

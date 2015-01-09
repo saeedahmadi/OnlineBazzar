@@ -11,15 +11,7 @@
 	
 	<div class="col-md-3">
 					<div class="w_sidebar">
-						<div class="w_nav1">
-							<h4>All</h4>
-							
-							<ul>
-							<c:forEach var="vendor" items="${vendorList}">
-								<li><a href="#">${vendor.name}</a></li>
-								</c:forEach>
-							</ul>
-						</div>
+						
 						
 						
 						<h3>filter by</h3>

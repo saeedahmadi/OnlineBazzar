@@ -63,29 +63,8 @@
 							</div>
 
 							
-							<div class="form-group">
-								<label for="bazzarBenefit"
-									class="control-label col-lg-2 col-lg-2">BazzarBenefit:
-								</label>
-								<div class="col-lg-3">
-									<form:input type="number" class="form-control"
-										placeholder="bazzarBenefit " path="bazzarBenefit" />
-									
-								</div>
-								<form:errors path="bazzarBenefit"  cssClass="text-danger"/>
-							</div>
-							<div class="form-group">
-
-								<label for="creationDate"
-									class="control-label col-lg-2 col-lg-2">Creation Date: </label>
-								<div class="col-lg-3">
-									<form:input type="date" class="form-control"
-										placeholder="creationDate" path="creationDate" />
-									
-								</div>
-								<form:errors path="creationDate"  cssClass="text-danger"/>
-							</div>
-
+						
+							
 							
 
 							<div class="form-group">
