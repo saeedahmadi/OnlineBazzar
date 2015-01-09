@@ -14,6 +14,8 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -27,14 +29,13 @@ public class Product  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@NotNull
+	@Size(min=1	,max=50)
+	@Pattern(regexp= "[a-zA-Z]*",message="Write the ProductName  correctly")
 	private String name;
 	 @Min(1) @Max(999999)
 	private double price;
 	@Min(0) @Max(99)
 	private int onSale;
-	
-
 	@NotEmpty
 	private String productDetails;
 	public String getProductDetails() {
@@ -43,16 +44,21 @@ public class Product  {
 	public void setProductDetails(String productDetails) {
 		this.productDetails = productDetails;
 	}
-	
+	@Min(1) @Max(99)
 	private double bazzarBenefit;
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "vendor") 
 	private Vendor vendor;
+
 	@ManyToOne
 	@JoinColumn(name = "category") 
 	private Category category;
-	@DateTimeFormat(iso = ISO.DATE)
+	@DateTimeFormat(pattern="MM-dd-yyyy")
+	
+	
 	private Date creationDate;
+	@Min(1) @Max(1000)
+	private int quantity;
 	@Transient
 	private MultipartFile  productImage;
 	public MultipartFile getProductImage() {
@@ -66,6 +72,12 @@ public class Product  {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	public String getName() {
 		return name;

@@ -46,9 +46,10 @@
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control" placeholder="name"
 										path="name" />
-									<form:errors path="name" cssClass="text-danger" />
+									
 									
 								</div>
+								<form:errors path="name" cssClass="text-danger" />
 							</div>
 							<div class="form-group" spellcheck="true">
 								<label for="price" class="control-label col-lg-2 col-lg-2">Price:
@@ -69,8 +70,9 @@
 								<div class="col-lg-3">
 									<form:input type="number" class="form-control"
 										placeholder="bazzarBenefit " path="bazzarBenefit" />
-									<form:errors path="bazzarBenefit"  cssClass="text-danger"/>
+									
 								</div>
+								<form:errors path="bazzarBenefit"  cssClass="text-danger"/>
 							</div>
 							<div class="form-group">
 
@@ -79,8 +81,9 @@
 								<div class="col-lg-3">
 									<form:input type="date" class="form-control"
 										placeholder="creationDate" path="creationDate" />
-									<form:errors path="creationDate"  cssClass="text-danger"/>
+									
 								</div>
+								<form:errors path="creationDate"  cssClass="text-danger"/>
 							</div>
 
 							
@@ -90,12 +93,13 @@
 								</label>
 								<div class="col-lg-6">
 									<form:select path="category.id">
-										
+										<%-- <form:option value="-"></form:option> --%>
 										<form:options items="${category}" itemValue="id"
 											itemLabel="name" />
 									</form:select>
-								<form:errors path="category.id" cssClass="text-danger" />
+								
 								</div>
+								<form:errors path="category.id" cssClass="text-danger" />
 							</div>
 
 							<div class="form-group">
@@ -104,8 +108,9 @@
 								<div class="col-lg-10">
 									<form:input id="productImage" path="productImage" type="file"
 										class="form:input-large" />
-										<form:errors path="productImage" cssClass="text-danger" />
+										
 								</div>
+								<form:errors path="productImage" cssClass="text-danger" />
 							</div>
 							
 							
@@ -118,8 +123,24 @@
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control" placeholder="onSale"
 										path="onSale" />
-									<form:errors path="onSale" cssClass="text-danger" />
+									
 								</div>
+								<form:errors path="onSale" cssClass="text-danger" />
+							</div>
+							
+							
+							<div class="form-group">
+
+								<label for="quantity" class="control-label col-lg-2 col-lg-2">Quantity:
+								</label>
+								
+								
+								<div class="col-lg-3">
+									<form:input type="text" class="form-control" placeholder="quantity"
+										path="quantity" />
+									
+								</div>
+								<form:errors path="quantity" cssClass="text-danger" />
 							</div>
 
 								<div class="form-group">
@@ -127,9 +148,10 @@
 									ProductDetails: </label>
 								<div class="col-lg-10">
 									<form:textarea id="productDetails" path="productDetails" rows="5" cols="30" class="form:input-large" />
-									
-										<form:errors path="productDetails" cssClass="text-danger" />
+									<form:errors path="productDetails" cssClass="text-danger" />
+										
 								</div>
+								
 								</div>
 								
 								<%-- <div class="input-group">
