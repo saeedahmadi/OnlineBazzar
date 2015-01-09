@@ -38,6 +38,11 @@ public class Product  {
 	private int onSale;
 	@NotEmpty
 	private String productDetails;
+	
+	public Product() {
+		this.creationDate = new Date();
+	}
+	
 	public String getProductDetails() {
 		return productDetails;
 	}
@@ -53,9 +58,6 @@ public class Product  {
 	@ManyToOne
 	@JoinColumn(name = "category") 
 	private Category category;
-	@DateTimeFormat(pattern="MM-dd-yyyy")
-	
-	
 	private Date creationDate;
 	@Min(1) @Max(1000)
 	private int quantity;

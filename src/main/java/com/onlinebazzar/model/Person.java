@@ -28,10 +28,11 @@ public class Person {
 	@GeneratedValue
 	private Long id;
 	
-	@NotNull
+	@Pattern(regexp= "[a-zA-Z]*",message="First name is not written correctly")
 	private String firstName;
+	@Pattern(regexp= "[a-zA-Z]*",message="Last name is not written correctly")
 	private String lastName;
-//	@Pattern(regexp = "^[0-9]{3}-[0-9]{3}-[0-9]{4}$", message = "Phone should be in 111-111-1111 format")
+//	@Pattern(regexp = ""[0-9()-\.]*", message = "Phone should be in 111-111-1111 format")
 	private String phoneNumber;
 
 	@Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\."
