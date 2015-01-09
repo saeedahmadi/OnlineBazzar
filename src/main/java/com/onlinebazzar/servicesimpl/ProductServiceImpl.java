@@ -51,4 +51,10 @@ public class ProductServiceImpl extends GenericServiceImpl<Product> implements P
 		return productDAO.findDiscountProduct();
 	}
 
+	@Override
+	public List<Product> findByVendor(Long id) {
+		// TODO Auto-generated method stub
+		return productDAO.findByVendor(id);
+	}
+
 }
