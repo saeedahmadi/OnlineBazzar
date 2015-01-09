@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.onlinebazzar.commons.ProductSize;
+
 @Entity
 public class LineItem  implements Serializable{
 	@Id
@@ -17,9 +19,9 @@ public class LineItem  implements Serializable{
 	private Product product;
 	private int quantity;
 	private double price;
+	private ProductSize size;
 	
 	public LineItem() {
-		// TODO Auto-generated constructor stub
 		this.quantity=1;
 	}
 	public Long getId() {
@@ -46,6 +48,12 @@ public class LineItem  implements Serializable{
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	public ProductSize getSize() {
+		return size;
+	}
+	public void setSize(ProductSize size) {
+		this.size = size;
 	}
 
 }
