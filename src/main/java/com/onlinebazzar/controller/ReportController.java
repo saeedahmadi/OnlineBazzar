@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mysql.fabric.xmlrpc.base.Data;
-import com.onlinebazzar.model.Report;
 import com.onlinebazzar.model.Transaction;
 import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.services.TransactionService;
