@@ -77,19 +77,19 @@
 							<li><a href="<c:url value="/customer/edit"/>">Manage
 									Profile</a></li>|
 						<li><a href="<c:url value="shoppingCart"/>">Cart(${fn:length(shoppingCart.items)})</a></li>|
-						<li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
+						<li><a href="<c:url value="/onlinebazzar/j_spring_security_logout"/>">Logout</a></li>
 						</sec:authorize>
 
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
 							<li><a href="<c:url value="/customer/edit"/>">Manage
 									Profile</a></li>|						
-						<li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
+						<li><a href="<c:url value="/onlinebazzar/j_spring_security_logout"/>">Logout</a></li>
 						</sec:authorize>
 
 						<sec:authorize access="hasRole('ROLE_VADMIN')">
 							<li><a href="<c:url value="/customer/edit"/>">Manage
 									Profile</a></li>|						
-						<li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
+						<li><a href="<c:url value="/onlinebazzar/j_spring_security_logout"/>">Logout</a></li>
 						</sec:authorize>
 
 						<sec:authorize access="isAnonymous()">

@@ -71,7 +71,7 @@
 					<ul>
 						<sec:authorize access="hasRole('ROLE_VADMIN')">
 						<li><a href="<c:url value="/vendor/edit"/>">Manage Profile</a></li>|						
-						<li><a href="<c:url value="j_spring_security_logout"/>">Logout</a></li>
+						<li><a href="<c:url value="/onlinebazzar/j_spring_security_logout"/>">Logout</a></li>
 						</sec:authorize>
 					</ul>
 				</div>
