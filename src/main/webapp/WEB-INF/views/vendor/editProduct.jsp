@@ -30,71 +30,49 @@
 	<div class="content-section">
 		<div class="container">
 
-			<form:form role="form" method="POST" action="/onlinebazzar/product/add"
-				modelAttribute="product" class="form-horizontal"
-				enctype="multipart/form-data">
+			<form:form role="form" method="POST"
+				action="/onlinebazzar/product/add" modelAttribute="product"
+				class="form-horizontal" enctype="multipart/form-data">
 				<div class="panel panel-default">
 					<div class="panel-heading">Product Edit</div>
 					<div class="panel-body">
 						<fieldset>
 							<form:errors path="*" cssClass="alert alert-danger" element="div" />
-							
+
 							<div class="form-group">
 								<div class="col-lg-3">
 									<form:input type="hidden" class="form-control" path="id" />
 									<form:errors path="id" />
 									<br>
 								</div>
-								</div>
-								
-								<div class="form-group" spellcheck="true">
+							</div>
+
+							<div class="form-group" spellcheck="true">
 								<label for="name" class="control-label col-lg-2 col-lg-2">Name:
 								</label>
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control" path="name" />
-									
+
 
 								</div>
-								<form:errors path="name"  cssClass="text-danger"/>
+								<form:errors path="name" cssClass="text-danger" />
 							</div>
 							<div class="form-group" spellcheck="true">
 								<label for="price" class="control-label col-lg-2 col-lg-2">Price:
 								</label>
 								<div class="col-lg-3">
 									<form:input type="number" class="form-control" path="price" />
-									
-								</div>
-								<form:errors path="price"  cssClass="text-danger"/>
-							</div>
 
-							
-							<div class="form-group">
-								<label for="bazzarBenefit"
-									class="control-label col-lg-2 col-lg-2">BazzarBenefit:
-								</label>
-								<div class="col-lg-3">
-									<form:input type="number" class="form-control"
-										path="bazzarBenefit" />
-									
 								</div>
-								<form:errors path="bazzarBenefit"  cssClass="text-danger"/>
-							</div>
-							<div class="form-group">
-
-								<label for="creationDate"
-									class="control-label col-lg-2 col-lg-2">Creation Date:
-								</label>
-								<div class="col-lg-3">
-									<form:input type="date" class="form-control"
-										path="creationDate" />
-									
-								</div>
-								<form:errors path="creationDate"  cssClass="text-danger"/>
+								<form:errors path="price" cssClass="text-danger" />
 							</div>
 
 
 
-						
+
+
+
+
 
 							<div class="form-group">
 								<label for="url" class="control-label col-lg-2 col-lg-2">Category:
@@ -105,7 +83,7 @@
 											itemLabel="name" />
 									</form:select>
 								</div>
-								<form:errors path="category.id"  cssClass="text-danger"/>
+								<form:errors path="category.id" cssClass="text-danger" />
 							</div>
 
 							<div class="form-group">
@@ -118,16 +96,31 @@
 							</div>
 
 
-					<div class="form-group">
+							<div class="form-group">
+
+								<label for="onSale" class="control-label col-lg-2 col-lg-2">OnSale:
+								</label>
+
+
+								<div class="col-lg-3">
+									<form:input type="text" class="form-control"
+										placeholder="onSale" path="onSale" />
+
+								</div>
+								<form:errors path="onSale" cssClass="text-danger" />
+							</div>
+
+
+							<div class="form-group">
 
 								<label for="quantity" class="control-label col-lg-2 col-lg-2">Quantity:
 								</label>
-								
-								
+
+
 								<div class="col-lg-3">
-									<form:input type="text" class="form-control" placeholder="quantity"
-										path="quantity" />
-									
+									<form:input type="text" class="form-control"
+										placeholder="quantity" path="quantity" />
+
 								</div>
 								<form:errors path="quantity" cssClass="text-danger" />
 							</div>
@@ -135,12 +128,13 @@
 								<label class="control-label col-lg-2" for="productDetails">
 									ProductDetails: </label>
 								<div class="col-lg-10">
-									<form:textarea id="productDetails" path="productDetails" rows="5" cols="30" class="form:input-large" />
-									
-										
+									<form:textarea id="productDetails" path="productDetails"
+										rows="5" cols="30" class="form:input-large" />
+
+
 								</div>
-								<form:errors path="productDetails"  cssClass="text-danger"/>
-								</div>
+								<form:errors path="productDetails" cssClass="text-danger" />
+							</div>
 
 							<div class="form-group">
 								<div class="col-lg-offset-2 col-lg-10">

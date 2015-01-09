@@ -72,7 +72,7 @@
 								</ul>
 							</div>
 							<div class="det_nav1">
-								<h4>Select a size :</h4>
+								
 								<div class=" sky-form col col-4">
 									<ul>
 										<li><label class="checkbox"><input
@@ -89,7 +89,7 @@
 							<div class="btn_form">
 								<a href="<c:url value='/product/addtocart/${product.id}' />">Add to cart</a>
 							</div>
-							<a href="#"><span>login to save in wishlist </span></a>
+							
 
 						</div>
 						<div class="clearfix"></div>
@@ -149,15 +149,7 @@
 				</div>
 				<div class="col-md-3">
 					<div class="w_sidebar">
-						<div class="w_nav1">
-							<h4>All</h4>
-							
-							<ul>
-							<c:forEach var="vendor" items="${vendorList}">
-								<li><a href="#">${vendor.name}</a></li>
-								</c:forEach>
-							</ul>
-						</div>
+					
 						
 						
 						<h3>filter by</h3>
