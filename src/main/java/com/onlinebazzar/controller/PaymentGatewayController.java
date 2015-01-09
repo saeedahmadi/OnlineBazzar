@@ -22,12 +22,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.onlinebazzar.commons.CardType;
 import com.onlinebazzar.commons.EntryType;
+import com.onlinebazzar.encryption.EncryptDecryptStringWithDES;
 import com.onlinebazzar.financialsystem.restclient.FinancialSystemClient;
 import com.onlinebazzar.model.Customer;
 import com.onlinebazzar.model.LineItem;
 import com.onlinebazzar.model.Order;
 import com.onlinebazzar.model.PaymentDetails;
 import com.onlinebazzar.model.Product;
+import com.onlinebazzar.model.ProxyPaymentDetails;
 import com.onlinebazzar.model.ShoppingCart;
 import com.onlinebazzar.model.Transaction;
 import com.onlinebazzar.model.Vendor;
@@ -74,8 +76,11 @@ public class PaymentGatewayController {
 		if (cust.getPaymentDetails().size() > 0) {
 			model.addAttribute("paymentDetails", cust.getPaymentDetails()
 					.get(0));
+			ProxyPaymentDetails proxyPaymentDetails = new ProxyPaymentDetails();
+			copyDetails1(cust.getPaymentDetails().get(0), proxyPaymentDetails);
+			model.addAttribute("proxyDetails",proxyPaymentDetails );
 		} else {
-			model.addAttribute("paymentDetails", new PaymentDetails());
+			model.addAttribute("proxyDetails", new ProxyPaymentDetails());
 		}
 		return "paymentDetails";
 	}
@@ -93,13 +98,37 @@ public class PaymentGatewayController {
 		model.addAttribute("user", customer);
 
 		model.addAttribute("paymentDetails", new PaymentDetails());
+		model.addAttribute("proxyDetails", new ProxyPaymentDetails());
 		model.addAttribute("card", CardType.values());
 		return "paymentDetails";
 	}
+	
+	private void copyDetails(ProxyPaymentDetails p, PaymentDetails p1){
+		
+		p1.setBillingAddress(p.getBillingAddress());
+		p1.setCardNumber(p.getCardNumber());;
+		p1.setCvv(p.getCvv());
+		p1.setExipryDate(p.getExipryDate());
+		p1.setOwnerName(p.getOwnerName());
+		p1.setType(p.getType());
+		p1.setBillingAddress(p.getBillingAddress());
+		
+	}
+private void copyDetails1(PaymentDetails p, ProxyPaymentDetails p1){
+		
+		p1.setBillingAddress(p.getBillingAddress());
+		p1.setCardNumber(p.getCardNumber());;
+		p1.setCvv(p.getCvv());
+		p1.setExipryDate(p.getExipryDate());
+		p1.setOwnerName(p.getOwnerName());
+		p1.setType(p.getType());
+		p1.setBillingAddress(p.getBillingAddress());
+}
+		
 
 	@RequestMapping(value = "/paymentDetails", method = RequestMethod.POST)
-	public String savePaymentDetail(
-			@ModelAttribute("paymentDetails") @Valid PaymentDetails paymentDetails,
+	public String savePaymentDetail(@ModelAttribute("proxyDetails") @Valid ProxyPaymentDetails proxyDetails,
+			
 			BindingResult result, HttpServletRequest request, Locale locale,
 			Model model,
 			@ModelAttribute("shoppingCart") ShoppingCart shoppingCart,
@@ -108,12 +137,14 @@ public class PaymentGatewayController {
 		if (result.hasErrors()) {
 			return "paymentDetails";
 		}
-
+		
+		PaymentDetails paymentDetails = new PaymentDetails();
+		copyDetails(proxyDetails,paymentDetails);
 		currentUser.getPaymentDetails().add(paymentDetails);
 
 		// Web service for payment gateway to check the balance and card number
 		int paymentgatewayResult = RestClient.validateCC(
-				paymentDetails.getCardNumber(), shoppingCart.getPrice());
+				EncryptDecryptStringWithDES.encrypt(paymentDetails.getCardNumber()), shoppingCart.getPrice());
 		System.out.println(paymentgatewayResult);
 		if (paymentgatewayResult == 1) {
 

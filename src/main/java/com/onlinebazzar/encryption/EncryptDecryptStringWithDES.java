@@ -23,7 +23,7 @@ public class EncryptDecryptStringWithDES {
 
 
     public static String  encrypt(String str){
-    	str+=base;
+    	//str+=base;
     	 byte[] encoded = Base64.encodeBase64(str.getBytes());   
     	 
     	
@@ -35,6 +35,16 @@ public class EncryptDecryptStringWithDES {
     	 return new String(encoded);
     	 
     }
+    
+    public static void main(String[] args) {
+    	for (int i=1;i<10;i++){
+    		String text = i+""+i+""+i+""+i+i+""+i+""+i+""+i+i+""+i+""+i+""+i+i+""+i+""+i+""+i;
+    		//System.out.println(text);
+    		//System.out.println(text.length());
+    		System.out.println(EncryptDecryptStringWithDES.encrypt(text));
+		
+    	}
+	}
     
 
 }

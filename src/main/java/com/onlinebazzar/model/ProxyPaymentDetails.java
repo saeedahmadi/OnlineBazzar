@@ -1,13 +1,12 @@
 package com.onlinebazzar.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -16,17 +15,16 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 import com.onlinebazzar.commons.CardType;
 import com.onlinebazzar.encryption.EncryptDecryptStringWithDES;
 
+public class ProxyPaymentDetails {
 
-@Entity
-public class PaymentDetails implements Serializable{
-	
 	@Id
 	@GeneratedValue
 	private Long id;
 	
 	private String ownerName;
 	
-	//@Size(min = 16, max = 16, message = "Card number should be of 16 digits.")
+	@Size(min = 16, max = 16, message = "Card number should be of 16 digits.")
+	@Pattern(regexp= "[0-9]*",message="Can only be digits")
 	private String cardNumber;
 	
 	private CardType type;
@@ -51,12 +49,11 @@ public class PaymentDetails implements Serializable{
 		this.ownerName = ownerName;
 	}
 	public String getCardNumber() {
-		if(cardNumber!=null)
-		return EncryptDecryptStringWithDES.decrypt(cardNumber);
+		
 		return cardNumber;
 	}
 	public void setCardNumber(String cardNumber) {
-		this.cardNumber =EncryptDecryptStringWithDES.encrypt(cardNumber); 
+		this.cardNumber =cardNumber; 
 	}
 	public CardType getType() {
 		return type;
@@ -82,5 +79,6 @@ public class PaymentDetails implements Serializable{
 	public void setBillingAddress(Address billingAddress) {
 		this.billingAddress = billingAddress;
 	}
-
+	
+	
 }
