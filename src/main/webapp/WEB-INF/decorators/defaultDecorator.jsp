@@ -98,7 +98,19 @@
 						<li><a href="<c:url value="/onlinebazzar/j_spring_security_logout"/>">Signin</a></li>|
 						<li><a href="shoppingCart">Cart(${fn:length(shoppingCart.items)})<i
 									class="fa fa-shopping-cart"></i></a></li>|
-						<li><a href="/onlinebazzar/UserRegisteration">Register</a></li>
+						<!-- <li><a href="/onlinebazzar/UserRegisteration">Register</a></li> -->
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown" role="button">Register <span
+									class="caret"></span>
+							</a>
+								<ul class="dropdown-menu" role="menu"
+									aria-labelledby="dropdownMenuDivider">
+									<li><a href="/onlinebazzar/UserRegisteration" ><font color="black">Customer Registration</font></a></li>
+									
+									<li><a href="/onlinebazzar/registerAsVendor"><font color="black">Vendor
+											Registration</font></a></li>
+
+								</ul></li>
 						</sec:authorize>
 
 					</ul>
