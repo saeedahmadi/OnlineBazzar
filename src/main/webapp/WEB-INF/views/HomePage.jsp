@@ -44,61 +44,70 @@
 				<!-- end  slider -->
 			</div>
 			<div class="col-md-3 sidebar">
-				<div class="grid_list">
-					<a href="details.html">
-						<div class="grid_img">
-						
-						<%-- <c:forEach var="productOnSale" items="${productList}">
-						<img src="<c:url value="/resources/images/${productOnSale.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 
-							
-								</c:forEach> --%>
-						</div>
-						
+				<c:forEach var="productOnSale" items="${discountProductList}">
+					<div class="grid_list">
+
+						<a href="<c:url value="/details/${productOnSale.id}"/>">
+
+							<div class="grid_img">
+
+								<img
+									src="<c:url value="/resources/images/${productOnSale.name}.jpg" ></c:url>"
+									class="img-responsive" alt="" />
+
+							</div>
+
+						</a>
 						<div class="grid_text left">
+
+							<!-- 	<p>on select merchandise</p> -->
+
 							<h3>
-								<a href="#">extra 35<sub>%</sub> off
+								<a href="<c:url value="/details/${productOnSale.id}"/>">extra
+									${productOnSale.onSale}<sub>%</sub> off
 								</a>
 							</h3>
-							<p>on select merchandise</p>
-							
+							<p>${productOnSale.name}</p>
 						</div>
-						
 						<div class="clearfix"></div>
-						
-					</a>
-				</div>
-				
+					</div>
+				</c:forEach>
+
+
+
 			</div>
+
+
 			<div class="clearfix"></div>
-		</div>
-		<!-- start content -->
-		<div class="content">
-			<div class="content_text">
-				<h3>brand of the week</h3>
-				<h4>
-					<a href="#">a touch of glamour </a>
-				</h4>
-				<p>
-					It is a long established fact that <i class="fa fa-shopping-cart"></i>
-					a reader will be distracted by the readable content of a page when
-					looking at its layout. The point of using Lorem Ipsum is that it
-					has a more-or-less normal distribution of letters, as opposed to
-					using 'Content here, content here',
-				</p>
 
-			</div>
-			<!-- grids_of_3 -->
+			<!-- start content -->
+			<div class="content">
+				<div class="content_text">
+					<h3>brand of the week</h3>
+					<h4>
+						<a href="#">a touch of glamour </a>
+					</h4>
+					<p>
+						It is a long established fact that <i class="fa fa-shopping-cart"></i>
+						a reader will be distracted by the readable content of a page when
+						looking at its layout. The point of using Lorem Ipsum is that it
+						has a more-or-less normal distribution of letters, as opposed to
+						using 'Content here, content here',
+					</p>
 
-			<div class="row grids">
-				<c:forEach var="product" items="${productList}">
+				</div>
+				<!-- grids_of_3 -->
 
-					<div class="col-md-3 grid1">
-					
-								<a href="<c:url value="/details/${product.id}"/>"> 
-							
-					<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image" width="263px" height="340px"  class="img-responsive"/>
-					
-						<%--  <div class="content_box">
+				<div class="row grids">
+					<c:forEach var="product" items="${productList}">
+
+						<div class="col-md-3 grid1">
+
+							<a href="<c:url value="/details/${product.id}"/>"> <img
+								src="<c:url value="/resources/images/${product.name}.jpg"></c:url>"
+								alt="image" width="263px" height="340px" class="img-responsive" />
+
+								<%--  <div class="content_box">
 							<a href="<c:url value="/details/${product.id} "/>">
 								<div class="view view-fifth">
 									
@@ -112,20 +121,25 @@
 							</a>
 						</div>  --%>
 
-						<div class="look">
-							<h4>
-							${product.category.name}
-							</h4>
-							<p>read more</p>
+								<div class="look">
+									<h4>${product.category.name}</h4>
+									<p>read more</p>
+								</div>
+							</a>
 						</div>
-						</a>
-					</div>
-				</c:forEach>
+					</c:forEach>
 
+				</div>
+				<!-- end grids_of_3 -->
 			</div>
-			<!-- end grids_of_3 -->
 		</div>
-</div>
 		<!-- end content -->
+
 	</div>
-	
+	<c:if test="${orderFailed}">
+		<script type="text/javascript">
+			window.onload = function() {
+				alert("Order failed");
+			}
+		</script>
+	</c:if>

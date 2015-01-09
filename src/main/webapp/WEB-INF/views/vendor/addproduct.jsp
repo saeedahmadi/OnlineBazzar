@@ -6,7 +6,7 @@
 <html>
 
 <head>
-<title>Customer Registration</title>
+<title>Product Registration</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
@@ -38,7 +38,7 @@
 					<div class="panel-heading">Product Registration</div>
 					<div class="panel-body">
 						<fieldset>
-							<form:errors path="*" cssClass="alert alert-danger" element="div" />
+						
 							<div class="form-group">
 
 								<label for="name" class="control-label col-lg-2 col-lg-2">Name:
@@ -46,9 +46,10 @@
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control" placeholder="name"
 										path="name" />
-									<form:errors path="name" />
+									
 									
 								</div>
+								<form:errors path="name" cssClass="text-danger" />
 							</div>
 							<div class="form-group" spellcheck="true">
 								<label for="price" class="control-label col-lg-2 col-lg-2">Price:
@@ -56,62 +57,28 @@
 								<div class="col-lg-3">
 									<form:input type="number" class="form-control"
 										placeholder="price: " path="price" />
-									<form:errors path="price" />
+									
 								</div>
+								<form:errors path="price" cssClass="text-danger" />
 							</div>
 
-							<div class="form-group">
-
-								<label for="descritpion" class="control-label col-lg-2 col-lg-2">Descritpion:
-								</label>
-								<div class="col-lg-3">
-									<form:input type="text" class="form-control"
-										placeholder="descritpion" path="descritpion" />
-									<form:errors path="descritpion" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="bazzarBenefit"
-									class="control-label col-lg-2 col-lg-2">BazzarBenefit:
-								</label>
-								<div class="col-lg-3">
-									<form:input type="number" class="form-control"
-										placeholder="bazzarBenefit " path="bazzarBenefit" />
-									<form:errors path="bazzarBenefit" />
-								</div>
-							</div>
-							<div class="form-group">
-
-								<label for="creationDate"
-									class="control-label col-lg-2 col-lg-2">Creation Date: </label>
-								<div class="col-lg-3">
-									<form:input type="date" class="form-control"
-										placeholder="creationDate" path="creationDate" />
-									<form:errors path="creationDate" />
-								</div>
-							</div>
+							
+						
+							
+							
 
 							<div class="form-group">
-
-								<label for="url" class="control-label col-lg-2 col-lg-2">Url:
-								</label>
-								<div class="col-lg-3">
-									<form:input type="text" class="form-control" placeholder="url"
-										path="url" />
-									<form:errors path="url" />
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="url" class="control-label col-lg-2 col-lg-2">Category:
+								<label for="category" class="control-label col-lg-2 col-lg-2">Category:
 								</label>
 								<div class="col-lg-6">
 									<form:select path="category.id">
-										<form:option value="-" label="--Please Select" />
+										<%-- <form:option value="-"></form:option> --%>
 										<form:options items="${category}" itemValue="id"
 											itemLabel="name" />
 									</form:select>
+								
 								</div>
+								<form:errors path="category.id" cssClass="text-danger" />
 							</div>
 
 							<div class="form-group">
@@ -120,21 +87,39 @@
 								<div class="col-lg-10">
 									<form:input id="productImage" path="productImage" type="file"
 										class="form:input-large" />
+										
 								</div>
+								<form:errors path="productImage" cssClass="text-danger" />
 							</div>
 							
 							
 							<div class="form-group">
 
-								<label for="url" class="control-label col-lg-2 col-lg-2">OnSale:
+								<label for="onSale" class="control-label col-lg-2 col-lg-2">OnSale:
 								</label>
 								
 								
 								<div class="col-lg-3">
 									<form:input type="text" class="form-control" placeholder="onSale"
 										path="onSale" />
-									<form:errors path="onSale" />
+									
 								</div>
+								<form:errors path="onSale" cssClass="text-danger" />
+							</div>
+							
+							
+							<div class="form-group">
+
+								<label for="quantity" class="control-label col-lg-2 col-lg-2">Quantity:
+								</label>
+								
+								
+								<div class="col-lg-3">
+									<form:input type="text" class="form-control" placeholder="quantity"
+										path="quantity" />
+									
+								</div>
+								<form:errors path="quantity" cssClass="text-danger" />
 							</div>
 
 								<div class="form-group">
@@ -142,9 +127,10 @@
 									ProductDetails: </label>
 								<div class="col-lg-10">
 									<form:textarea id="productDetails" path="productDetails" rows="5" cols="30" class="form:input-large" />
-									
+									<form:errors path="productDetails" cssClass="text-danger" />
 										
 								</div>
+								
 								</div>
 								
 								<%-- <div class="input-group">

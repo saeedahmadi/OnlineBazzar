@@ -2,6 +2,9 @@
 	prefix="sec"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<link rel="stylesheet" type="text/css" href="/resources/css/cloudzoom.css" />
+<script type="text/javascript" src="/resources/js/cloudzoom.js"></script>
+
 	<!-- content -->
 	<div class="container">
 		<div class="women_main">
@@ -11,13 +14,11 @@
 					<div class="single_left">
 						<div class="grid images_3_of_2">
 							
-							<ul id="etalage" class="etalage">
 							
-								<li>
-							
-									<img class="etalage_magnifier" src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image"  style = "width:100%"/>
 								
-								</li>
+									<img src="<c:url value="/resources/images/${product.name}.jpg"></c:url>" alt="image"  style = "width:100%"/>
+								
+								
 					
 			<%-- 		
 					<li class ="etalage_small_thumbs style = "with:400px; hieght:410px;" >
@@ -38,7 +39,7 @@
 					</ul>
 					</li> --%>
 								
-							</ul>
+							
 							
 							<div class="clearfix"></div>
 						</div>
@@ -53,7 +54,7 @@
 									
 									<c:forEach var="realtedProduct" items="${productList}">
 									<li>
-									<a href="#">
+										<a href="<c:url value="/details/${realtedProduct.id}"/>">
 										<img src="<c:url value="/resources/images/${realtedProduct.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 
 									</a>
 										<%-- <div class="col-md-3 grid1">
@@ -71,7 +72,7 @@
 								</ul>
 							</div>
 							<div class="det_nav1">
-								<h4>Select a size :</h4>
+								
 								<div class=" sky-form col col-4">
 									<ul>
 										<li><label class="checkbox"><input
@@ -88,7 +89,7 @@
 							<div class="btn_form">
 								<a href="<c:url value='/product/addtocart/${product.id}' />">Add to cart</a>
 							</div>
-							<a href="#"><span>login to save in wishlist </span></a>
+							
 
 						</div>
 						<div class="clearfix"></div>
@@ -113,7 +114,7 @@
 								<div class="product-img">
 								
 								
-								<a href="#">
+								<a href="<c:url value="/details/${realtedProduct.id}"/>">
 										<img src="<c:url value="/resources/images/${realtedProduct.name}.jpg"></c:url>" alt="image gize"  style = "width:100%"/> 
 									</a>
 									
@@ -148,15 +149,7 @@
 				</div>
 				<div class="col-md-3">
 					<div class="w_sidebar">
-						<div class="w_nav1">
-							<h4>All</h4>
-							
-							<ul>
-							<c:forEach var="vendor" items="${vendorList}">
-								<li><a href="#">${vendor.name}</a></li>
-								</c:forEach>
-							</ul>
-						</div>
+					
 						
 						
 						<h3>filter by</h3>
@@ -172,7 +165,10 @@
 							<c:forEach var="catagories" items="${vendor.categories}">
 										
 								<label class="checkbox"><input type="checkbox"
-									name="checkbox" checked=""><i></i>${catagories.name}</label>
+									name="checkbox" checked=""><i></i>
+									<a href="<c:url value='/product/category/${catagories.id}' />">${catagories.name}</a>
+									
+								</label>
 										
 										</c:forEach>
 						
@@ -186,46 +182,56 @@
 						
 						</section>
 						
+						
+						
+						
+						
+						<%-- <c:forEach var="category" items="${categoryList}">
+									<div class="col1">
+										<div class="h_nav">
+											<h4>
+												
+											</h4>
+										</div>
+									</div>
+
+								</c:forEach> --%>
 						<!-- Brands -->
+						
+						
+						
+						
+						
 						<section class="sky-form">
 						<h4>brand</h4>
 						<div class="row1 scroll-pane">
-							<div class="col col-4">
-							<c:forEach var="vendor" items="${vendorList}">
-							
+						
+						<div class="col col-4">
+						
+						<c:forEach var="vendor" items="${vendorList}">
+							<c:forEach var="catagories" items="${vendor.categories}">
+										
 								<label class="checkbox"><input type="checkbox"
-									name="checkbox" checked=""><i></i>${vendor.name}</label> 
-									</c:forEach>
-							</div>
+									name="checkbox" checked=""><i></i>
+									<a href="<c:url value='/product/category/${catagories.id}' />">${vendor.name}</a>
+									
+								</label>
+										
+										</c:forEach>
+						
+						</c:forEach>
+						
+						
 							
-						</div>
-						</section>
-						<section class="sky-form">
-						<h4>colour</h4>
-						<ul class="w_nav2">
-							<li><a class="color1" href="#"></a></li>
-							<li><a class="color2" href="#"></a></li>
-							<li><a class="color3" href="#"></a></li>
-							<li><a class="color4" href="#"></a></li>
-							<li><a class="color5" href="#"></a></li>
-							<li><a class="color6" href="#"></a></li>
-							<li><a class="color7" href="#"></a></li>
-							<li><a class="color8" href="#"></a></li>
-							<li><a class="color9" href="#"></a></li>
-							<li><a class="color10" href="#"></a></li>
-							<li><a class="color12" href="#"></a></li>
-							<li><a class="color13" href="#"></a></li>
-							<li><a class="color14" href="#"></a></li>
-							<li><a class="color15" href="#"></a></li>
-							<li><a class="color5" href="#"></a></li>
-							<li><a class="color6" href="#"></a></li>
-							<li><a class="color7" href="#"></a></li>
-							<li><a class="color8" href="#"></a></li>
-							<li><a class="color9" href="#"></a></li>
-							<li><a class="color10" href="#"></a></li>
-						</ul>
-						</section>
-						<section class="sky-form">
+							</div>
+							</div>
+							</section>
+						
+						
+						
+						
+				
+						<%-- <section class="sky-form">
 						<h4>discount</h4>
 						<div class="row1 scroll-pane">
 							<div class="col col-4">
@@ -242,7 +248,7 @@
 									type="radio" name="radio"><i></i>10 % and above</label>
 							</div>
 						</div>
-						</section>
+						</section> --%>
 					</div>
 				</div>
 				<div class="clearfix"></div>

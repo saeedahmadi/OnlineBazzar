@@ -12,4 +12,5 @@ public interface ProductService extends GenericService<Product>{
 	List<Product> findByVendorAndCategoryName(Long vid, Long cid);
 	List<Product> findByCategory(Long id);
 	List<Product> findDiscountProduct();
+	List<Product> findByVendor(Long id);
 }

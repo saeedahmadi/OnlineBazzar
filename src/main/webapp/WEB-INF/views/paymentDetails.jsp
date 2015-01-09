@@ -15,7 +15,7 @@
 
 			<!-- 	<div class="form-group">Customer Registration</div> -->
 			<form:form role="form" method="post" action="paymentDetails"
-				modelAttribute="paymentDetails" class="form-horizontal">
+				modelAttribute="proxyDetails" class="form-horizontal">
 				<fieldset>
 					<div class="form-group">
 						<div class="col-lg-3">
@@ -43,7 +43,7 @@
 						<div class="col-lg-3">
 							<form:select path="type">
 								<form:option value="" label="--Select value--" />
-								<form:options items="${card}"/>
+								<form:options items="${enumValues}"/>
 							</form:select>
 						</div>
 					</div>
@@ -53,7 +53,7 @@
 						<label for="cardNumber" class="control-label col-lg-2 col-lg-2">Card
 							number: </label>
 						<div class="col-lg-3">
-							<form:input type="cardNumber" class="form-control"
+							<form:input type="text" class="form-control"
 								path="cardNumber" />
 							<form:errors path="cardNumber" cssClass="text-danger" />
 						</div>

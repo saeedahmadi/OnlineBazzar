@@ -34,7 +34,7 @@ public class PaymentDetails implements Serializable{
 	@DateTimeFormat(iso = ISO.DATE)
 	private Date exipryDate;
 	
-//	@Size(min = 3, max = 3, message = "CVV must be 3 digits.")
+    //@Size(min = 3, max = 3, message = "CVV must be 3 digits.")
 	private int cvv;
 	@OneToOne(cascade = CascadeType.ALL)
 	private Address billingAddress;
@@ -51,8 +51,8 @@ public class PaymentDetails implements Serializable{
 		this.ownerName = ownerName;
 	}
 	public String getCardNumber() {
-		
-		//return EncryptDecryptStringWithDES.decrypt(cardNumber); 
+		if(cardNumber!=null)
+		return EncryptDecryptStringWithDES.decrypt(cardNumber);
 		return cardNumber;
 	}
 	public void setCardNumber(String cardNumber) {

@@ -5,7 +5,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
 import com.onlinebazzar.services.CategoryService;
+import com.onlinebazzar.services.CustomerService;
 import com.onlinebazzar.services.PersonService;
+import com.onlinebazzar.services.ProductService;
+import com.onlinebazzar.services.VendorService;
 import com.onlinebazzar.test.TestBase;
 
 
@@ -20,5 +23,17 @@ public class ServiceImplTestBase extends TestBase {
 	@Qualifier("personService")
 	protected PersonService personService;
 	
+	
+	@Autowired
+	@Qualifier("productService")
+	protected ProductService productService;
+	
+	@Autowired
+	@Qualifier("vendorService")
+	protected VendorService vendorService;
+	
+	@Autowired
+	@Qualifier("customerService")
+	protected CustomerService customerService;
 	
 }

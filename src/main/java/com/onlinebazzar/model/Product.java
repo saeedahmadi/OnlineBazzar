@@ -11,10 +11,18 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.onlinebazzar.commons.ProductSize;
 
 
 @Entity
@@ -23,31 +31,43 @@ public class Product  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Size(min=1	,max=50)
+	
 	private String name;
+	 @Min(1) @Max(999999)
 	private double price;
+	@Min(0) @Max(99)
 	private int onSale;
 	
-	
-	private String descritpion;
+	@NotEmpty
 	private String productDetails;
+	
+	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name = "vendor") 
+	private Vendor vendor;
+
+	@ManyToOne
+	@JoinColumn(name = "category") 
+	private Category category;
+	private Date creationDate;
+	@Min(1) @Max(1000)
+	private int quantity;
+	@Transient
+	private MultipartFile  productImage;
+	
+	public Product() {
+		this.creationDate = new Date();
+		this.quantity     = 1;
+	}
+	
 	public String getProductDetails() {
 		return productDetails;
 	}
 	public void setProductDetails(String productDetails) {
 		this.productDetails = productDetails;
 	}
-	private String url;
-	private double bazzarBenefit;
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "vendor") 
-	private Vendor vendor;
-	@ManyToOne
-	@JoinColumn(name = "category") 
-	private Category category;
-	@DateTimeFormat(iso = ISO.DATE)
-	private Date creationDate;
-	@Transient
-	private MultipartFile  productImage;
+	
 	public MultipartFile getProductImage() {
 		return productImage;
 	}
@@ -59,6 +79,12 @@ public class Product  {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	public String getName() {
 		return name;
@@ -72,18 +98,7 @@ public class Product  {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getDescritpion() {
-		return descritpion;
-	}
-	public void setDescritpion(String descritpion) {
-		this.descritpion = descritpion;
-	}
-	public String getUrl() {
-		return url;
-	}
-	public void setUrl(String url) {
-		this.url = url;
-	}
+
 	public Vendor getVendor() {
 		return vendor;
 	}
@@ -102,12 +117,7 @@ public class Product  {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
-	public double getBazzarBenefit() {
-		return bazzarBenefit;
-	}
-	public void setBazzarBenefit(double bazzarBenefit) {
-		this.bazzarBenefit = bazzarBenefit;
-	}
+	
 	public int getOnSale() {
 		return onSale;
 	}
@@ -118,8 +128,6 @@ public class Product  {
 	public String toString() {
 		return "Product [category=" + category + "]";
 	}
-	
-	
 	
 	
 }

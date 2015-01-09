@@ -14,28 +14,28 @@ import com.onlinebazzar.model.BankAccount;
 import com.onlinebazzar.model.Category;
 import com.onlinebazzar.model.Customer;
 import com.onlinebazzar.model.Person;
+import com.onlinebazzar.model.Product;
 import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.model.WebUser;
 
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({ "classpath:root-context.xml",
-		"classpath:servlet-context.xml" })
+@ContextConfiguration("classpath:/com/onlinebazzar/test/root-context.xml")
 public class TestBase {
 	private static Category globalCategory;
 	private static Category category;
 
 	public static Category getGlobalCategory() {
 		if (globalCategory == null) {
-			globalCategory = createOneNewCategory();
+			globalCategory = createOneNewCategory("test");
 		}
 		return globalCategory;
 	}
 
 	public static Category getCategory() {
 		if (category == null) {
-			category = createOneNewCategory();
+			category = createOneNewCategory("test");
 			
 		}
 		return category;
@@ -44,10 +44,11 @@ public class TestBase {
 
 	
 
-	protected static Category createOneNewCategory() {
+	protected static Category createOneNewCategory(String string) {
 		Category category = new Category();
 		
-		category.setName(RandomData.randomName("Category"));
+		category.setName(string);
+		
 		
 		return category;
 	}
@@ -68,17 +69,19 @@ public class TestBase {
 		
 		return p;
 	}
-	protected static Person createOneNewCustomer() {
+	protected static Customer createOneNewCustomer() {
 		Customer p = new Customer();
 		String random = RandomData.randomName("Customer");
 		
-    	p.setFirstName(random);
-    	p.setLastName(random);
+    	p.setFirstName("Customer");
+    	p.setLastName("Customer");
     	p.setEmail("test@onlinebazzar.com");
     	p.setPhoneNumber(RandomData.randomName(random));
     	p.setAddress(createOneNewAddress());
-    	
-    	p.setWebuser(createOneNewWebUser(Role.CUSTOMER));
+    	WebUser webuser = createOneNewWebUser(Role.CUSTOMER);
+    	webuser.setUsername("customer");
+    	webuser.setPassword("customer");
+    	p.setWebuser(webuser);
     	//p.setVendor(createOneNewVendor());
 		
 		
@@ -88,8 +91,8 @@ public class TestBase {
 		Person p = new Person();
 		String random = RandomData.randomName("Person");
 		
-    	p.setFirstName(random);
-    	p.setLastName(random);
+    	p.setFirstName("Person");
+    	p.setLastName("Person");
     	p.setEmail("test@onlinebazzar.com");
     	p.setPhoneNumber(RandomData.randomName(random));
     	p.setAddress(createOneNewAddress());
@@ -100,58 +103,22 @@ public class TestBase {
 		
 		return p;
 	}
-	protected static Person createOneNewVendorAdmin() {
+	protected static Person createOneNewVendorAdmin(Vendor v) {
 		Person p = new Person();
 		String random = RandomData.randomName("Person");
 		
-    	p.setFirstName(random);
-    	p.setLastName(random);
+    	p.setFirstName("VendorAdmin");
+    	p.setLastName("VendorAdmin");
     	p.setEmail("test@onlinebazzar.com");
     	p.setPhoneNumber(RandomData.randomName(random));
     	p.setAddress(createOneNewAddress());
     	
     	p.setWebuser(createOneNewWebUser(Role.VADMIN));
-    	p.setVendor(createOneNewVendor());
+    	p.setVendor(v);
 		
 		
 		return p;
 	}
-
-
-
-	private static Vendor createOneNewVendor() {
-		// TODO Auto-generated method stub
-		Vendor vendor = new Vendor();
-		String random = RandomData.randomName("Vendor");
-		vendor.setName(random);
-		vendor.setEmail("test@gmail.com");
-		vendor.setPhoneNumber("1111111111");
-		vendor.setAddress(createOneNewAddress());
-		vendor.setBankAccount(createOneNewBankAccount());
-		return vendor;
-	}
-
-	private static BankAccount createOneNewBankAccount() {
-		// TODO Auto-generated method stub
-		BankAccount bankAccount = new BankAccount();
-		String random = RandomData.randomName("BankAccount");
-		bankAccount.setAccountNumber("11111111111111"+RandomData.randomId());
-		bankAccount.setBankAddress(createOneNewAddress());
-		bankAccount.setOwnerName(random);
-		bankAccount.setType(AccountType.CHECKING);
-		return bankAccount;
-	}
-
-	private static WebUser createOneNewWebUser(Role role) {
-		// TODO Auto-generated method stub
-		WebUser user = new WebUser();
-    	user.setRole(role);
-    	String random = RandomData.randomName("Admin");
-    	user.setUsername(random);
-    	user.setPassword(random);
-    	return user;
-	}
-
 	private static Address createOneNewAddress() {
 		// TODO Auto-generated method stub
 		
@@ -165,6 +132,57 @@ public class TestBase {
 		
 		
 		return address;
+	}
+
+
+	public static Vendor createOneNewVendor(String vendorNames) {
+		// TODO Auto-generated method stub
+		Vendor vendor = new Vendor();
+		String random = vendorNames;
+		vendor.setName(random);
+		vendor.setEmail("test@gmail.com");
+		vendor.setPhoneNumber("1111111111");
+		vendor.setAddress(createOneNewAddress());
+		vendor.setBankAccount(createOneNewBankAccount());
+		return vendor;
+	}
+
+	public static BankAccount createOneNewBankAccount() {
+		// TODO Auto-generated method stub
+		BankAccount bankAccount = new BankAccount();
+		String random = RandomData.randomName("BankAccount");
+		bankAccount.setAccountNumber("11111111111111"+RandomData.randomId());
+		bankAccount.setBankAddress(createOneNewAddress());
+		bankAccount.setOwnerName(random);
+		bankAccount.setType(AccountType.CHECKING);
+		return bankAccount;
+	}
+
+	public static WebUser createOneNewWebUser(Role role) {
+		// TODO Auto-generated method stub
+		WebUser user = new WebUser();
+    	user.setRole(role);
+    	String random = RandomData.randomName("Admin");
+    	user.setUsername(random);
+    	user.setPassword("2222222");
+    	return user;
+	}
+
+	public static Product createOneNewProduct(Category category, Vendor vendor) {
+		// TODO Auto-generated method stub
+		
+		String random = RandomData.randomName(category.getName());
+		Product product = new Product();
+		product.setCategory(category);
+		product.setName(vendor.getName()+"Product");
+		product.setPrice(100);
+		product.setProductDetails("Description ");
+		product.setVendor(vendor);
+		product.setQuantity(10);
+		
+		
+		
+		return product;
 	}
 
 	@Test

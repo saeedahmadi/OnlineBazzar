@@ -54,4 +54,14 @@ public class ProductDAOImpl extends GenericDAOImpl<Product> implements
 		List<Product> productList = query.list();
 		return productList;
 	}
+
+	@Override
+	public List<Product> findByVendor(Long id) {
+		Query query = getCurrentSession().createQuery(
+				"from Product p where p.vendor.id =:id");
+
+		query.setParameter("id", id);
+		List<Product> productList = query.list();
+		return productList;
+	}
 }

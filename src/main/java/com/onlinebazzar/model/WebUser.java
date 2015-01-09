@@ -8,6 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.onlinebazzar.commons.Role;
 
@@ -17,8 +21,10 @@ public class WebUser implements Serializable{
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+	@NotNull
 	private String username;
+	
+	@NotNull @Size(min = 6, max = 15)
 	private String password;
 	@Transient
 	private boolean status;
