@@ -169,7 +169,8 @@ private void copyDetails1(PaymentDetails p, ProxyPaymentDetails p1){
 			model.addAttribute("order", order);
 			return "orderDetails";
 		}
-		return "redirect:/HomePage";
+		model.addAttribute("orderFailed", true);
+		return "redirect:/";
 	}
 
 	@Async
