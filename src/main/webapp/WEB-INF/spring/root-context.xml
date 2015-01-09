@@ -90,8 +90,15 @@
 		<!-- ADMIN -->
 		<security:intercept-url pattern="/admin**"
 			access="ROLE_ADMIN" />
+			
+		<security:intercept-url pattern="/admin/**"
+			access="ROLE_ADMIN" />
+			
 		<!-- VADMIN -->
 		<security:intercept-url pattern="/vendor**"
+			access="ROLE_VADMIN" />
+			
+		<security:intercept-url pattern="/vendor/**"
 			access="ROLE_VADMIN" />
 			
 		<!-- VMANAGER -->
