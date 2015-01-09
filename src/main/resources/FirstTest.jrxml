@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.0.1.final using JasperReports Library version 6.0.0  -->
-<!-- 2015-01-09T11:52:44 -->
+<!-- 2015-01-09T14:15:01 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FirstTest" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ce391ce7-7c9f-49a7-b0c2-a7b344eebb1a">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -78,43 +78,33 @@
 			</staticText>
 			<staticText>
 				<reportElement x="83" y="7" width="100" height="20" uuid="01fd44fa-939c-49de-af56-eb0ebc1be866"/>
-				<text><![CDATA[accountNumber]]></text>
+				<text><![CDATA[AccountNumber]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="180" y="7" width="100" height="16" uuid="775ab469-daff-411e-93f7-52d9bce9ff34"/>
-				<text><![CDATA[accountCompany]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="293" y="10" width="60" height="14" uuid="e40f4a46-feaa-487e-9223-0d78de70a5ec"/>
-				<text><![CDATA[price]]></text>
+				<reportElement x="284" y="10" width="60" height="14" uuid="e40f4a46-feaa-487e-9223-0d78de70a5ec"/>
+				<text><![CDATA[Amount]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="24" splitType="Stretch">
+		<band height="57" splitType="Stretch">
 			<property name="local_mesure_unitheight" value="pixel"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement x="0" y="9" width="71" height="15" uuid="20d2acff-5683-427b-a444-862d40607e65">
+				<reportElement x="0" y="2" width="71" height="15" uuid="20d2acff-5683-427b-a444-862d40607e65">
 					<property name="local_mesure_unitheight" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{orderId}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="80" y="9" width="100" height="15" uuid="cf8c696f-e66a-4c69-bed7-f6ab40ba0a57">
+				<reportElement x="80" y="0" width="100" height="15" uuid="cf8c696f-e66a-4c69-bed7-f6ab40ba0a57">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{accountNumber}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="180" y="9" width="100" height="15" uuid="4c42a9b3-fe03-4bff-b63a-31494aff0efa">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textFieldExpression><![CDATA[$F{accountCompany}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="286" y="9" width="62" height="15" uuid="521301ed-4266-47c3-9f29-6446140ed6f7">
+				<reportElement x="281" y="1" width="62" height="15" uuid="521301ed-4266-47c3-9f29-6446140ed6f7">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
@@ -128,7 +118,7 @@
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="154" splitType="Stretch">
+		<band height="90" splitType="Stretch">
 			<textField>
 				<reportElement x="17" y="58" width="100" height="30" uuid="08fa17c8-c97b-4dc2-a99f-28b410a5734b"/>
 				<textElement textAlignment="Right"/>
@@ -147,19 +137,19 @@
 				<reportElement x="2" y="30" width="799" height="1" uuid="84e3e1e2-a970-4291-85aa-a84856aaa55d"/>
 			</line>
 			<textField>
-				<reportElement x="286" y="-12" width="66" height="19" uuid="45eaed76-99c0-45b3-9ff4-1002c98afb7b"/>
+				<reportElement x="282" y="-19" width="66" height="19" uuid="45eaed76-99c0-45b3-9ff4-1002c98afb7b"/>
 				<textFieldExpression><![CDATA[$P{amount}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="180" y="-15" width="50" height="20" uuid="c1294745-7120-47a1-bcab-c5d857da1065"/>
+				<reportElement x="180" y="-20" width="50" height="20" uuid="c1294745-7120-47a1-bcab-c5d857da1065"/>
 				<text><![CDATA[Amount]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="286" y="2" width="62" height="21" uuid="c76550b5-db43-48f6-84de-513d5f961a86"/>
+				<reportElement x="281" y="10" width="62" height="21" uuid="c76550b5-db43-48f6-84de-513d5f961a86"/>
 				<textFieldExpression><![CDATA[$P{profit}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="180" y="0" width="50" height="20" uuid="84fabb52-0de0-4c54-a2c6-0f1569990e6d"/>
+				<reportElement x="180" y="9" width="50" height="20" uuid="84fabb52-0de0-4c54-a2c6-0f1569990e6d"/>
 				<text><![CDATA[Profite]]></text>
 			</staticText>
 		</band>
