@@ -7,12 +7,12 @@
 		<div class="main">
 			<div class="shoping_bag">
 				<h4>
-					<img src="images/bag1.png">Shopping Lists / <span> 11
+					Shopping Lists / <span> ${fn:length(shoppingCart.items)}
 						item</span>
 				</h4>
 				<ul class="s_art">
-					<li><img src="images/art1.png"></li>
-					<li><span> 11 item</span></li>
+					
+					<li><span> ${fn:length(shoppingCart.items)} items</span></li>
 				</ul>
 				<div class="clearfix"></div>
 			</div>
@@ -54,15 +54,10 @@
 			</div>
 	</c:forEach>
 			<div class="shoping_bag1">
-				<div class="shoping_left">
-					<h2>
-						<a href="#"><img src="images/login.jpg">login </a> <span>
-							to apply coupons</span>
-					</h2>
-				</div>
+				
 				<div class="shoping_right">
 					<p>
-						coupon discount &nbsp;<span class="color"> Rs. 0</span>
+						coupon discount &nbsp;<span class="color"> $. 0</span>
 					</p>
 				</div>
 				<div class="clearfix"></div>
@@ -73,7 +68,7 @@
 				</div>
 				<div class="shoping_right">
 					<p class="tot">
-						total &nbsp;<span class="color"> ${shoppingCart.price} </span>
+						total &nbsp;<span class="color"> ${shoppingCart.price} $ </span>
 					</p>
 
 				</div>
