@@ -22,6 +22,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.onlinebazzar.commons.ProductSize;
+
 
 @Entity
 public class Product  {
@@ -39,16 +41,6 @@ public class Product  {
 	@NotEmpty
 	private String productDetails;
 	
-	public Product() {
-		this.creationDate = new Date();
-	}
-	
-	public String getProductDetails() {
-		return productDetails;
-	}
-	public void setProductDetails(String productDetails) {
-		this.productDetails = productDetails;
-	}
 	@Min(1) @Max(99)
 	private double bazzarBenefit;
 	@ManyToOne(cascade=CascadeType.ALL)
@@ -63,6 +55,19 @@ public class Product  {
 	private int quantity;
 	@Transient
 	private MultipartFile  productImage;
+	
+	public Product() {
+		this.creationDate = new Date();
+		this.quantity     = 1;
+	}
+	
+	public String getProductDetails() {
+		return productDetails;
+	}
+	public void setProductDetails(String productDetails) {
+		this.productDetails = productDetails;
+	}
+	
 	public MultipartFile getProductImage() {
 		return productImage;
 	}
@@ -128,8 +133,6 @@ public class Product  {
 	public String toString() {
 		return "Product [category=" + category + "]";
 	}
-	
-	
 	
 	
 }

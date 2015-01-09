@@ -43,7 +43,7 @@
 						<div class="col-lg-3">
 							<form:select path="type">
 								<form:option value="" label="--Select value--" />
-								<form:options items="${card}"/>
+								<form:options items="${enumValues}"/>
 							</form:select>
 						</div>
 					</div>

@@ -27,6 +27,7 @@ import com.onlinebazzar.model.Customer;
 import com.onlinebazzar.model.LineItem;
 import com.onlinebazzar.model.Order;
 import com.onlinebazzar.model.PaymentDetails;
+import com.onlinebazzar.model.Product;
 import com.onlinebazzar.model.ShoppingCart;
 import com.onlinebazzar.model.Transaction;
 import com.onlinebazzar.model.Vendor;
@@ -34,6 +35,7 @@ import com.onlinebazzar.paymentgt.restfulclient.RestClient;
 import com.onlinebazzar.services.CustomerService;
 import com.onlinebazzar.services.OrderService;
 import com.onlinebazzar.services.PaymentDetailsService;
+import com.onlinebazzar.services.ProductService;
 import com.onlinebazzar.services.TransactionService;
 import com.onlinebazzar.services.VendorService;
 
@@ -55,6 +57,9 @@ public class PaymentGatewayController {
 
 	@Autowired
 	TransactionService transactionService;
+	
+	@Autowired
+	ProductService productService;
 
 	@RequestMapping("/paymentInput")
 	public String paymentDetails(Model model, HttpServletRequest request) {
@@ -72,8 +77,6 @@ public class PaymentGatewayController {
 		} else {
 			model.addAttribute("paymentDetails", new PaymentDetails());
 		}
-
-		model.addAttribute("card", CardType.values());
 		return "paymentDetails";
 	}
 
@@ -116,6 +119,17 @@ public class PaymentGatewayController {
 
 			Order order = new Order();
 			order.setPrice(shoppingCart.getPrice());
+
+			List<LineItem> lineItemList = shoppingCart.getItems();
+			Iterator<LineItem> it = lineItemList.iterator();
+			while (it.hasNext()) {
+				LineItem lineItem = it.next();
+				Product product = lineItem.getProduct();
+				product.setQuantity(product.getQuantity()
+						- lineItem.getQuantity());
+				productService.update(product);
+			}
+
 			order.setItems(shoppingCart.getItems());
 			order.setCustomer(currentUser);
 			order = orderService.update(order);

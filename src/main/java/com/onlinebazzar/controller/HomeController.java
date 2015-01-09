@@ -1,7 +1,10 @@
 package com.onlinebazzar.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -106,7 +109,32 @@ public class HomeController {
 		List<Product> discountProducts = productService.findDiscountProduct();
 		System.out.println(discountProducts.size());
 		model.addAttribute("discountProductList", discountProducts);
-
+		
+		Map<Category, List<Vendor>> categoryWithVendors = new HashMap<Category, List<Vendor>>();
+		for(int i = 0; i< categoryList.size(); i++){
+			Category cat = categoryList.get(i);
+			List<Vendor> vList = new ArrayList<Vendor>();
+			for(int j = 0;j< vendorList.size() ; j++){
+				Vendor v = vendorList.get(j);
+				if(v.getCategories().contains(cat)){
+					vList.add(v);
+				}
+			}
+			categoryWithVendors.put(cat, vList);
+		}
+		model.addAttribute("categoryVendorList", categoryWithVendors);
+		
+//		System.out.println(categoryWithVendors.size());
+//		for (Map.Entry<Category, List<Vendor>> entry : categoryWithVendors.entrySet()) {
+//			Category c = entry.getKey();
+//			System.out.println("cat name ::" + c.getName() );
+//			List<Vendor> vlist = entry.getValue();
+//			for(int i = 0; i< vlist.size(); i++){
+//				Vendor v = vlist.get(i);
+//				System.out.println("Vendor ::" + v.getName());
+//			}
+//		}
+		
 		return "/HomePage";
 
 	}

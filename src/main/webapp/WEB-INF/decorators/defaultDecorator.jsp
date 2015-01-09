@@ -167,7 +167,7 @@
 								<div class="col1"></div>
 							</div>
 						</div></li>
-					<li><a class="color8" href="#">category</a>
+	<%-- 				<li><a class="color8" href="#">category</a>
 						<div class="megapanel">
 							<div class="row">
 								<c:forEach var="category" items="${categoryList}">
@@ -177,6 +177,20 @@
 												<a href="<c:url value='/product/category/${category.id}' />">${category.name}</a>
 
 											</h4>
+											
+											
+											<ul>
+
+
+
+
+												<c:forEach var="catagories" items="${category.vendorList}">
+
+													<li><a
+														href="<c:url value='/product/vendorCategory/${vendor.id}/${catagories.id}' />">${catagories.vendor.name}</a></li>
+												</c:forEach>
+
+											</ul>
 										</div>
 									</div>
 
@@ -189,7 +203,7 @@
 								<div class="col1"></div>
 								<div class="col1"></div>
 							</div>
-						</div></li>
+						</div></li> --%>
 
 					<li><a class="color9" href="#">sale</a>
 					<li><a class="color10" href="contact.html">Contact</a>

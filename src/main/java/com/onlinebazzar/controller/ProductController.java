@@ -1,11 +1,8 @@
 package com.onlinebazzar.controller;
 
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -17,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.onlinebazzar.model.Category;
 import com.onlinebazzar.model.LineItem;
 import com.onlinebazzar.model.Product;
 import com.onlinebazzar.model.ShoppingCart;
-import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.services.CategoryService;
 import com.onlinebazzar.services.ProductService;
 import com.onlinebazzar.services.VendorService;
