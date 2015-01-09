@@ -1,4 +1,4 @@
-package com.onlinebazzar.services.test;
+/*package com.onlinebazzar.services.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -70,3 +70,4 @@ public class PersonServiceImplTest  extends ServiceImplTestBase{
 	}
 
 }
+*/
