@@ -199,45 +199,39 @@
 						<!-- Brands -->
 						
 						
+						
+						
+						
 						<section class="sky-form">
 						<h4>brand</h4>
 						<div class="row1 scroll-pane">
-							<div class="col col-4">
-							<c:forEach var="vendor" items="${vendorList}">
-							
+						
+						<div class="col col-4">
+						
+						<c:forEach var="vendor" items="${vendorList}">
+							<c:forEach var="catagories" items="${vendor.categories}">
+										
 								<label class="checkbox"><input type="checkbox"
-									name="checkbox" checked=""><i></i>${vendor.name}</label> 
-									</c:forEach>
-							</div>
+									name="checkbox" checked=""><i></i>
+									<a href="<c:url value='/product/category/${catagories.id}' />">${vendor.name}</a>
+									
+								</label>
+										
+										</c:forEach>
+						
+						</c:forEach>
+						
+						
 							
-						</div>
-						</section>
-						<section class="sky-form">
-						<h4>colour</h4>
-						<ul class="w_nav2">
-							<li><a class="color1" href="#"></a></li>
-							<li><a class="color2" href="#"></a></li>
-							<li><a class="color3" href="#"></a></li>
-							<li><a class="color4" href="#"></a></li>
-							<li><a class="color5" href="#"></a></li>
-							<li><a class="color6" href="#"></a></li>
-							<li><a class="color7" href="#"></a></li>
-							<li><a class="color8" href="#"></a></li>
-							<li><a class="color9" href="#"></a></li>
-							<li><a class="color10" href="#"></a></li>
-							<li><a class="color12" href="#"></a></li>
-							<li><a class="color13" href="#"></a></li>
-							<li><a class="color14" href="#"></a></li>
-							<li><a class="color15" href="#"></a></li>
-							<li><a class="color5" href="#"></a></li>
-							<li><a class="color6" href="#"></a></li>
-							<li><a class="color7" href="#"></a></li>
-							<li><a class="color8" href="#"></a></li>
-							<li><a class="color9" href="#"></a></li>
-							<li><a class="color10" href="#"></a></li>
-						</ul>
-						</section>
-						<section class="sky-form">
+							</div>
+							</div>
+							</section>
+						
+						
+						
+						
+				
+						<%-- <section class="sky-form">
 						<h4>discount</h4>
 						<div class="row1 scroll-pane">
 							<div class="col col-4">
@@ -254,7 +248,7 @@
 									type="radio" name="radio"><i></i>10 % and above</label>
 							</div>
 						</div>
-						</section>
+						</section> --%>
 					</div>
 				</div>
 				<div class="clearfix"></div>
