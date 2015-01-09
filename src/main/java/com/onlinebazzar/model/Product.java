@@ -43,7 +43,7 @@ public class Product  {
 	private String productDetails;
 	
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "vendor") 
 	private Vendor vendor;
 
@@ -104,6 +104,7 @@ public class Product  {
 	}
 	public void setVendor(Vendor vendor) {
 		this.vendor = vendor;
+
 	}
 	public Category getCategory() {
 		return category;

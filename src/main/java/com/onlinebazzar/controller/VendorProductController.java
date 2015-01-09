@@ -27,6 +27,7 @@ import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.model.WebUser;
 import com.onlinebazzar.services.CategoryService;
 import com.onlinebazzar.services.ProductService;
+import com.onlinebazzar.services.VendorService;
 
 @Controller
 @Scope("session")
@@ -42,6 +43,9 @@ public class VendorProductController {
 	private CategoryService catagoryservice;
 	@Autowired
 	private ProductService productService;
+	@Autowired
+	VendorService vendorService;
+
 
 	@RequestMapping(value = "/allProducts", method = RequestMethod.GET)
 	public String list(Model model) {
@@ -50,12 +54,24 @@ public class VendorProductController {
 	}
 
 	@RequestMapping(value = "/vendor/product/add", method = RequestMethod.GET)
-	public String vendorAddProduct(Model model) {
+	public String vendorAddProduct(Model model, HttpServletRequest request) {
 
 		List<Category> category = new ArrayList<Category>();
 		category = catagoryservice.findAll();
+		List<Vendor> vendors = new ArrayList<Vendor>();
+		WebUser webUser =  (WebUser) request.getSession().getAttribute("user");
+		Vendor vendor = vendorService.findOne(webUser.getPerson().getVendor().getId());
+		List<Vendor> tvendors= vendorService.findAll();
+		vendors = new ArrayList<Vendor>();
+		for(int i =0;i<tvendors.size();i++){
+			if(tvendors.get(i).getName().equals(vendor.getName())){
+				vendors.add(tvendors.get(i));
+				break;
+			}
+			
+		}
 		model.addAttribute("category", category);
-
+		model.addAttribute("vendors", vendors);
 		model.addAttribute("newProduct", new Product());
 
 		return "vendor/addproduct";
@@ -114,9 +130,11 @@ public class VendorProductController {
 	public String addProduct(@ModelAttribute("product") Product p,HttpServletRequest request) {
 		// System.out.println(v);
 		WebUser webUser =  (WebUser) request.getSession().getAttribute("user");
-		p.setVendor(webUser.getPerson().getVendor());
+		Vendor vendor = vendorService.findOne(webUser.getPerson().getVendor().getId());
+		
+		//p.getVendor().setId(vendor.getId());
 		productService.update(p);
-
+		//vendorService.save(vendor);
 		return "redirect:/vendor/managedProducts";
 
 	}

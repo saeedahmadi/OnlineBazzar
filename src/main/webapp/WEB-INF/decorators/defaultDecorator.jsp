@@ -65,7 +65,7 @@
 				<div class="top_left">
 					<h2>
 						<a href="#">50%off</a> use coupon code "big61" and get extra 33%
-						off on orders above rs 2,229
+						off on orders above $ 500
 					</h2>
 				</div>
 
