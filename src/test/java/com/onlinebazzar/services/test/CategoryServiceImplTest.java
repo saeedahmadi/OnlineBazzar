@@ -47,7 +47,7 @@ public class CategoryServiceImplTest  extends ServiceImplTestBase{
 			c = categoryService.save(c);
 			
 			Vendor v = createOneNewVendor(vendorNames[i]);
-			
+			v.getCategories().add(c);
 			v = vendorService.save(v);
 			Person person = createOneNewVendorAdmin(v);
 			personService.save(person);
