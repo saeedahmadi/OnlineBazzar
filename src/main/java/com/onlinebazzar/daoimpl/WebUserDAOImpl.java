@@ -40,4 +40,13 @@ public class WebUserDAOImpl extends GenericDAOImpl<WebUser> implements WebUserDA
 		
 	}
 
+	@Override
+	public List<WebUser> findPendingUsers() {
+		// TODO Auto-generated method stub
+		Query query = getCurrentSession().createQuery("Select u from WebUser u where u.enabled=0");
+		
+		List<WebUser> users = query.list();
+		return users;	
+		}
+
 }

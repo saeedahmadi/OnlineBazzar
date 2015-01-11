@@ -165,6 +165,7 @@ public class TestBase {
     	String random = RandomData.randomName("Admin");
     	user.setUsername(random);
     	user.setPassword("2222222");
+    	user.setEnabled(true);
     	return user;
 	}
 

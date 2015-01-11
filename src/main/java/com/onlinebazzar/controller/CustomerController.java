@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.onlinebazzar.commons.MailMail;
 import com.onlinebazzar.commons.Role;
 import com.onlinebazzar.model.Customer;
+import com.onlinebazzar.model.Person;
 import com.onlinebazzar.services.CustomerService;
 
 @Controller
@@ -33,6 +36,8 @@ public class CustomerController {
 
 	@Autowired
 	CustomerService customerService;
+	@Autowired
+	MailMail mail;
 
 	@RequestMapping(value = "/userRegister", method = RequestMethod.GET)
 	public String createCustomerForm(Model model) {
@@ -93,7 +98,20 @@ public class CustomerController {
 		}
 		customer.getWebuser().setRole(Role.CUSTOMER);
 		customerService.save(customer);
+		notifyVendorAdmin(customer);
 		return "redirect:/login";
 	}
-	
+	@Async
+	private void notifyVendorAdmin(Person p){
+		String msg="";
+		msg=("Dear "+p.getFirstName()+" ( "+p.getLastName()+" )"+ ", thank you for using our service!\n"
+	    		+ "Please use the link below to activate your account.\n");
+		msg+="<a href='http://localhost:8080/onlinebazzar/validateRegister/"+p.getWebuser().getPasswordRecovery()+">"+"Activate"+"</a>";
+		msg+="Your Account Details are:\nUsername: "+p.getWebuser().getUsername()+"\nPassword: "+p.getWebuser().getPassword();
+		msg+="\nWarm Regards,\nOnline Bazzar Team";
+		mail.sendMail("testmeluck@gmail.com",
+				p.getEmail(),
+				"OnlineBazzar Activatioin", 
+				msg);
+	}
 }

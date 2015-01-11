@@ -168,6 +168,7 @@ public class AdminController {
 	@RequestMapping(value = "/admin/vendors", method = RequestMethod.GET)
 	public String listVendors(Model model) {
 		model.addAttribute("vendor", new Vendor());
+		
 		model.addAttribute("vendors", vendorService.findAll());
 		return "admin/vendors";
 	}
@@ -287,8 +288,9 @@ public class AdminController {
 
 	@RequestMapping(value = "/admin/webusers", method = RequestMethod.GET)
 	public String listWebusers(Model model) {
-		model.addAttribute("webuser", new WebUser());
-		model.addAttribute("webusers", webuserService.findAll());
+		
+		model.addAttribute("webusers", webuserService.findPendingUsers());
+		
 		return "admin/webusers";
 	}
 
@@ -324,12 +326,11 @@ public class AdminController {
 	@RequestMapping(value = "/webusers/enableWebuser/{id}", method = RequestMethod.GET)
 	public String enableWebUser(@PathVariable("id") Long id, HttpServletRequest request, Model model) {
 		webuserService.enable(id);
-		WebUser webuser = (WebUser) request.getSession().getAttribute("user");
-		Person person = webuser.getPerson();
-		List<Person> webusers = personService.findAllWebUserPersons(person.getWebuser().getId());
 		
-		model.addAttribute("webuser", new Person());
-		model.addAttribute("webusers", webusers);
+		//List<WebUser> webusers = (List<WebUser>) webuserService.findPendingUsers();
+		WebUser tempUser = webuserService.findOne(id);
+		notifyVendorAdmin(tempUser.getPerson());
+		model.addAttribute("webusers", webuserService.findPendingUsers());
 		return "redirect:/admin/webusers";
 	}
 	

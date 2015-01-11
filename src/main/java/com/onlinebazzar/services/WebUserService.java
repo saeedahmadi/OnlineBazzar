@@ -1,5 +1,6 @@
 package com.onlinebazzar.services;
 
+import java.util.List;
 import java.util.Locale;
 
 import com.onlinebazzar.commons.exception.ExceptionResourceAlredyExist;
@@ -21,4 +22,6 @@ public interface WebUserService extends GenericService<WebUser>{
 	public void updateUser(WebUser user);
 
 	public void updateUserByPasswordRecovery(String id);
+
+	public List<WebUser> findPendingUsers();
 }

@@ -48,14 +48,16 @@
 					<c:if test="${!empty webusers}">
 						<table class="table table-striped">
 							<tr>
-								<th width="80">webuser ID</th>
-								<th width="120">webuser username</th>
+								<th width="80">ID</th>
+								<th width="120">Username</th>
+								<th width="120">Role</th>
 								<th width="60">Enable</th>
 							</tr>
 							<c:forEach items="${webusers}" var="webuser">
 								<tr>
 									<td>${webuser.id}</td>
 									<td>${webuser.username}</td>
+									<td>${webuser.role}</td>
 									<td><a href="<c:url value='/webusers/enableWebuser/${webuser.id}' />" >Enable</a></td>
 								<%-- 	
 									<td><a

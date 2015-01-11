@@ -3,7 +3,8 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
     <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-
+<link href="<c:url value="/resources/css/bootstrap.css"/>" 
+	rel='stylesheet' type='text/css' />
 	<div class="content-section">
 		<div class="container">
 

@@ -208,8 +208,8 @@ private void copyDetails1(PaymentDetails p, ProxyPaymentDetails p1){
 			Double vendorBenefit = (Double) entry.getValue();
 			Transaction transaction = new Transaction();
 			transaction.setOrderId(order.getId());
-			transaction.setAccountNumber(vendor.getBankAccount()
-					.getAccountNumber());
+			transaction.setAccountNumber(EncryptDecryptStringWithDES.encrypt(vendor.getBankAccount()
+					.getAccountNumber()));
 			transaction.setEntryType(EntryType.DEPOSIT);
 			transaction.setPrice(vendorBenefit);
 
@@ -220,8 +220,8 @@ private void copyDetails1(PaymentDetails p, ProxyPaymentDetails p1){
 
 		Transaction customerTransaction = new Transaction();
 		customerTransaction.setOrderId(order.getId());
-		customerTransaction.setAccountNumber(order.getCustomer()
-				.getPaymentDetails().get(0).getCardNumber());
+		customerTransaction.setAccountNumber(EncryptDecryptStringWithDES.encrypt(order.getCustomer()
+				.getPaymentDetails().get(0).getCardNumber()));
 		customerTransaction.setEntryType(EntryType.WITHDRAW);
 		customerTransaction.setPrice(order.getPrice());
 		customerTransaction.setType(order.getCustomer().getPaymentDetails()
@@ -231,7 +231,7 @@ private void copyDetails1(PaymentDetails p, ProxyPaymentDetails p1){
 
 		Transaction bazzarTransaction = new Transaction();
 		bazzarTransaction.setOrderId(order.getId());
-		bazzarTransaction.setAccountNumber("1111111111111111");
+		bazzarTransaction.setAccountNumber(EncryptDecryptStringWithDES.encrypt("1111111111111111"));
 		bazzarTransaction.setEntryType(EntryType.DEPOSIT);
 		bazzarTransaction.setPrice(bazzarBenefit);
 		transactionService.save(bazzarTransaction);

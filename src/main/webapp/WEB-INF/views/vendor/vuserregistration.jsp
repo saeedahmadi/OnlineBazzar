@@ -1,30 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ page session="false"%>
-<html>
-
-<head>
-<title>vuser Registration</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
-	type="text/css" />
-<!-- <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-  -->
-<script type="text/javascript" src="bootstrap/js/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-
-
-</head>
-<body>
+<link href="<c:url value="/resources/css/bootstrap.css"/>" 
+	rel='stylesheet' type='text/css' />
 	<div class="content-section">
 		<div class="container">
 
@@ -224,6 +199,3 @@
 			</form:form>
 		</div>
 	</div>
-
-</body>
-</html>

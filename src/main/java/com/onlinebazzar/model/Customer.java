@@ -16,7 +16,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @PrimaryKeyJoinColumn(name="person_id")
 public class Customer extends Person implements Serializable{
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private ShoppingCart shoppingCart;
 	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name="customer_id")
@@ -27,6 +27,7 @@ public class Customer extends Person implements Serializable{
 	
 	public Customer() {
 		paymentDetails = new ArrayList<PaymentDetails>();
+		this.shoppingCart = new ShoppingCart();
 	}
 	
 	public ShoppingCart getShoppingCart() {

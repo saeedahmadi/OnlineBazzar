@@ -21,7 +21,7 @@ public class ShoppingCartController {
  		return "buy";
 	}
 	
-	@RequestMapping(value = "/clearCart", method = RequestMethod.POST)
+	@RequestMapping(value = "/clearCart", method = RequestMethod.GET)
 	public String clearCart(Model model){
 		
 		model.addAttribute("shoppingCart", new ShoppingCart());

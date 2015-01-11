@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.onlinebazzar.commons.EntryType;
 import com.onlinebazzar.commons.MailMail;
 import com.onlinebazzar.commons.Role;
+import com.onlinebazzar.encryption.EncryptDecryptStringWithDES;
 import com.onlinebazzar.model.Person;
 import com.onlinebazzar.model.Transaction;
 import com.onlinebazzar.model.Vendor;
@@ -76,7 +77,7 @@ public class VendorAdminController {
 
 	}
 
-	@RequestMapping(value="/vendor", method=RequestMethod.POST)
+	@RequestMapping(value="/compeleteVendorRegistration", method=RequestMethod.POST)
 	public String saveVendor(@ModelAttribute("vendor") @Valid Vendor vendor,
 BindingResult result, HttpServletRequest request, Locale locale){
 
@@ -103,13 +104,13 @@ BindingResult result, HttpServletRequest request, Locale locale){
 		
 		 Transaction vendorTransaction = new Transaction();
 		 vendorTransaction.setAccountCompany(vendor.getName());
-		 vendorTransaction.setAccountNumber(vendor.getBankAccount().getAccountNumber());
+		 vendorTransaction.setAccountNumber(EncryptDecryptStringWithDES.encrypt(vendor.getBankAccount().getAccountNumber()));
 		 vendorTransaction.setEntryType(EntryType.WITHDRAW);
 		 vendorTransaction.setPrice(1000);
 		
 		 Transaction bazzarTransaction = new Transaction();
 		 bazzarTransaction.setAccountCompany(vendor.getName());
-		 bazzarTransaction.setAccountNumber("1111111111111111");
+		 bazzarTransaction.setAccountNumber(EncryptDecryptStringWithDES.encrypt(("1111111111111111")));
 		 bazzarTransaction.setEntryType(EntryType.DEPOSIT);
 		 bazzarTransaction.setPrice(1000);
 		 
@@ -144,8 +145,8 @@ BindingResult result, HttpServletRequest request, Locale locale){
 	private void notifyVendorAdmin(Person p){
 		String msg="";
 		msg=("Dear "+p.getFirstName()+" ( "+p.getLastName()+" )"+ ", thank you for using our service!\n"
-	    		+ "Please use the link below to activate your account.\n");
-		msg+="<a href='http://localhost:8080/onlinebazzar/validateRegister/"+p.getWebuser().getPasswordRecovery()+">"+"Activate"+"</a>";
+	    		+ "Shortly you will recieve another email with account activation details.\n");
+		//msg+="<a href='http://localhost:8080/onlinebazzar/validateRegister/"+p.getWebuser().getPasswordRecovery()+">"+"Activate"+"</a>";
 		msg+="Your Account Details are:\nUsername: "+p.getWebuser().getUsername()+"\nPassword: "+p.getWebuser().getPassword();
 		msg+="\nWarm Regards,\nOnline Bazzar Team";
 		mail.sendMail("testmeluck@gmail.com",

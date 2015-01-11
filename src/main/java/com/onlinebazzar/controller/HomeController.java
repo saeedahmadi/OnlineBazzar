@@ -29,11 +29,13 @@ import com.onlinebazzar.commons.Role;
 import com.onlinebazzar.encryption.EncryptDecryptStringWithDES;
 import com.onlinebazzar.model.Category;
 import com.onlinebazzar.model.Customer;
+import com.onlinebazzar.model.LineItem;
 import com.onlinebazzar.model.Person;
 import com.onlinebazzar.model.Product;
 import com.onlinebazzar.model.ShoppingCart;
 import com.onlinebazzar.model.Vendor;
 import com.onlinebazzar.services.CategoryService;
+import com.onlinebazzar.services.CustomerService;
 import com.onlinebazzar.services.ProductService;
 import com.onlinebazzar.services.VendorService;
 import com.onlinebazzar.model.WebUser;
@@ -59,12 +61,16 @@ public class HomeController {
 
 	@Autowired
 	WebUserService webUserService;
+	
+	@Autowired
+	CustomerService customerService;
 
 	/**
 	 * Handle the home request and place view according to the user type
 	 * 
 	 * @return
 	 */
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String clientHome(HttpServletRequest request, Model model) {
 
@@ -86,6 +92,16 @@ public class HomeController {
 			if (user.getRole().equals(Role.CUSTOMER)) {
 				Customer customer = (Customer) user.getPerson();
 				request.getSession().setAttribute("user", customer);
+				customer = customerService.findOne(customer.getId());
+				ShoppingCart sc =customer.getShoppingCart();
+				List<LineItem> tempLi= customer.getShoppingCart().getItems();
+				System.out.println(tempLi.size());
+				
+				request.getSession().setAttribute("shoppingCart", customer.getShoppingCart());
+				
+				ShoppingCart temShoppingCart = (ShoppingCart) request.getSession().getAttribute("shoppingCart");
+				System.out.println(temShoppingCart.getItems().size());
+				
 			}
 
 			if (user.getRole().equals(Role.VADMIN)) {
@@ -135,7 +151,7 @@ public class HomeController {
 //			}
 //		}
 		
-		return "/HomePage";
+		return "redirect:/HomePage";
 
 	}
 

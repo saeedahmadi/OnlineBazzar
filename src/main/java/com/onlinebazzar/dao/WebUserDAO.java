@@ -1,5 +1,7 @@
 package com.onlinebazzar.dao;
 
+import java.util.List;
+
 import com.onlinebazzar.model.WebUser;
 
 public interface WebUserDAO extends GenericDAO<WebUser>{
@@ -8,4 +10,6 @@ public interface WebUserDAO extends GenericDAO<WebUser>{
 	void enable(Long id);
 
 	void updateUserByPasswordRecovery(String id);
+
+	List<WebUser> findPendingUsers();
 }

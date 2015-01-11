@@ -49,7 +49,7 @@ public class VendorController {
 		return "vendor/vendorpanel";
 	}
 
-	@RequestMapping(value = "/vendor/", method = RequestMethod.POST)
+	/*@RequestMapping(value = "/vendor/", method = RequestMethod.POST)
 	public String saveVendor(@ModelAttribute("vendor") @Valid Vendor vendor,
 			BindingResult result, HttpServletRequest request, Locale locale) {
 
@@ -60,7 +60,7 @@ public class VendorController {
 		vendorService.save(vendor);
 		// after the custmer service implimentation created
 		return "home";
-	}
+	}*/
 
 	@RequestMapping(value = "/vendor/vusers", method = RequestMethod.GET)
 	public String getVendorUsers(Model model, HttpServletRequest request) {

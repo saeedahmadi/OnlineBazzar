@@ -33,6 +33,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 		WebUser user = webUserDAO.findOneByUserName(authentication);	
 		
 		if (user != null) {
+			if(!user.isEnabled())
+				return null;
 			customUserData.setAuthentication(true);
 			customUserData.setId(user.getId().toString());
 			customUserData.setUserName(user.getUsername());

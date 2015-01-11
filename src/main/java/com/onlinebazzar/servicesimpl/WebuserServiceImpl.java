@@ -1,5 +1,6 @@
 package com.onlinebazzar.servicesimpl;
 
+import java.util.List;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,6 +69,12 @@ public class WebuserServiceImpl extends GenericServiceImpl<WebUser> implements W
 	public void updateUserByPasswordRecovery(String id) {
 		// TODO Auto-generated method stub
 		webUserDAO.updateUserByPasswordRecovery(id);
+	}
+
+	@Override
+	public List<WebUser> findPendingUsers() {
+		// TODO Auto-generated method stub
+		return webUserDAO.findPendingUsers();
 	}
 	}
 

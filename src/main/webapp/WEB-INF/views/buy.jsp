@@ -16,7 +16,7 @@
 				</ul>
 				<div class="clearfix"></div>
 			</div>
-			<c:forEach var="lineitem" items="${shoppingCart.items}">
+			<c:forEach var="lineitem" items="${shoppingCart.items}" varStatus="countId">
 			<div class="shoping_bag1">
 				<div class="shoping_left">
 
@@ -26,6 +26,7 @@
 							
 							<a href="<c:url value="/details/${lineitem.product.id}"/>">
 							<img src="<c:url value="/resources/images/${lineitem.product.name}.jpg" ></c:url>" class="img-responsive" alt=""/> 
+							<a class="href" href="/onlinebazzar/shoppingCart/delete/${countId.index }">Remove</a>
 						</a>
 						</div>
 						<div class="shoping1_of_2">
@@ -64,7 +65,11 @@
 			</div>
 			<div class="shoping_bag2">
 				<div class="shoping_left">
-					<a class="btn1" href="paymentInput">place order</a>
+					<a class="btn1" href="paymentInput">Place Order</a>
+					<a class="btn1" href="/onlinebazzar/clearCart">Clear Cart</a>
+				</div>
+				<div class="shoping_left">
+					
 				</div>
 				<div class="shoping_right">
 					<p class="tot">
@@ -74,6 +79,8 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
+			
+			
 		</div>
 	</div>
 	
