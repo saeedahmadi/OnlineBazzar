@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.onlinebazzar.dao.WebUserDAO;
 import com.onlinebazzar.model.WebUser;
@@ -21,6 +22,7 @@ import com.onlinebazzar.model.WebUser;
  */
 @Service("customUserDetailsService")
 @Transactional
+@SessionAttributes({ "shoppingCart"})
 public class CustomUserDetailsService implements UserDetailsService {
 
 	@Autowired

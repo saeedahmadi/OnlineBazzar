@@ -11,11 +11,11 @@ import com.onlinebazzar.services.GenericService;
 
 public abstract class GenericServiceImpl<T> implements GenericService<T> {
 	protected abstract GenericDAO getDAO();
-
+	@Transactional
 	public T findOne(Long id) {
 		return (T) getDAO().findOne(id);
 	}
-
+	@Transactional
 	public List<T> findAll() {
 		return getDAO().findAll();
 	}

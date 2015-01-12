@@ -1,6 +1,7 @@
 package com.onlinebazzar.model;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -26,7 +27,7 @@ import com.onlinebazzar.commons.ProductSize;
 
 
 @Entity
-public class Product  {
+public class Product implements Serializable  {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

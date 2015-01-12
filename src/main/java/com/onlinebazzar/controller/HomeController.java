@@ -93,14 +93,27 @@ public class HomeController {
 				Customer customer = (Customer) user.getPerson();
 				request.getSession().setAttribute("user", customer);
 				customer = customerService.findOne(customer.getId());
+				ShoppingCart shoppingCart =
+						(ShoppingCart) request.getSession().getAttribute("shoppingCart");
 				ShoppingCart sc =customer.getShoppingCart();
-				List<LineItem> tempLi= customer.getShoppingCart().getItems();
-				System.out.println(tempLi.size());
 				
-				request.getSession().setAttribute("shoppingCart", customer.getShoppingCart());
+				//lazy loading
+				if(sc!=null){
+					for (int i = 0; i < sc.getItems().size(); i++) {
+						sc.getItems().get(i).getProduct().getName();
+					}
+					
+					for(int i=0;i<sc.getItems().size();i++){
+						shoppingCart.addCartItem(sc.getItems().get(i));
+					
+					}
+				}
+				customer.setShoppingCart(shoppingCart);
+				customer = customerService.update(customer);
 				
-				ShoppingCart temShoppingCart = (ShoppingCart) request.getSession().getAttribute("shoppingCart");
-				System.out.println(temShoppingCart.getItems().size());
+				model.addAttribute("shoppingCart", customer.getShoppingCart());
+				
+				
 				
 			}
 

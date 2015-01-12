@@ -139,6 +139,8 @@
 													Vendor</a></li>
 											<li><a href="<c:url value='/admin/vendors'/>">Manage
 													Vendors</a></li>
+										<li><a href="<c:url value='/report/test' />">Generate Report</a></li>										
+													
 										</ul>
 									</div>
 								</div>

@@ -95,7 +95,7 @@
 						<sec:authorize access="isAnonymous()">
 							
 						
-						<li><a href="<c:url value="/onlinebazzar/j_spring_security_logout"/>">Signin</a></li>|
+						<li><a href="/onlinebazzar/login" >Signin</a></li>|
 						<li><a href="shoppingCart">Cart(${fn:length(shoppingCart.items)})<i
 									class="fa fa-shopping-cart"></i></a></li>|
 						<!-- <li><a href="/onlinebazzar/UserRegisteration">Register</a></li> -->

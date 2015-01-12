@@ -1,5 +1,6 @@
 package com.onlinebazzar.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Vendor {
+public class Vendor  implements Serializable{
 	@Id
 	@GeneratedValue
 	private Long id;
